@@ -1,8 +1,10 @@
-package com.example.ticon;
+package com.example.ticon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.ticon.R;
 
 public class MainActivity extends AppCompatActivity {
 
