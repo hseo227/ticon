@@ -2,4 +2,6 @@
     <string name="app_name">ticon</string>
     <string name="no_results">Sorry, No Results Found</string>
     <string name="search">Search</string>
+    <string name="wishlist">WISHLIST</string>
+    <string name="my_emoticons">MY EMOTICONS</string>
 </resources>
