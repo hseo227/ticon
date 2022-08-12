@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ticon</string>
     <string name="no_results">Sorry, No Results Found</string>
+    <string name="search">Search</string>
 </resources>
