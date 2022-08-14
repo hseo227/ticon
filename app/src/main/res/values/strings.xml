@@ -10,4 +10,7 @@
 
     <string name="wishlist">WISHLIST</string>
     <string name="my_emoticons">MY EMOTICONS</string>
+
+    <string name="favorite">Favorite Emoticons</string>
+
 </resources>
