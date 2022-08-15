@@ -59,13 +59,25 @@
                 android:id="@+id/emoticonName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/itemImage"
+                android:layout_above="@id/artistName"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="TextView" />
+                android:text="Mr.Wolf" />
+
+            <TextView
+                android:id="@+id/artistName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/itemImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/grey_500"
+                android:text="by KYE" />
 
 
         </RelativeLayout>
