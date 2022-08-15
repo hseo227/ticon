@@ -27,19 +27,35 @@
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
+            android:id="@+id/noticeBubble"
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="80sp"
             android:layout_marginLeft="30sp"
+            android:layout_marginTop="80sp"
             android:background="@color/pink_a200"
             android:padding="8dp"
-            android:radius="10dp"
-            android:text="This is a test chat room for emoticon preview."
-            android:textColor="@color/white"
-            android:textSize="14sp" />
 
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/chatLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_bubble"
+            android:visibility="visible"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="180sp"
+            android:layout_marginEnd="10sp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="35dp"
+                tools:srcCompat="@tools:sample/avatars[2]" />
+
+        </RelativeLayout>
 
 
     </RelativeLayout>
