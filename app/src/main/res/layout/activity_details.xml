@@ -21,7 +21,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="4dp"
+                android:paddingStart="8dp"
                 android:paddingEnd="8dp">
 
                 <ImageButton
@@ -140,14 +140,23 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="wishlist"
                 android:src="@drawable/wishlist">
-
             </ImageButton>
-
-
-
-
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/item_container" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emoticonRView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+
     </LinearLayout>
+
 </ScrollView>
