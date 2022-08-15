@@ -12,7 +12,11 @@
     <string name="my_emoticons">MY EMOTICONS</string>
 
     <string name="favorite">Favorite Emoticons</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="search">Search</string>
 
     <string name="ticon_phrase">SHOP YOUR ONLINE EMOTIONS</string>
+
+    <string name="popular">POPULAR</string>
 
 </resources>
