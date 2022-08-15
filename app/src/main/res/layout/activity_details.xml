@@ -131,6 +131,19 @@
                 android:textSize="12sp"
                 app:cornerRadius="8dp" />
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/buyButton"
+                android:layout_marginLeft="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="wishlist"
+                android:src="@drawable/wishlist">
+
+            </ImageButton>
+
+
 
 
 
