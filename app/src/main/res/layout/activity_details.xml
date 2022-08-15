@@ -52,8 +52,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                tools:src="@tools:sample/avatars"
-                android:contentDescription="emoticonImage" />
+                android:contentDescription="emoticonImage"
+                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/emoticonName"
@@ -62,10 +62,10 @@
                 android:layout_above="@id/artistName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="2dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:text="Mr.Wolf"
                 android:textColor="@color/black"
-                android:text="Mr.Wolf" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/artistName"
@@ -74,10 +74,10 @@
                 android:layout_above="@id/itemImage"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp"
-                android:textSize="12sp"
-                android:textStyle="bold"
+                android:text="by KYE"
                 android:textColor="@color/grey_500"
-                android:text="by KYE" />
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/priceTag"
@@ -104,8 +104,34 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-
             </LinearLayout>
+
+            <Button
+                android:id="@+id/previewButton"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:backgroundTint="@color/mint_a100"
+                android:radius="8dp"
+                android:text="Preview in Chat"
+                android:textSize="12sp"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/buyButton"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/previewButton"
+                android:layout_marginLeft="12dp"
+                android:backgroundTint="@color/pink_a200"
+                android:radius="8dp"
+                android:text="Buy"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:cornerRadius="8dp" />
+
+
 
 
         </RelativeLayout>
