@@ -33,7 +33,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="80sp"
+            android:layout_marginTop="80dp"
             android:elevation="10dp"
             android:background="@drawable/notice_bubble"
             android:padding = "13dp"
@@ -66,6 +66,33 @@
 
         </RelativeLayout>
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/emoticonKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/white_100"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:background="@color/white_300"
+                android:radius="30dp"
+                android:padding="10dp"
+                android:paddingStart="15dp"
+                android:text="Try use the emoticons in a chatroom!"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+        
     </RelativeLayout>
 
 </RelativeLayout>
