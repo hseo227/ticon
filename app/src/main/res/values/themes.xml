@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Ticon" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white_100</item>
-        <item name="colorPrimaryVariant">@color/white_300</item>
+        <item name="colorPrimary">@color/pink_a200</item>
+        <item name="colorPrimaryVariant">@color/pink_a200</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/grey_500</item>
@@ -22,4 +22,5 @@
     <style name="Theme.Ticon.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Ticon.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
