@@ -18,5 +18,12 @@
     <string name="ticon_phrase">SHOP YOUR ONLINE EMOTIONS</string>
 
     <string name="popular">POPULAR</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_main2">MainActivity2</string>
 
 </resources>
