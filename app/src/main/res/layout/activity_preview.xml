@@ -32,19 +32,27 @@
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="30sp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="80sp"
+            android:elevation="10dp"
             android:background="@drawable/notice_bubble"
             android:padding = "13dp"
             android:textColor = "@color/white"
             android:text="This is a test chatroom for emoticon preview."/>
-        
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/TICON_LOGO" />
 
         <RelativeLayout
             android:id="@+id/chatLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/chat_bubble"
+            android:elevation="10dp"
             android:visibility="visible"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="180sp"
