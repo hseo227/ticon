@@ -34,11 +34,12 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="80dp"
-            android:elevation="10dp"
             android:background="@drawable/notice_bubble"
-            android:padding = "13dp"
-            android:textColor = "@color/white"
-            android:text="This is a test chatroom for emoticon preview."/>
+            android:elevation="10dp"
+            android:padding="13dp"
+            android:textSize="14sp"
+            android:text="This is a test chatroom for emoticon preview."
+            android:textColor="@color/white" />
 
         <ImageView
             android:layout_width="60dp"
@@ -71,22 +72,22 @@
     <RelativeLayout
         android:id="@+id/emoticonKeyboard"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="@color/white_100"
-        android:layout_alignParentBottom="true">
+        android:layout_height="430dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white_100">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:padding="18dp">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="310dp"
                 android:layout_height="48dp"
-                android:background="@color/white_300"
-                android:radius="30dp"
+                android:background="@drawable/text_with_roundcorner"
                 android:padding="12dp"
                 android:paddingStart="16dp"
+                android:radius="30dp"
                 android:text="Try use the emoticons in a chatroom!"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -95,13 +96,13 @@
                 android:id="@+id/sendButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
                 android:background="transparent"
-                android:src="@drawable/ic_send"
-                android:layout_marginLeft="18dp"/>
+                android:src="@drawable/ic_send" />
 
 
         </LinearLayout>
-        
+
     </RelativeLayout>
 
 </RelativeLayout>
