@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/mint_a100"
     tools:context=".activities.PreviewActivity">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:orientation="vertical"
         android:padding="8dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -26,68 +29,80 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/noticeBubble"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="80dp"
-            android:background="@drawable/notice_bubble"
-            android:elevation="10dp"
-            android:padding="13dp"
-            android:textSize="14sp"
-            android:text="This is a test chatroom for emoticon preview."
-            android:textColor="@color/white" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="120dp"
-            android:src="@drawable/ticon" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/chatLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/chat_bubble"
-            android:elevation="10dp"
-            android:visibility="visible"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="180sp"
-            android:layout_marginEnd="10sp">
+                <TextView
+                    android:id="@+id/noticeBubble"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/notice_bubble"
+                    android:elevation="10dp"
+                    android:padding="13dp"
+                    android:textSize="14sp"
+                    android:text="This is a test chatroom for emoticon preview."
+                    android:textColor="@color/white" />
 
-            <ImageView
-                android:layout_width="210dp"
-                android:layout_height="160dp"
-                android:padding="35dp"
-                android:src="@drawable/ticon" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ticon" />
 
-        </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/chatLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/chat_bubble">
 
-    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="220dp"
+                        android:layout_height="160dp"
+                        android:padding="15dp"
+                        android:src="@drawable/ticon" />
+                </RelativeLayout>
 
-    <RelativeLayout
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/emoticonKeyboard"
         android:layout_width="match_parent"
-        android:layout_height="480dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
+        android:layout_weight = "50"
+        android:orientation="vertical"
         android:background="@color/white_100">
 
         <LinearLayout
+            android:id="@+id/topKeyboard"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:padding="16dp">
+            android:layout_height="72dp"
+            android:paddingTop="18dp"
+            android:paddingHorizontal="12dp">
 
             <TextView
-                android:layout_width="310dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_weight="40"
                 android:background="@drawable/text_with_round_corner"
                 android:padding="12dp"
                 android:paddingStart="16dp"
-                android:radius="30dp"
                 android:text="Try use the emoticons in a chatroom!"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -96,15 +111,19 @@
                 android:id="@+id/sendButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
+                android:layout_marginLeft="10dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_send" />
 
-            
-
-
         </LinearLayout>
 
-    </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/emoticonRView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+</LinearLayout>
