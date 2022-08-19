@@ -19,7 +19,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">HOME</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="wishlist">WISHLIST</string>
