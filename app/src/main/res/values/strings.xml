@@ -36,4 +36,6 @@
     <string name="duck">Duck</string>
     <string name="animals"># ANIMALS</string>
 
+    <string name="no_results">Sorry, No Results Found</string>
+
 </resources>
