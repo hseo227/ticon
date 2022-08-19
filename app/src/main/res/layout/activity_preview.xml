@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:padding="8dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -46,7 +46,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="120dp"
-            android:src="@drawable/TICON_LOGO" />
+            android:src="@drawable/ticon" />
 
         <RelativeLayout
             android:id="@+id/chatLayout"
@@ -60,10 +60,10 @@
             android:layout_marginEnd="10sp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="210dp"
+                android:layout_height="160dp"
                 android:padding="35dp"
-                tools:srcCompat="@tools:sample/avatars[2]" />
+                android:src="@drawable/ticon" />
 
         </RelativeLayout>
 
@@ -72,7 +72,7 @@
     <RelativeLayout
         android:id="@+id/emoticonKeyboard"
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="480dp"
         android:layout_alignParentBottom="true"
         android:background="@color/white_100">
 
@@ -84,7 +84,7 @@
             <TextView
                 android:layout_width="310dp"
                 android:layout_height="48dp"
-                android:background="@drawable/text_with_roundcorner"
+                android:background="@drawable/text_with_round_corner"
                 android:padding="12dp"
                 android:paddingStart="16dp"
                 android:radius="30dp"
@@ -97,8 +97,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
-                android:background="transparent"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_send" />
+
+            
 
 
         </LinearLayout>
