@@ -20,8 +20,8 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-        SavedListRV = findViewById(R.id.SavedListRView);
+        setContentView(R.layout.activity_search);
+        SavedListRV = findViewById(R.id.listRView);
 
         // here we have created new array list and added data to it.
         savedModelArrayList = new ArrayList<>();
