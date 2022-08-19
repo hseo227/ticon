@@ -21,14 +21,16 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewholder> {
+public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewholder> implements Filterable {
     private Context context;
     private ArrayList<ListModel> listModelArrayList;
+    private ArrayList<ListModel> listModelFiltered;
 
-//    Constructor
+    //    Constructor
     public EmoticonAdapter(Context context, ArrayList<ListModel> listModelArrayList) {
         this.context = context;
         this.listModelArrayList = listModelArrayList;
+        listModelFiltered = new ArrayList<>(listModelFiltered);
     }
 
     @NonNull
@@ -46,16 +48,16 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         holder.emoImg3.setImageResource(model.getEmoticonimg3());
         holder.emoName.setText(model.getEmoticonName());
 
-        holder.itemView.setOnClickListener(view -> {
-            //                    itemView.getContext().startActivity(new Intent(itemView.getContext(), ListActivity.class));
-            Toast.makeText(context, "You clicked", Toast.LENGTH_SHORT).show();
-
-//                Intent intent = new Intent(context, DetailsActivity.class);
-//                intent.putExtra("title", listModelArrayList.get(position).getEmoticonName());
-//                context.startActivity(intent);
-
-            //                    view.getContext().startActivity(intent);
-        });
+//        holder.itemView.setOnClickListener(view -> {
+//            //                    itemView.getContext().startActivity(new Intent(itemView.getContext(), ListActivity.class));
+//            Toast.makeText(context, "You clicked", Toast.LENGTH_SHORT).show();
+//
+////                Intent intent = new Intent(context, DetailsActivity.class);
+////                intent.putExtra("title", listModelArrayList.get(position).getEmoticonName());
+////                context.startActivity(intent);
+//
+//            //                    view.getContext().startActivity(intent);
+//        });
     }
 
     @Override
@@ -76,5 +78,41 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<ListModel> filteredList = new ArrayList<>();
+
+            if (charSequence == null | charSequence.length() == 0) {
+                filteredList.addAll(listModelFiltered);
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for (ListModel item : listModelFiltered) {
+                    if (item.getEmoticonName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults (CharSequence charSequence, FilterResults results){
+            listModelArrayList.clear();
+            listModelArrayList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
 
 }
