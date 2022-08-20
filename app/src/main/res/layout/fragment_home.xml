@@ -292,7 +292,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/crazy_dog2"
+                                android:src="@drawable/kermit1"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -300,7 +300,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="Crazy Dog"
+                                android:text="Kermit the Frog"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
