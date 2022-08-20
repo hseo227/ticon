@@ -12,19 +12,16 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private RecyclerView ListRV;
-
-    // Arraylist for storing data
-    private ArrayList<ListModel> listModelArrayList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        ListRV = findViewById(R.id.listRView);
+
+        RecyclerView listRV = findViewById(R.id.listRView);
 
         // here we have created new array list and added data to it.
-        listModelArrayList = new ArrayList<>();
+        // Arraylist for storing data
+        ArrayList<ListModel> listModelArrayList = new ArrayList<>();
         listModelArrayList.add(new ListModel(R.drawable.back_icon, R.drawable.back_icon, R.drawable.back_icon, "Back icon"));
         listModelArrayList.add(new ListModel(R.drawable.close_icon, R.drawable.close_icon, R.drawable.close_icon, "Close icon"));
         listModelArrayList.add(new ListModel(R.drawable.search_icon, R.drawable.search_icon, R.drawable.search_icon, "Search icon"));
@@ -41,11 +38,11 @@ public class SearchActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
-        ListRV.setLayoutManager(linearLayoutManager);
-        ListRV.setAdapter(emoticonAdapter);
+        listRV.setLayoutManager(linearLayoutManager);
+        listRV.setAdapter(emoticonAdapter);
 
         ItemSpacing itemSpacing = new ItemSpacing(16);
-        ListRV.addItemDecoration(itemSpacing);
+        listRV.addItemDecoration(itemSpacing);
 
     }
 }
