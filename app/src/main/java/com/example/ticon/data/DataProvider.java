@@ -1,6 +1,8 @@
 package com.example.ticon.data;
 
 import com.example.ticon.models.Category;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,7 @@ public class DataProvider {
             if (task.isSuccessful()) {
                 QuerySnapshot results = task.getResult();
                 for (Emoticons emoticons: results.toObjects(Emoticons.class)) {
-                    emoticonList.add(coffeeBeans);
+                    emoticonList.add(emoticons);
                 }
             }
 
