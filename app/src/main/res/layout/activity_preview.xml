@@ -66,10 +66,11 @@
                     android:background="@drawable/chat_bubble">
 
                     <ImageView
+                        android:id="@+id/displayEmoticon"
                         android:layout_width="220dp"
                         android:layout_height="160dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/duck_heart" />
+                        android:src="@drawable/ic_favorite_white" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -146,7 +147,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_x"/>
+                            android:src="@drawable/bad_ducks1"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -154,7 +155,18 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_heart"/>
+                            android:src="@drawable/bad_ducks2"/>
+
+                        <ImageButton
+                            android:id="@+id/changeEmo1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="changeChatEmo1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks3" />
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -162,15 +174,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_cry"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/duck_o"/>
+                            android:src="@drawable/bad_ducks4"/>
 
                     </LinearLayout>
 
@@ -199,7 +203,18 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_heart"/>
+                            android:src="@drawable/bad_ducks5"/>
+
+                        <ImageButton
+                            android:id="@+id/changeEmo2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="changeChatEmo2"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks6" />
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -207,7 +222,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/logo"/>
+                            android:src="@drawable/bad_ducks7"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -215,15 +230,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_x"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/ic_favorite_black"/>
+                            android:src="@drawable/bad_ducks8"/>
 
                     </LinearLayout>
 
@@ -252,7 +259,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ic_favorite_white"/>
+                            android:src="@drawable/bad_ducks9"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -260,23 +267,29 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_cry"/>
+                            android:src="@drawable/bad_ducks10"/>
+
                         <ImageButton
+                            android:id="@+id/changeEmo3"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_heart"/>
+                            android:onClick="changeChatEmo3"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks11" />
+
                         <ImageButton
+                            android:id="@+id/changeEmo4"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/duck_o"/>
+                            android:onClick="changeChatEmo4"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks12" />
 
                     </LinearLayout>
 
