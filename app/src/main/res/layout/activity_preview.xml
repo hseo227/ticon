@@ -19,8 +19,8 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:background="@android:color/transparent"
@@ -42,9 +42,7 @@
                     android:id="@+id/noticeBubble"
                     android:layout_width="220dp"
                     android:layout_height="60dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="60dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/notice_bubble"
                     android:elevation="10dp"
@@ -56,23 +54,22 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/ticon" />
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/logo" />
 
                 <RelativeLayout
                     android:id="@+id/chatLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="8dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/chat_bubble">
 
                     <ImageView
                         android:layout_width="220dp"
                         android:layout_height="160dp"
-                        android:padding="15dp"
-                        android:src="@drawable/ticon" />
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/duck_heart" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -97,12 +94,11 @@
             android:paddingHorizontal="12dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="40"
                 android:background="@drawable/text_with_round_corner"
-                android:padding="12dp"
-                android:paddingStart="16dp"
+                android:padding="16dp"
                 android:text="Try use the emoticons in a chatroom!"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -119,8 +115,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".activities.PreviewActivity">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,7 +146,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ic_back"/>
+                            android:src="@drawable/duck_x"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -159,7 +154,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/duck_heart"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -167,7 +162,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/duck_cry"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -175,7 +170,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ic_send"/>
+                            android:src="@drawable/duck_o"/>
 
                     </LinearLayout>
 
@@ -204,7 +199,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/duck_heart"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -212,7 +207,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ic_send"/>
+                            android:src="@drawable/logo"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -220,7 +215,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/duck_x"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -228,7 +223,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/ic_favorite_black"/>
 
                     </LinearLayout>
 
@@ -257,7 +252,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/ic_favorite_white"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -265,7 +260,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/duck_cry"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -273,7 +268,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ticon"/>
+                            android:src="@drawable/duck_heart"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -281,7 +276,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ic_back"/>
+                            android:src="@drawable/duck_o"/>
 
                     </LinearLayout>
 

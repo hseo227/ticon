@@ -39,11 +39,11 @@ public class WishlistFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.listRView);
 
         savedModelArrayList = new ArrayList<>();
-        savedModelArrayList.add(new SavedModel(R.drawable.back_icon, R.drawable.back_icon, "Back icon", "Back icon"));
+        savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon","Sort icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.back_icon, R.drawable.back_icon, "Back icon", "Back icon"));
+        savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
 
