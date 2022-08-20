@@ -52,7 +52,7 @@
                         android:layout_margin="15dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/white_300"
-                        android:text="@string/cute" />
+                        android:text="@string/character" />
 
                     <Button
                         android:id="@+id/button3"
@@ -227,7 +227,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="5dp"
                 android:padding="5dp"
-                android:text="@string/for_you"
+                android:text="@string/new_"
                 android:textColor="#9E9E9E"
                 android:textStyle="bold"/>
 
