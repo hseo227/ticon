@@ -29,27 +29,27 @@ public class MainActivity extends AppCompatActivity {
         com.example.ticon.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Button changeToSearchFunny = findViewById(R.id.button3);
+        Button changeToSearchFunny = findViewById(R.id.button1);
         changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                changeActivityFunny();
             }
         });
 
-        Button changeToSearchAnimals = findViewById(R.id.button2);
+        Button changeToSearchAnimals = findViewById(R.id.button3);
         changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                changeActivityAnimals();
             }
         });
 
-        Button changeToSearchCute = findViewById(R.id.button1);
+        Button changeToSearchCute = findViewById(R.id.button2);
         changeToSearchCute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                changeActivityCute();
             }
         });
 
@@ -69,8 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void changeActivity() {
-        Intent intent = new Intent(this, SearchActivity.class);
+    private void changeActivityFunny() {
+        Intent intent = new Intent(this, FunnyCategory.class);
+        startActivity(intent);
+    }
+    private void changeActivityAnimals() {
+        Intent intent = new Intent(this, AnimalsCategory.class);
+        startActivity(intent);
+    }
+    private void changeActivityCute() {
+        Intent intent = new Intent(this, CuteCategory.class);
         startActivity(intent);
     }
 
