@@ -1,6 +1,9 @@
 package com.example.ticon.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,7 +31,7 @@ public class ListActivity extends AppCompatActivity {
         savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon","Sort icon"));
+        savedModelArrayList.add(new SavedModel(R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon", "Sort icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
@@ -47,5 +50,7 @@ public class ListActivity extends AppCompatActivity {
         ItemSpacing itemSpacing = new ItemSpacing(16);
         SavedListRV.addItemDecoration(itemSpacing);
 
+
     }
+
 }
