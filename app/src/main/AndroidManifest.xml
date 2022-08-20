@@ -19,6 +19,21 @@
             android:label="SearchActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
+            android:name=".activities.FunnyCategory"
+            android:exported="false"
+            android:label="FunnyCategory"
+            android:theme="@style/Theme.Ticon.NoActionBar" />
+        <activity
+            android:name=".activities.AnimalsCategory"
+            android:exported="false"
+            android:label="AnimalsCategory"
+            android:theme="@style/Theme.Ticon.NoActionBar" />
+        <activity
+            android:name=".activities.CuteCategory"
+            android:exported="false"
+            android:label="CuteCategory"
+            android:theme="@style/Theme.Ticon.NoActionBar" />
+        <activity
             android:name=".activities.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
