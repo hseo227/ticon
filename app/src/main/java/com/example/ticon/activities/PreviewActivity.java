@@ -1,6 +1,7 @@
 package com.example.ticon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,11 @@ public class PreviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar3);
+        setSupportActionBar(myToolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }
