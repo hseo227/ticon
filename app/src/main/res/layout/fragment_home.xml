@@ -108,14 +108,14 @@
                                 android:layout_height="150dp"
                                 android:background="@color/white"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/duck_cry" />
+                                android:src="@drawable/bad_ducks1" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Bad Ducks"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -139,7 +139,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_o"
+                                android:src="@drawable/mr_donothing1"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -147,7 +147,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Mr. Donothing"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -171,7 +171,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_x"
+                                android:src="@drawable/animal_friends1"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -179,7 +179,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Animal Friends"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -203,7 +203,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_heart"
+                                android:src="@drawable/cluck_chicken2"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -211,7 +211,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Cluck Chicken"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -260,7 +260,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_cry"
+                                android:src="@drawable/stockman_monkey1"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -268,7 +268,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Stockman Monkey"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -277,7 +277,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/forYouImageButton2"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         app:cardCornerRadius="13dp"
                         app:cardElevation="5dp"
@@ -292,7 +292,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_o"
+                                android:src="@drawable/crazy_dog2"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -300,7 +300,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Crazy Dog"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -309,7 +309,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/forYouImageButton3"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         app:cardCornerRadius="13dp"
                         app:cardElevation="5dp"
@@ -324,7 +324,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_x"
+                                android:src="@drawable/shopaholic2"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -332,7 +332,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Shopaholic"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -341,7 +341,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/forYouImageButton4"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         app:cardCornerRadius="13dp"
                         app:cardElevation="5dp"
@@ -356,7 +356,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_heart"
+                                android:src="@drawable/devasted_man2"
                                 android:scaleType="fitCenter"/>
 
                             <TextView
@@ -364,7 +364,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="@string/duck"
+                                android:text="Devastated Man"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
