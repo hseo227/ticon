@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton changeToDetails = findViewById(R.id.detailsButton);
-        changeToDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeActivityDetails();
-            }
-        });
+//        ImageButton changeToDetails = findViewById(R.id.detailsButton);
+//        changeToDetails.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                changeActivityDetails();
+//            }
+//        });
 
         setSupportActionBar(binding.appBarMain.toolbar);
 
@@ -91,10 +91,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void changeActivityDetails() {
-        Intent intent = new Intent(this, DetailsActivity.class);
-        startActivity(intent);
-    }
+//    private void changeActivityDetails() {
+//        Intent intent = new Intent(this, DetailsActivity.class);
+//        startActivity(intent);
+//    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

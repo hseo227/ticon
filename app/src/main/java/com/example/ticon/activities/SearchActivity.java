@@ -1,6 +1,10 @@
 package com.example.ticon.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,6 +48,31 @@ public class SearchActivity extends AppCompatActivity {
         ItemSpacing itemSpacing = new ItemSpacing(16);
         listRV.addItemDecoration(itemSpacing);
 
+        Button changeToDuck = findViewById(R.id.duckButton);
+        changeToDuck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { changeActivityDuck();
+            }
+        });
+
+        Button changeToMonkey = findViewById(R.id.monkeyButton);
+        changeToMonkey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivityMonkey();
+            }
+        });
+
+
+    }
+
+    private void changeActivityDuck() {
+        Intent intent = new Intent(this, DetailsActivity.class);
+        startActivity(intent);
+    }
+    private void changeActivityMonkey() {
+        Intent intent = new Intent(this, MonkeyActivity.class);
+        startActivity(intent);
     }
 }
 
