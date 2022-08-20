@@ -33,7 +33,6 @@ public class AnimalsCategory extends AppCompatActivity {
         listModelArrayList.add(new ListModel(R.drawable.bad_ducks1, R.drawable.bad_ducks2, R.drawable.bad_ducks3, "Bad ducks"));
         listModelArrayList.add(new ListModel(R.drawable.cluck_chicken1, R.drawable.cluck_chicken2, R.drawable.cluck_chicken3, "Cluck Chicken"));
         listModelArrayList.add(new ListModel(R.drawable.crazy_dog1, R.drawable.crazy_dog2, R.drawable.crazy_dog3, "Crazy dog"));
-        listModelArrayList.add(new ListModel(R.drawable.duck_cry, R.drawable.duck_heart, R.drawable.duck_x, "Duck"));
         listModelArrayList.add(new ListModel(R.drawable.stockman_monkey1, R.drawable.stockman_monkey2, R.drawable.stockman_monkey3, "Stockman Monkey"));
 
         // we are initializing our adapter class and passing our arraylist to it.
