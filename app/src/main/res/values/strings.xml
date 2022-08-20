@@ -29,8 +29,7 @@
     <!--    Category Names-->
     <string name="funny"># FUNNY</string>
     <string name="character"># CHARACTER</string>
-    <string name="cute"># CUTE</string>
-    <string name="new_"># NEW</string>
+    <string name="new_">NEW</string>
     <string name="duck">Duck</string>
     <string name="animals"># ANIMALS</string>
 
