@@ -21,6 +21,57 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="5dp"
                 android:padding="5dp"
+                android:text="@string/categories"
+                android:textColor="#9E9E9E"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/mint_a100"
+                        android:text="@string/funny" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white_300"
+                        android:text="@string/cute" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#80CBC4"
+                        android:text="@string/animals" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
                 android:text="@string/popular"
                 android:textColor="#9E9E9E"
                 android:textSize="20sp"
@@ -319,57 +370,6 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
-            </HorizontalScrollView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="5dp"
-                android:padding="5dp"
-                android:text="@string/categories"
-                android:textColor="#9E9E9E"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/button1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/mint_a100"
-                        android:text="@string/funny" />
-
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/white_300"
-                        android:text="@string/cute" />
-
-                    <Button
-                        android:id="@+id/button3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#80CBC4"
-                        android:text="@string/animals" />
-                </LinearLayout>
-
             </HorizontalScrollView>
 
         </LinearLayout>
