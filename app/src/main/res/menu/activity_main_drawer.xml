@@ -14,7 +14,7 @@
             android:title="@string/wishlist" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_favorite"
+            android:icon="@drawable/ic_favorite_white"
             android:title="@string/my_emoticons" />
     </group>
 </menu>

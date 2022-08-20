@@ -15,20 +15,18 @@
     <string name="ticon_phrase">SHOP YOUR ONLINE EMOTIONS</string>
 
     <string name="popular">POPULAR</string>
+    <string name="for_you">FOR YOU</string>
     <string name="categories">CATEGORIES</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">HOME</string>
+    <string name="menu_wishlist">WISHLIST</string>
+    <string name="menu_my_emoticons">MY EMOTICONS</string>
     <string name="wishlist">WISHLIST</string>
     <string name="my_emoticons">MY EMOTICONS</string>
 
-    <string name="title_activity_main2">MainActivity2</string>
-
     <!--    Category Names-->
-    <string name="for_you"># FOR YOU</string>
     <string name="funny"># FUNNY</string>
     <string name="character"># CHARACTER</string>
     <string name="cute"># CUTE</string>

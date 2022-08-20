@@ -16,7 +16,7 @@
 
     <item
         android:id="@+id/favorite"
-        android:icon="@drawable/ic_favorite"
+        android:icon="@drawable/ic_favorite_white"
         android:title="@string/my_emoticons"
         app:showAsAction="ifRoom" />
 </menu>
