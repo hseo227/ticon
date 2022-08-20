@@ -29,7 +29,7 @@
                     android:layout_centerVertical="true"
                     android:background="@android:color/transparent"
                     android:contentDescription="Back"
-                    android:src="@drawable/bb_icon" />
+                    android:src="@drawable/back_icon" />
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -71,7 +71,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src = "@drawable/bb_icon" />
+                android:src = "@drawable/duck_cry" />
 
             <LinearLayout
                 android:id="@+id/priceTag"
@@ -135,7 +135,7 @@
                     android:layout_marginLeft="5dp"
                     android:background="@android:color/transparent"
                     android:contentDescription="wishlist"
-                    android:src="@drawable/wishlist"
+                    android:src="@drawable/ic_favorite_black"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 </LinearLayout>
@@ -176,7 +176,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
+                            android:src="@drawable/duck_heart"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -184,53 +184,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
-
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
+                            android:src="@drawable/duck_cry"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -268,7 +222,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
+                            android:src="@drawable/duck_o"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -284,7 +238,53 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
+                            android:src="@drawable/duck_x"/>
+
+
+                    </LinearLayout>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight = "3"
+                    android:columnCount="3"
+                    android:rowCount="4"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false"
+                    android:padding="10dp">
+
+                    //Your grid items..
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/duck_cry"/>
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/duck_heart"/>
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/duck_o"/>
 
                     </LinearLayout>
 
@@ -321,7 +321,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/dollar"/>
+                            android:src="@drawable/duck_x"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
