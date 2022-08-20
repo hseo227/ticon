@@ -103,11 +103,12 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/detailsButton"
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:background="@color/white"
-                                android:src="@drawable/duck_cry"
-                                android:scaleType="fitCenter"/>
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/duck_cry" />
 
                             <TextView
                                 android:layout_width="match_parent"

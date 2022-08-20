@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -53,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton changeToDetails = findViewById(R.id.detailsButton);
+        changeToDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivityDetails();
+            }
+        });
+
         setSupportActionBar(binding.appBarMain.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -79,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void changeActivityCute() {
         Intent intent = new Intent(this, CuteCategory.class);
+        startActivity(intent);
+    }
+
+    private void changeActivityDetails() {
+        Intent intent = new Intent(this, DetailsActivity.class);
         startActivity(intent);
     }
 
