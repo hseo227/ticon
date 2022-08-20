@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".activities.SearchActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_list">
 
@@ -44,10 +45,29 @@
             android:layout_below="@id/sort" >
 
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/listRView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                android:id="@+id/listRView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/duckButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/monkeyButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent">
+            </Button>
+
 
         </RelativeLayout>
 
