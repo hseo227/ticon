@@ -12,7 +12,7 @@ import com.example.ticon.R;
 
 import java.util.ArrayList;
 
-public class CuteCategory extends AppCompatActivity {
+public class CharacterCategory extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

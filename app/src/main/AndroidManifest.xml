@@ -31,10 +31,10 @@
             android:label="#ANIMALS"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
-            android:name=".activities.CuteCategory"
+            android:name=".activities.CharacterCategory"
             android:parentActivityName=".activities.MainActivity"
             android:exported="false"
-            android:label="#CUTE"
+            android:label="#CHARACTER"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
