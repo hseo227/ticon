@@ -54,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button changeToSearchDemo = findViewById(R.id.searchDemoButton);
+        changeToSearchDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeSearchDemo();
+            }
+        });
+
 //        ImageButton changeToDetails = findViewById(R.id.detailsButton);
 //        changeToDetails.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -88,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void changeActivityCharacter() {
         Intent intent = new Intent(this, CharacterCategory.class);
+        startActivity(intent);
+    }
+
+    private void changeSearchDemo() {
+        Intent intent = new Intent(this, DemoSearchActivity.class);
         startActivity(intent);
     }
 
