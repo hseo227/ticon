@@ -20,18 +20,21 @@
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.FunnyCategory"
+            android:parentActivityName=".activities.MainActivity"
             android:exported="false"
-            android:label="FunnyCategory"
+            android:label="#FUNNY"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.AnimalsCategory"
+            android:parentActivityName=".activities.MainActivity"
             android:exported="false"
-            android:label="AnimalsCategory"
+            android:label="#ANIMALS"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
-            android:name=".activities.CuteCategory"
+            android:name=".activities.CharacterCategory"
+            android:parentActivityName=".activities.MainActivity"
             android:exported="false"
-            android:label="CuteCategory"
+            android:label="#CHARACTER"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
@@ -40,13 +43,15 @@
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.DetailsActivity"
+            android:parentActivityName=".activities.MainActivity"
             android:exported="false"
-            android:label="DetailsActivity"
+            android:label=""
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.PreviewActivity"
+            android:parentActivityName=".activities.DetailsActivity"
             android:exported="false"
-            android:label="PreviewActivity"
+            android:label=""
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"
