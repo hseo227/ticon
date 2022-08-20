@@ -1,8 +1,10 @@
 package com.example.ticon.activities;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,12 +12,17 @@ import com.example.ticon.R;
 
 import java.util.ArrayList;
 
-public class CuteCategory extends AppCompatActivity {
+public class CharacterCategory extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.app_bar_list);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         RecyclerView listRV = findViewById(R.id.listRView);
 
@@ -46,4 +53,12 @@ public class CuteCategory extends AppCompatActivity {
         listRV.setAdapter(emoticonAdapter);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
 }

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         changeToSearchCute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivityCute();
+                changeActivityCharacter();
             }
         });
 
@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AnimalsCategory.class);
         startActivity(intent);
     }
-    private void changeActivityCute() {
-        Intent intent = new Intent(this, CuteCategory.class);
+    private void changeActivityCharacter() {
+        Intent intent = new Intent(this, CharacterCategory.class);
         startActivity(intent);
     }
 
