@@ -39,13 +39,8 @@ public class WishlistFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.listRView);
 
         savedModelArrayList = new ArrayList<>();
-        savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon","Sort icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
+        savedModelArrayList.add(new SavedModel(R.drawable.animal_friends1, R.drawable.ic_favorite_pink, "Animal Friends", "JS"));
+        savedModelArrayList.add(new SavedModel(R.drawable.mr_donothing1, R.drawable.ic_favorite_pink, "Mr Donothing", "Hoo"));
 
         MyEmoticonAdapter myEmoticonAdapter = new MyEmoticonAdapter(getContext(), savedModelArrayList);
         recyclerView.setAdapter(myEmoticonAdapter);
