@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
+import com.example.ticon.models.Emoticon;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -23,10 +24,10 @@ import java.util.List;
 
 public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewholder> {
     private Context context;
-    private ArrayList<ListModel> listModelArrayList;
+    private List<Emoticon> listModelArrayList;
 
 //    Constructor
-    public EmoticonAdapter(Context context, ArrayList<ListModel> listModelArrayList) {
+    public EmoticonAdapter(Context context, List<Emoticon> listModelArrayList) {
         this.context = context;
         this.listModelArrayList = listModelArrayList;
     }
@@ -40,11 +41,11 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
     @Override
     public void onBindViewHolder(@NonNull EmoticonAdapter.Viewholder holder, int position) {
-        ListModel model = listModelArrayList.get(position);
-        holder.emoImg1.setImageResource(model.getEmoticonimg1());
-        holder.emoImg2.setImageResource(model.getEmoticonimg2());
-        holder.emoImg3.setImageResource(model.getEmoticonimg3());
-        holder.emoName.setText(model.getEmoticonName());
+        Emoticon emoticon = listModelArrayList.get(position);
+//        holder.emoImg1.setImageResource(model.getEmoticonimg1());
+//        holder.emoImg2.setImageResource(model.getEmoticonimg2());
+//        holder.emoImg3.setImageResource(model.getEmoticonimg3());
+        holder.emoName.setText(emoticon.getName());
 
         holder.itemView.setOnClickListener(view -> {
             //                    itemView.getContext().startActivity(new Intent(itemView.getContext(), ListActivity.class));

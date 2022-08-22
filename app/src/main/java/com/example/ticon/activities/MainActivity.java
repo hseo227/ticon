@@ -31,28 +31,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         Button changeToSearchFunny = findViewById(R.id.button1);
-        changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeActivityFunny();
-            }
-        });
+
 
         Button changeToSearchAnimals = findViewById(R.id.button3);
         changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivityAnimals();
+                Intent listIntent = new Intent(getBaseContext(), ListActivity.class);
+                startActivity(listIntent);
             }
         });
 
         Button changeToSearchCute = findViewById(R.id.button2);
-        changeToSearchCute.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeActivityCharacter();
-            }
-        });
+
 
         Button changeToSearchDemo = findViewById(R.id.searchDemoButton);
         changeToSearchDemo.setOnClickListener(new View.OnClickListener() {
@@ -86,18 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void changeActivityFunny() {
-        Intent intent = new Intent(this, FunnyCategory.class);
-        startActivity(intent);
-    }
-    private void changeActivityAnimals() {
-        Intent intent = new Intent(this, AnimalsCategory.class);
-        startActivity(intent);
-    }
-    private void changeActivityCharacter() {
-        Intent intent = new Intent(this, CharacterCategory.class);
-        startActivity(intent);
-    }
+
 
     private void changeSearchDemo() {
         Intent intent = new Intent(this, DemoSearchActivity.class);

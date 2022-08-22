@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
+import com.example.ticon.data.DataProvider;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,11 @@ public class ListActivity extends AppCompatActivity {
         savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
         savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
+
+        DataProvider.getAnimalsData(emoticons -> {
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+
+        });
 
         // we are initializing our adapter class and passing our arraylist to it.
         MyEmoticonAdapter myemoticonAdapter = new MyEmoticonAdapter(this, savedModelArrayList);

@@ -17,8 +17,10 @@ import com.example.ticon.activities.EmoticonAdapter;
 import com.example.ticon.activities.ListModel;
 import com.example.ticon.activities.MonkeyActivity;
 import com.example.ticon.databinding.ActivityMainBinding;
+import com.example.ticon.models.Emoticon;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DemoSearchActivity extends AppCompatActivity {
 
@@ -36,8 +38,8 @@ public class DemoSearchActivity extends AppCompatActivity {
 
         // here we have created new array list and added data to it.
         // Arraylist for storing data
-        ArrayList<ListModel> listModelArrayList = new ArrayList<>();
-        listModelArrayList.add(new ListModel(R.drawable.stockman_monkey1, R.drawable.stockman_monkey2, R.drawable.stockman_monkey3, "Stockman Monkey"));
+        List<Emoticon> listModelArrayList = new ArrayList<>();
+        //listModelArrayList.add(new ListModel(R.drawable.stockman_monkey1, R.drawable.stockman_monkey2, R.drawable.stockman_monkey3, "Stockman Monkey"));
 
         // we are initializing our adapter class and passing our arraylist to it.
         EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, listModelArrayList);
