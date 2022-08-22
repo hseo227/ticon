@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/rounded_image_button.xml" value="0.1255" />
-        <entry key="app/src/main/res/layout-v28/fragment_home.xml" value="0.338768115942029" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/drawable/button.xml" value="0.2255" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/drawable/chat_bubble.xml" value="0.235" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/drawable/dollar.xml" value="0.216" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/drawable/drop_shadow.xml" value="0.2255" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/drawable/notice_bubble.xml" value="0.235" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/layout/activity_details.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/layout/activity_preview.xml" value="0.4" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/layout/activity_search.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/StudioProjects/project-1-java-new-team15/app/src/main/res/layout/hello.xml" value="0.20863616930312098" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17962962962962964" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.1887031408308004" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1887031408308004" />

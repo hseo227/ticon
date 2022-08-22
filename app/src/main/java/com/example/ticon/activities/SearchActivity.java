@@ -1,6 +1,10 @@
 package com.example.ticon.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,11 +26,11 @@ public class SearchActivity extends AppCompatActivity {
         // here we have created new array list and added data to it.
         // Arraylist for storing data
         ArrayList<ListModel> listModelArrayList = new ArrayList<>();
-        listModelArrayList.add(new ListModel(R.drawable.back_icon, R.drawable.back_icon, R.drawable.back_icon, "Back icon"));
+        listModelArrayList.add(new ListModel(R.drawable.ic_back, R.drawable.ic_back, R.drawable.ic_back, "Back icon"));
         listModelArrayList.add(new ListModel(R.drawable.close_icon, R.drawable.close_icon, R.drawable.close_icon, "Close icon"));
         listModelArrayList.add(new ListModel(R.drawable.search_icon, R.drawable.search_icon, R.drawable.search_icon, "Search icon"));
         listModelArrayList.add(new ListModel(R.drawable.sort_icon, R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon"));
-        listModelArrayList.add(new ListModel(R.drawable.back_icon, R.drawable.back_icon, R.drawable.back_icon, "Back icon"));
+        listModelArrayList.add(new ListModel(R.drawable.ic_back, R.drawable.ic_back, R.drawable.ic_back, "Back icon"));
         listModelArrayList.add(new ListModel(R.drawable.close_icon, R.drawable.close_icon, R.drawable.close_icon, "Close icon"));
         listModelArrayList.add(new ListModel(R.drawable.search_icon, R.drawable.search_icon, R.drawable.search_icon, "Search icon"));
 
@@ -44,6 +48,31 @@ public class SearchActivity extends AppCompatActivity {
         ItemSpacing itemSpacing = new ItemSpacing(16);
         listRV.addItemDecoration(itemSpacing);
 
+        Button changeToDuck = findViewById(R.id.duckButton);
+        changeToDuck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { changeActivityDuck();
+            }
+        });
+
+        Button changeToMonkey = findViewById(R.id.monkeyButton);
+        changeToMonkey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivityMonkey();
+            }
+        });
+
+
+    }
+
+    private void changeActivityDuck() {
+        Intent intent = new Intent(this, DetailsActivity.class);
+        startActivity(intent);
+    }
+    private void changeActivityMonkey() {
+        Intent intent = new Intent(this, MonkeyActivity.class);
+        startActivity(intent);
     }
 }
 

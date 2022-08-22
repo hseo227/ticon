@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -29,38 +30,48 @@ public class MainActivity extends AppCompatActivity {
         com.example.ticon.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Button changeToSearchFunny = findViewById(R.id.button3);
+        Button changeToSearchFunny = findViewById(R.id.button1);
         changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                changeActivityFunny();
             }
         });
 
-        Button changeToSearchAnimals = findViewById(R.id.button2);
+        Button changeToSearchAnimals = findViewById(R.id.button3);
         changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                changeActivityAnimals();
             }
         });
 
-        Button changeToSearchCute = findViewById(R.id.button1);
+        Button changeToSearchCute = findViewById(R.id.button2);
         changeToSearchCute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                changeActivityCharacter();
             }
         });
 
-        setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+        Button changeToSearchDemo = findViewById(R.id.searchDemoButton);
+        changeToSearchDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                changeSearchDemo();
             }
         });
+
+//        ImageButton changeToDetails = findViewById(R.id.detailsButton);
+//        changeToDetails.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                changeActivityDetails();
+//            }
+//        });
+
+        setSupportActionBar(binding.appBarMain.toolbar);
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -75,10 +86,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void changeActivity() {
-        Intent intent = new Intent(this, SearchActivity.class);
+    private void changeActivityFunny() {
+        Intent intent = new Intent(this, FunnyCategory.class);
         startActivity(intent);
     }
+    private void changeActivityAnimals() {
+        Intent intent = new Intent(this, AnimalsCategory.class);
+        startActivity(intent);
+    }
+    private void changeActivityCharacter() {
+        Intent intent = new Intent(this, CharacterCategory.class);
+        startActivity(intent);
+    }
+
+    private void changeSearchDemo() {
+        Intent intent = new Intent(this, DemoSearchActivity.class);
+        startActivity(intent);
+    }
+
+//    private void changeActivityDetails() {
+//        Intent intent = new Intent(this, DetailsActivity.class);
+//        startActivity(intent);
+//    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

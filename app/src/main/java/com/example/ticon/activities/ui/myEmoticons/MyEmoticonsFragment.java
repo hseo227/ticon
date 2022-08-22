@@ -37,13 +37,9 @@ public class MyEmoticonsFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.listRView);
 
         savedModelArrayList = new ArrayList<>();
-        savedModelArrayList.add(new SavedModel(R.drawable.back_icon, R.drawable.back_icon, "Back icon", "Back icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon","Sort icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.back_icon, R.drawable.back_icon, "Back icon", "Back icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
+        savedModelArrayList.add(new SavedModel(R.drawable.crazy_dog1, R.drawable.ic_favorite_pink, "Crazy Dog", "Hoo"));
+        savedModelArrayList.add(new SavedModel(R.drawable.princess_moments1, R.drawable.ic_favorite_pink, "Princess Moments", "JK"));
+        savedModelArrayList.add(new SavedModel(R.drawable.stockman_monkey1, R.drawable.ic_favorite_pink, "Stockman Monkey", "JK"));
 
         MyEmoticonAdapter myEmoticonAdapter = new MyEmoticonAdapter(getContext(), savedModelArrayList);
         recyclerView.setAdapter(myEmoticonAdapter);

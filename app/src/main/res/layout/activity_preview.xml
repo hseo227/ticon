@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mint_a100"
+    tools:context=".activities.PreviewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <ImageButton-->
+<!--                android:layout_width="48dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:contentDescription="Back"-->
+<!--                android:src="@drawable/ic_back" />-->
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/noticeBubble"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/notice_bubble"
+                    android:elevation="10dp"
+                    android:padding="13dp"
+                    android:textSize="14sp"
+                    android:text="This is a test chatroom for emoticon preview."
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/logo" />
+
+                <RelativeLayout
+                    android:id="@+id/chatLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/chat_bubble">
+
+                    <ImageView
+                        android:id="@+id/displayEmoticon"
+                        android:layout_width="220dp"
+                        android:layout_height="160dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_favorite_white" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emoticonKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight = "50"
+        android:orientation="vertical"
+        android:background="@color/white_100">
+
+        <LinearLayout
+            android:id="@+id/topKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:paddingTop="18dp"
+            android:paddingHorizontal="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="40"
+                android:background="@drawable/text_with_round_corner"
+                android:padding="16dp"
+                android:text="Try use the emoticons in a chatroom!"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_send" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum = "9" >
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight = "3"
+                    android:columnCount="4"
+                    android:rowCount="5"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false"
+                    android:padding="10dp">
+
+                    //Your grid items..
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks1"/>
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks2"/>
+
+                        <ImageButton
+                            android:id="@+id/changeEmo1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="changeChatEmo1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks3" />
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks4"/>
+
+                    </LinearLayout>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight = "3"
+                    android:columnCount="4"
+                    android:rowCount="5"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false"
+                    android:padding="10dp">
+
+                    //Your grid items..
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks5"/>
+
+                        <ImageButton
+                            android:id="@+id/changeEmo2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="changeChatEmo2"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks6" />
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks7"/>
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks8"/>
+
+                    </LinearLayout>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight = "3"
+                    android:columnCount="4"
+                    android:rowCount="5"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false"
+                    android:padding="10dp">
+
+                    //Your grid items..
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks9"/>
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/bad_ducks10"/>
+
+                        <ImageButton
+                            android:id="@+id/changeEmo3"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="changeChatEmo3"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks11" />
+
+                        <ImageButton
+                            android:id="@+id/changeEmo4"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/transparent"
+                            android:onClick="changeChatEmo4"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bad_ducks12" />
+
+                    </LinearLayout>
+
+                </GridLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
