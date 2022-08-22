@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "188859229916",
+    "project_id": "ticon-f8dfb",
+    "storage_bucket": "ticon-f8dfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188859229916:android:ae174588a02719b581f619",
+        "android_client_info": {
+          "package_name": "com.example.ticon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188859229916-hmotvfkp8fjjsp9pupp6guouenr473vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYxEBSHr-FjvZpgUSeJwa1NfKm-5OI7_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188859229916-hmotvfkp8fjjsp9pupp6guouenr473vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
