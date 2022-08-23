@@ -25,6 +25,12 @@
             android:label="ListActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
+            android:name=".activities.DetailsActivity"
+            android:parentActivityName=".activities.ListActivity"
+            android:exported="false"
+            android:label="DetailsActivity"
+            android:theme="@style/Theme.Ticon.NoActionBar" />
+        <activity
             android:name=".activities.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
