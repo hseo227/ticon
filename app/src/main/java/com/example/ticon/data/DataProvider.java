@@ -20,7 +20,6 @@ public class DataProvider {
                 QuerySnapshot results = task.getResult();
                 for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
                     emoticons.add(emoticon);
-                    System.out.println("NAME: " + emoticon.getName());
                 }
             }
 
@@ -39,7 +38,6 @@ public class DataProvider {
                 QuerySnapshot results = task.getResult();
                 for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
                     emoticons.add(emoticon);
-                    System.out.println("NAME: " + emoticon.getName());
                 }
             }
 
@@ -58,7 +56,6 @@ public class DataProvider {
                 QuerySnapshot results = task.getResult();
                 for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
                     emoticons.add(emoticon);
-                    System.out.println("NAME: " + emoticon.getName());
                 }
             }
 
