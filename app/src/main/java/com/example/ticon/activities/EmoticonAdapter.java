@@ -28,6 +28,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     private Context context;
     private List<Emoticon> listModelArrayList;
     private String listType;
+    String id = "";
 
 //    Constructor
     public EmoticonAdapter(Context context, List<Emoticon> listModelArrayList, String listType) {
@@ -75,7 +76,13 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
         holder.itemView.setOnClickListener(view -> {
             //                    itemView.getContext().startActivity(new Intent(itemView.getContext(), ListActivity.class));
-            Toast.makeText(context, "You clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "You clicked. Congrats!", Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(view.getContext(), DetailsActivity.class);
+            String id = emoticon.getId();
+            i.putExtra("id", id);
+
+            view.getContext().startActivity(i);
 
 //                Intent intent = new Intent(context, DetailsActivity.class);
 //                intent.putExtra("title", listModelArrayList.get(position).getEmoticonName());
@@ -108,6 +115,13 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             emoImg3 = itemView.findViewById(R.id.imageView3);
             emoName = itemView.findViewById(R.id.TextView);
 
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent i = new Intent(view.getContext(), DetailsActivity.class);
+//                    view.getContext().startActivity(i);
+//                }
+//            });
         }
     }
 
