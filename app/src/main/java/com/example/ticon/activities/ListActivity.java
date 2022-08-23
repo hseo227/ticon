@@ -32,23 +32,29 @@ public class ListActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        DataProvider.getAnimalsData(emoticons -> {
-            // we are initializing our adapter class and passing our arraylist to it.
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
-            getData(emoticonAdapter);
-        });
+        Intent intent = getIntent();
+        String category = intent.getStringExtra("category");
+        String listType = intent.getStringExtra("listType");
 
-        DataProvider.getCharacterData(emoticons -> {
-            // we are initializing our adapter class and passing our arraylist to it.
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
-            getData(emoticonAdapter);
-        });
-
-        DataProvider.getFunnyData(emoticons -> {
-            // we are initializing our adapter class and passing our arraylist to it.
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
-            getData(emoticonAdapter);
-        });
+        if (category.equals("funny")) {
+            DataProvider.getFunnyData(emoticons -> {
+                // we are initializing our adapter class and passing our arraylist to it.
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+                getData(emoticonAdapter);
+            });
+        } else if (category.equals("character")) {
+            DataProvider.getCharacterData(emoticons -> {
+                // we are initializing our adapter class and passing our arraylist to it.
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+                getData(emoticonAdapter);
+            });
+        } else {
+            DataProvider.getAnimalsData(emoticons -> {
+                // we are initializing our adapter class and passing our arraylist to it.
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+                getData(emoticonAdapter);
+            });
+        }
 
     }
 
