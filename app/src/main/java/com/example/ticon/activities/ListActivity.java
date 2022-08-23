@@ -2,61 +2,72 @@ package com.example.ticon.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
 import com.example.ticon.data.DataProvider;
+import com.example.ticon.models.Emoticon;
 
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
 
     private RecyclerView SavedListRV;
-
-    // Arraylist for storing data
-    private ArrayList<SavedModel> savedModelArrayList;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.app_bar_list);
         SavedListRV = findViewById(R.id.listRView);
 
-        // here we have created new array list and added data to it.
-        savedModelArrayList = new ArrayList<>();
-        savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon", "Sort icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.ic_back, R.drawable.ic_back, "Back icon", "Back icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.close_icon, R.drawable.close_icon, "Close icon", "Close icon"));
-        savedModelArrayList.add(new SavedModel(R.drawable.search_icon, R.drawable.search_icon, "Search icon", "Search icon"));
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DataProvider.getAnimalsData(emoticons -> {
+            // we are initializing our adapter class and passing our arraylist to it.
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
-
+            getData(emoticonAdapter);
         });
 
-        // we are initializing our adapter class and passing our arraylist to it.
-        MyEmoticonAdapter myemoticonAdapter = new MyEmoticonAdapter(this, savedModelArrayList);
+        DataProvider.getCharacterData(emoticons -> {
+            // we are initializing our adapter class and passing our arraylist to it.
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+            getData(emoticonAdapter);
+        });
 
+        DataProvider.getFunnyData(emoticons -> {
+            // we are initializing our adapter class and passing our arraylist to it.
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+            getData(emoticonAdapter);
+        });
+
+    }
+
+    protected void getData(EmoticonAdapter emoticonAdapter) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         SavedListRV.setLayoutManager(linearLayoutManager);
-        SavedListRV.setAdapter(myemoticonAdapter);
-
-        ItemSpacing itemSpacing = new ItemSpacing(16);
-        SavedListRV.addItemDecoration(itemSpacing);
+        SavedListRV.setAdapter(emoticonAdapter);
+    }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 
 }
