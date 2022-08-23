@@ -1,5 +1,9 @@
 package com.example.ticon.models;
 
+import android.media.Image;
+
+import java.util.List;
+
 public class Emoticon {
     private String artist;
     private String category;
@@ -9,6 +13,7 @@ public class Emoticon {
     private double price;
     private int views;
     private boolean wishlist;
+    private List<String> images;
 
     public String getArtist() {
         return artist;
@@ -41,5 +46,10 @@ public class Emoticon {
     public boolean isWishlist() {
         return wishlist;
     }
+
+    public List<String> getImages() {
+        return images;
+    }
+
 
 }
