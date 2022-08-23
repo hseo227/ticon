@@ -57,14 +57,6 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        Button changeToMonkey = findViewById(R.id.monkeyButton);
-        changeToMonkey.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeActivityMonkey();
-            }
-        });
-
 
     }
 
@@ -72,10 +64,7 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DetailsActivity.class);
         startActivity(intent);
     }
-    private void changeActivityMonkey() {
-        Intent intent = new Intent(this, MonkeyActivity.class);
-        startActivity(intent);
-    }
+
 }
 
 
