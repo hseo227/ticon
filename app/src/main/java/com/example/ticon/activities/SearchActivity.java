@@ -50,12 +50,12 @@ public class SearchActivity extends AppCompatActivity {
         ItemSpacing itemSpacing = new ItemSpacing(16);
         listRV.addItemDecoration(itemSpacing);
 
-        Button changeToDuck = findViewById(R.id.duckButton);
-        changeToDuck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { changeActivityDuck();
-            }
-        });
+//        Button changeToDuck = findViewById(R.id.duckButton);
+//        changeToDuck.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) { changeActivityDuck();
+//            }
+//        });
 
 
     }
