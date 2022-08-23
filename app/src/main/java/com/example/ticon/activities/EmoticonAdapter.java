@@ -3,6 +3,8 @@ package com.example.ticon.activities;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,10 +44,20 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     @Override
     public void onBindViewHolder(@NonNull EmoticonAdapter.Viewholder holder, int position) {
         Emoticon emoticon = listModelArrayList.get(position);
-//        holder.emoImg1.setImageResource(model.getEmoticonimg1());
-//        holder.emoImg2.setImageResource(model.getEmoticonimg2());
-//        holder.emoImg3.setImageResource(model.getEmoticonimg3());
+
+//        int resId1 = context.getResources().getIdentifier(emoticon.getImages().get(0), "drawable", context.getPackageName());
+//        holder.emoImg1.setImageResource(resId1);
+//        int resId2 = context.getResources().getIdentifier(emoticon.getImages().get(1), "drawable", context.getPackageName());
+//        holder.emoImg2.setImageResource(resId2);
+//        int resId3 = context.getResources().getIdentifier(emoticon.getImages().get(2), "drawable", context.getPackageName());
+//        holder.emoImg3.setImageResource(resId3);
+
+        holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
+        holder.emoImg2.setImageResource(getCardImages(1, emoticon, holder));
+        holder.emoImg3.setImageResource(getCardImages(2, emoticon, holder));
+
         holder.emoName.setText(emoticon.getName());
+
 
         holder.itemView.setOnClickListener(view -> {
             //                    itemView.getContext().startActivity(new Intent(itemView.getContext(), ListActivity.class));
@@ -57,6 +69,11 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
             //                    view.getContext().startActivity(intent);
         });
+    }
+
+    public int getCardImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
+        int resId = context.getResources().getIdentifier(emoticon.getImages().get(index), "drawable", context.getPackageName());
+        return resId;
     }
 
     @Override
