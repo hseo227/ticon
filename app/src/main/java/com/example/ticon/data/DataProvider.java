@@ -64,4 +64,48 @@ public class DataProvider {
             }
         });
     }
+
+    public static void getAllData(ITaskListener<List<Emoticon>> taskListener){
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        List<Emoticon> emoticons = new ArrayList<>();
+
+        database.collection("animals").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
+                }
+            }
+
+            if (emoticons.size() > 0 ) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+        database.collection("characters").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
+                }
+            }
+
+            if (emoticons.size() > 0 ) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+        database.collection("funny").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
+                }
+            }
+
+            if (emoticons.size() > 0 ) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+    }
 }
