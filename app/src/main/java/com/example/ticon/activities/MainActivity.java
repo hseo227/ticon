@@ -6,8 +6,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -15,11 +17,32 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.ticon.R;
+import com.example.ticon.data.DataProvider;
 import com.example.ticon.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    private class ViewHolder{
+        ImageButton  wishlistBtn;
+        Button changeToSearchFunny;
+        Button changeToSearchCharacter;
+        Button changeToSearchAnimals;
+        SearchView searchView;
+        public ViewHolder() {
+            wishlistBtn = findViewById(R.id.favorite);
+            changeToSearchFunny = findViewById(R.id.button1);
+            changeToSearchCharacter = findViewById(R.id.button2);
+            changeToSearchAnimals = findViewById(R.id.button3);
+            searchView = findViewById(R.id.action_search);
+        }
+    }
+    ViewHolder vh;
+    DataProvider dp;
+
+    String category = "";
+    String listType = "";
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -30,40 +53,44 @@ public class MainActivity extends AppCompatActivity {
         com.example.ticon.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Button changeToSearchFunny = findViewById(R.id.button1);
-        changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
+        vh = new ViewHolder();
+
+//        Button changeToSearchFunny = findViewById(R.id.button1);
+        vh.changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent listIntent = new Intent(getBaseContext(), ListActivity.class);
-                startActivity(listIntent);
+                category = "funny";
+                listType = "three";
+                Intent funnyIntent = new Intent(getBaseContext(), ListActivity.class);
+                funnyIntent.putExtra("category", category);
+                startActivity(funnyIntent);
             }
         });
 
-        Button changeToSearchCharacter = findViewById(R.id.button2);
-        changeToSearchCharacter.setOnClickListener(new View.OnClickListener() {
+//        Button changeToSearchCharacter = findViewById(R.id.button2);
+        vh.changeToSearchCharacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent listIntent = new Intent(getBaseContext(), ListActivity.class);
-                startActivity(listIntent);
+                category = "character";
+                listType = "four";
+                Intent characterIntent = new Intent(getBaseContext(), ListActivity.class);
+                characterIntent.putExtra("category", category);
+                startActivity(characterIntent);
             }
         });
 
-        Button changeToSearchAnimals = findViewById(R.id.button3);
-        changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
+//        Button changeToSearchAnimals = findViewById(R.id.button3);
+        vh.changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent listIntent = new Intent(getBaseContext(), ListActivity.class);
-                startActivity(listIntent);
+                category = "animals";
+                listType = "three";
+                Intent animalsIntent = new Intent(getBaseContext(), ListActivity.class);
+                animalsIntent.putExtra("category", category);
+                startActivity(animalsIntent);
             }
         });
 
-        Button changeToSearchDemo = findViewById(R.id.searchDemoButton);
-        changeToSearchDemo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeSearchDemo();
-            }
-        });
 
 //        ImageButton changeToDetails = findViewById(R.id.detailsButton);
 //        changeToDetails.setOnClickListener(new View.OnClickListener() {
@@ -89,12 +116,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-    private void changeSearchDemo() {
-        Intent intent = new Intent(this, DemoSearchActivity.class);
-        startActivity(intent);
-    }
 
 //    private void changeActivityDetails() {
 //        Intent intent = new Intent(this, DetailsActivity.class);
