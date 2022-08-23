@@ -15,12 +15,16 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
     DataProvider dp;
 
     String category = "";
-    String listType = "";
+    String listType = "home";
+
+    RecyclerView popularRV;
+    RecyclerView newRV;
+
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -54,6 +62,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         vh = new ViewHolder();
+
+        popularRV = findViewById(R.id.popular_recycler_view);
+        DataProvider.getAllData(emoticons -> {
+            // we are initializing our adapter class and passing our arraylist to it.
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, listType);
+            getData(emoticonAdapter, popularRV);
+        });
+
+
+        newRV = findViewById(R.id.new_recycler_view);
+        DataProvider.getAllData(emoticons -> {
+            // we are initializing our adapter class and passing our arraylist to it.
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, listType);
+            getData(emoticonAdapter, newRV);
+        });
 
 //        Button changeToSearchFunny = findViewById(R.id.button1);
         vh.changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +145,15 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
+    protected void getData(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+        // below line is for setting a layout manager for our recycler view.
+        // here we are creating vertical list so we will provide orientation as horizontal
+        Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByDate());
+        LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        // in below two lines we are setting layoutmanager and adapter to our recycler view.
+        rv.setLayoutManager(layout);
+        rv.setAdapter(emoticonAdapter);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

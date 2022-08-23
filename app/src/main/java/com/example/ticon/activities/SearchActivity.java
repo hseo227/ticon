@@ -37,7 +37,7 @@ public class SearchActivity extends AppCompatActivity {
 //        listModelArrayList.add(new ListModel(R.drawable.search_icon, R.drawable.search_icon, R.drawable.search_icon, "Search icon"));
 
         // we are initializing our adapter class and passing our arraylist to it.
-        EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, listModelArrayList);
+        EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, listModelArrayList, "list");
 
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical

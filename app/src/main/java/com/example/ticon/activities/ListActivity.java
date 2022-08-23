@@ -39,19 +39,19 @@ public class ListActivity extends AppCompatActivity {
         if (category.equals("funny")) {
             DataProvider.getFunnyData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "list");
                 getData(emoticonAdapter);
             });
         } else if (category.equals("character")) {
             DataProvider.getCharacterData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "list");
                 getData(emoticonAdapter);
             });
         } else {
             DataProvider.getAnimalsData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons);
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "list");
                 getData(emoticonAdapter);
             });
         }
@@ -61,13 +61,11 @@ public class ListActivity extends AppCompatActivity {
     protected void getData(EmoticonAdapter emoticonAdapter) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-
+        LinearLayoutManager layout = new LinearLayoutManager(this);
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
-        SavedListRV.setLayoutManager(linearLayoutManager);
+        SavedListRV.setLayoutManager(layout);
         SavedListRV.setAdapter(emoticonAdapter);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
