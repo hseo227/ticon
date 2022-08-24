@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,19 +40,19 @@ public class ListActivity extends AppCompatActivity {
         if (category.equals("funny")) {
             DataProvider.getFunnyData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "list");
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "three");
                 getData(emoticonAdapter);
             });
         } else if (category.equals("character")) {
             DataProvider.getCharacterData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "list");
-                getData(emoticonAdapter);
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "four");
+                getData2(emoticonAdapter);
             });
         } else {
             DataProvider.getAnimalsData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "list");
+                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "three");
                 getData(emoticonAdapter);
             });
         }
@@ -64,6 +65,15 @@ public class ListActivity extends AppCompatActivity {
         LinearLayoutManager layout = new LinearLayoutManager(this);
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         SavedListRV.setLayoutManager(layout);
+        SavedListRV.setAdapter(emoticonAdapter);
+    }
+
+    protected void getData2(EmoticonAdapter emoticonAdapter) {
+        // below line is for setting a layout manager for our recycler view.
+        // here we are creating vertical list so we will provide orientation as vertical
+        GridLayoutManager Glayout = new GridLayoutManager(this, 2);
+        // in below two lines we are setting layoutmanager and adapter to our recycler view.
+        SavedListRV.setLayoutManager(Glayout);
         SavedListRV.setAdapter(emoticonAdapter);
     }
 
