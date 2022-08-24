@@ -43,8 +43,10 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         View view;
         if (listType.equals("home")) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_card,parent,false);
-        } else {
+        } else if (listType.equals("three")) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_card,parent,false);
+        } else {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.display_card,parent,false);
         }
         return new Viewholder(view);
     }
@@ -67,11 +69,17 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         if (listType.equals("home")) {
             holder.titleText.setText(emoticon.getName());
             holder.imageButton.setImageResource(getCardImages(0, emoticon, holder));
+        } else if (listType.equals("three")) {
+            holder.emoName.setText(emoticon.getName());
+            holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
+            holder.emoImg2.setImageResource(getCardImages(1, emoticon, holder));
+            holder.emoImg3.setImageResource(getCardImages(2, emoticon, holder));
         } else {
             holder.emoName.setText(emoticon.getName());
             holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
             holder.emoImg2.setImageResource(getCardImages(1, emoticon, holder));
             holder.emoImg3.setImageResource(getCardImages(2, emoticon, holder));
+            holder.emoImg4.setImageResource(getCardImages(3, emoticon, holder));
         }
 
         holder.itemView.setOnClickListener(view -> {
@@ -103,7 +111,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
-        private ImageView emoImg1, emoImg2, emoImg3, imageButton;
+        private ImageView emoImg1, emoImg2, emoImg3, emoImg4, imageButton;
         private TextView emoName, titleText;
 
         public Viewholder(@NonNull View itemView) {
@@ -113,6 +121,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             emoImg1 = itemView.findViewById(R.id.imageView1);
             emoImg2 = itemView.findViewById(R.id.imageView2);
             emoImg3 = itemView.findViewById(R.id.imageView3);
+            emoImg4 = itemView.findViewById(R.id.imageView4);
             emoName = itemView.findViewById(R.id.TextView);
 
 //            itemView.setOnClickListener(new View.OnClickListener() {
