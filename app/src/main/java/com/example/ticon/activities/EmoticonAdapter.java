@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,16 +80,9 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             Toast.makeText(context, "You clicked. Congrats!", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(view.getContext(), DetailsActivity.class);
-            String id = emoticon.getId();
-            i.putExtra("id", id);
+            i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
             view.getContext().startActivity(i);
-
-//                Intent intent = new Intent(context, DetailsActivity.class);
-//                intent.putExtra("title", listModelArrayList.get(position).getEmoticonName());
-//                context.startActivity(intent);
-
-            //                    view.getContext().startActivity(intent);
         });
     }
 

@@ -2,23 +2,47 @@ package com.example.ticon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.ticon.R;
 import com.example.ticon.data.DataProvider;
+import com.example.ticon.databinding.ActivityDetailsBinding;
 import com.example.ticon.models.Emoticon;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DetailsActivity extends AppCompatActivity {
+
+    Emoticon emoticon;
+
+    TextView emoticonTitle;
+    TextView emoticonArtist;
+    TextView emoticonPrice;
+    ImageView emoticonImage;
+    ImageView emoImage1;
+    ImageView emoImage2;
+    ImageView emoImage3;
+    ImageView emoImage4;
+    ImageView emoImage5;
+    ImageView emoImage6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
@@ -26,27 +50,54 @@ public class DetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        String id = intent.getStringExtra("id");
+        emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
+//        String id = intent.getStringExtra("id");
 
-        DataProvider.getAllData(emoticons -> {
+        // Create objects from layout
+        emoticonImage = findViewById(R.id.emoticonImage);
+        emoticonTitle = findViewById(R.id.emoticonTitle);
+        emoticonArtist = findViewById(R.id.emoticonArtist);
+        emoticonPrice = findViewById(R.id.emoticonPrice);
+
+        emoImage1 = findViewById(R.id.emoImage1);
+        emoImage2 = findViewById(R.id.emoImage2);
+        emoImage3 = findViewById(R.id.emoImage3);
+        emoImage4 = findViewById(R.id.emoImage4);
+        emoImage5 = findViewById(R.id.emoImage5);
+        emoImage6 = findViewById(R.id.emoImage6);
+
+        // Set TextView objects to data from emoticon
+        emoticonTitle.setText(emoticon.getName());
+        emoticonArtist.setText(emoticon.getArtist());
+        emoticonPrice.setText(String.valueOf(emoticon.getPrice()));
+
+        // Set ImageView objects to images from emoticon
+
+//        emoImage1.setImageResource
+//        emoImage2.setImageResource(emoticon.getImages().indexOf(1));
+//        emoImage3.setImageResource(emoticon.getImages().indexOf(2));
+//        emoImage4.setImageResource(emoticon.getImages().indexOf(3));
+//        emoImage5.setImageResource(emoticon.getImages().indexOf(4));
+//        emoImage6.setImageResource(emoticon.getImages().indexOf(5));
+
+
+//        DataProvider.getAllData(emoticons -> {
 //            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, emoticons);
 //            getData(viewPagerAdapter);
-        });
+//        });
 
     }
 
-//    protected void getData(ViewPagerAdapter viewPagerAdapter) {
-//        // below line is for setting a layout manager for our recycler view.
-//        // here we are creating vertical list so we will provide orientation as vertical
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//    public int getEmoticonImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
 //
-//        // in below two lines we are setting layoutmanager and adapter to our recycler view.
-//        SavedListRV.setLayoutManager(linearLayoutManager);
-//        SavedListRV.setAdapter(viewPagerAdapter);
 //    }
 
-//    private void changeActivityPreview() {
-//        Intent intent = new Intent(this, PreviewActivity.class);
-//        startActivity(intent);
+//    protected void getData(EmoticonAdapter emoticonAdapter) {
+//        // below line is for setting a layout manager for our recycler view.
+//        // here we are creating vertical list so we will provide orientation as vertical
+//        LinearLayoutManager layout = new LinearLayoutManager(this);
+//        // in below two lines we are setting layoutmanager and adapter to our recycler view.
+//        detailsLayout.setAdapter(emoticonAdapter);
 //    }
+
 }

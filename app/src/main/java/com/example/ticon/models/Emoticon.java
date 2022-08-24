@@ -2,9 +2,10 @@ package com.example.ticon.models;
 
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Emoticon {
+public class Emoticon implements Serializable {
     private String artist;
     private String category;
     private String description;
