@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
 //        ImageButton changeToDetails = findViewById(R.id.detailsButton);
 //        changeToDetails.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -201,6 +200,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent newIntent = new Intent(getBaseContext(), SearchActivity.class);
+                newIntent.putExtra("query", "");
+                startActivity(newIntent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
