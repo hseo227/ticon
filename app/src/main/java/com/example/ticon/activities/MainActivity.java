@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 listType = "three";
                 Intent funnyIntent = new Intent(getBaseContext(), ListActivity.class);
                 funnyIntent.putExtra("category", category);
+                funnyIntent.putExtra("listType", listType);
                 startActivity(funnyIntent);
             }
         });
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 listType = "four";
                 Intent characterIntent = new Intent(getBaseContext(), ListActivity.class);
                 characterIntent.putExtra("category", category);
+                characterIntent.putExtra("listType", listType);
                 startActivity(characterIntent);
             }
         });
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 listType = "three";
                 Intent animalsIntent = new Intent(getBaseContext(), ListActivity.class);
                 animalsIntent.putExtra("category", category);
+                animalsIntent.putExtra("listType", listType);
                 startActivity(animalsIntent);
             }
         });
