@@ -73,12 +73,13 @@ public class DetailsActivity extends AppCompatActivity {
 
         // Set ImageView objects to images from emoticon
 
-//        emoImage1.setImageResource
-//        emoImage2.setImageResource(emoticon.getImages().indexOf(1));
-//        emoImage3.setImageResource(emoticon.getImages().indexOf(2));
-//        emoImage4.setImageResource(emoticon.getImages().indexOf(3));
-//        emoImage5.setImageResource(emoticon.getImages().indexOf(4));
-//        emoImage6.setImageResource(emoticon.getImages().indexOf(5));
+        emoticonImage.setImageResource(getEmoticonId(0));
+        emoImage1.setImageResource(getEmoticonId(0));
+        emoImage2.setImageResource(getEmoticonId(1));
+        emoImage3.setImageResource(getEmoticonId(2));
+        emoImage4.setImageResource(getEmoticonId(3));
+        emoImage5.setImageResource(getEmoticonId(4));
+        emoImage6.setImageResource(getEmoticonId(5));
 
 
 //        DataProvider.getAllData(emoticons -> {
@@ -88,9 +89,12 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-//    public int getEmoticonImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
-//
-//    }
+    public int getEmoticonId(int index) {
+        String PACKAGE_NAME = getApplicationContext().getPackageName();
+        int resId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+ emoticon.getImages().get(index), null, null);
+
+        return resId;
+    }
 
 //    protected void getData(EmoticonAdapter emoticonAdapter) {
 //        // below line is for setting a layout manager for our recycler view.
