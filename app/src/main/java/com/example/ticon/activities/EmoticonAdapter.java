@@ -45,6 +45,8 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_card,parent,false);
         } else if (listType.equals("three")) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_card,parent,false);
+        } else if (listType.equals("sidebar_list")){
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.saved_card,parent,false);
         } else {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.display_card,parent,false);
         }
@@ -55,25 +57,18 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     public void onBindViewHolder(@NonNull EmoticonAdapter.Viewholder holder, int position) {
         Emoticon emoticon = listModelArrayList.get(position);
 
-//        int resId1 = context.getResources().getIdentifier(emoticon.getImages().get(0), "drawable", context.getPackageName());
-//        holder.emoImg1.setImageResource(resId1);
-//        int resId2 = context.getResources().getIdentifier(emoticon.getImages().get(1), "drawable", context.getPackageName());
-//        holder.emoImg2.setImageResource(resId2);
-//        int resId3 = context.getResources().getIdentifier(emoticon.getImages().get(2), "drawable", context.getPackageName());
-//        holder.emoImg3.setImageResource(resId3);
-
-//        holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
-//        holder.emoImg2.setImageResource(getCardImages(1, emoticon, holder));
-//        holder.emoImg3.setImageResource(getCardImages(2, emoticon, holder));
-
         if (listType.equals("home")) {
-            holder.titleText.setText(emoticon.getName());
+            holder.emoName.setText(emoticon.getName());
             holder.imageButton.setImageResource(getCardImages(0, emoticon, holder));
         } else if (listType.equals("three")) {
             holder.emoName.setText(emoticon.getName());
             holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
             holder.emoImg2.setImageResource(getCardImages(1, emoticon, holder));
             holder.emoImg3.setImageResource(getCardImages(2, emoticon, holder));
+        } else if (listType.equals("sidebar_list")){
+            holder.emoName.setText(emoticon.getName());
+            holder.artist.setText(emoticon.getArtist());
+            holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
         } else {
             holder.emoName.setText(emoticon.getName());
             holder.emoImg1.setImageResource(getCardImages(0, emoticon, holder));
@@ -112,17 +107,17 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
     public class Viewholder extends RecyclerView.ViewHolder {
         private ImageView emoImg1, emoImg2, emoImg3, emoImg4, imageButton;
-        private TextView emoName, titleText;
+        private TextView emoName, artist;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             imageButton = itemView.findViewById(R.id.image_button);
-            titleText = itemView.findViewById(R.id.title_text);
             emoImg1 = itemView.findViewById(R.id.imageView1);
             emoImg2 = itemView.findViewById(R.id.imageView2);
             emoImg3 = itemView.findViewById(R.id.imageView3);
             emoImg4 = itemView.findViewById(R.id.imageView4);
             emoName = itemView.findViewById(R.id.TextView);
+            artist = itemView.findViewById(R.id.author);
 
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
