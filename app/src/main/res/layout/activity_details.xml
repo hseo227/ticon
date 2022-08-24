@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.DetailsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_100"
-    tools:context=".activities.DetailsActivity">
+    android:background="@color/white_100">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,29 +44,29 @@
             android:radius="8dp">
 
             <TextView
-                android:id="@+id/emoticonName"
+                android:id="@+id/emoticonTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop = "30dp"
-                android:text="Bad Duck"
+                android:text="@{emoticonTitle}"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/artistName"
+                android:id="@+id/emoticonArtist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop = "3dp"
-                android:text="by Hayoon"
+                android:text="@{emoticonArtist}"
                 android:textColor="@color/grey_500"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/itemImage"
+                android:id="@+id/emoticonImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -74,7 +74,6 @@
                 android:src = "@drawable/bad_ducks1" />
 
             <LinearLayout
-                android:id="@+id/priceTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -88,10 +87,11 @@
                     android:src="@drawable/ic_dollar"/>
 
                 <TextView
+                    android:id="@+id/emoticonPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="2dp"
-                    android:text="1.99"
+                    android:paddingStart="2dp"
+                    android:text="@{emoticonPrice}"
                     android:textColor="@color/pink_a200"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -138,7 +138,7 @@
                     android:src="@drawable/ic_favorite_black"
                     tools:ignore="TouchTargetSizeCheck" />
 
-                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -147,195 +147,69 @@
             android:layout_height="match_parent"
             tools:context=".activities.PreviewActivity">
 
-            <LinearLayout
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum = "9" >
+                android:columnCount="3"
+                android:padding="10dp"
+                android:rowCount="2">
 
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="4"
-                    android:rowCount="5"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
+                <ImageView
+                    android:id="@+id/emoImage1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/mickey_minnie1" />
 
-                    //Your grid items..
+                <ImageView
+                    android:id="@+id/emoImage2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/emoImage3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks1"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks2"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
+                <ImageView
+                    android:id="@+id/emoImage4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
+                <ImageView
+                    android:id="@+id/emoImage5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                    </LinearLayout>
+                <ImageView
+                    android:id="@+id/emoImage6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                </GridLayout>
+            </GridLayout>
 
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks5"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks6"/>
-
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-            </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
