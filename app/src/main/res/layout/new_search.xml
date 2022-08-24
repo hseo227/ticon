@@ -14,8 +14,10 @@
         android:layout_marginBottom="16dp" >
         <androidx.appcompat.widget.SearchView
             android:id="@+id/action_search"
+            android:focusableInTouchMode="true"
+            android:descendantFocusability="beforeDescendants"
+            app:showAsAction="always"
             android:layout_width="match_parent"
-            app:iconifiedByDefault = "false"
             android:layout_height="50dp"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp"

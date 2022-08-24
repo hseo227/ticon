@@ -42,19 +42,24 @@ public class SearchActivity extends AppCompatActivity {
         String query = intent.getStringExtra("query");
 
         if (query.equals("")){
-            textView.setText("Popular");
+            searchView.setIconified(false);
+            searchView.setIconifiedByDefault(false);
+            textView.setText(R.string.popular);
             DataProvider.getAllData(emoticons -> {
                 EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "three");
                 getData(emoticonAdapter);
             });
-            } else {
+        } else {
+            searchView.setIconifiedByDefault(false);
+            searchView.setFocusable(false);
+            searchView.clearFocus();
             DataProvider.getAllData(emoticons -> {
                 List<Emoticon> resultEmoticons = getResults(emoticons, query);
                 if (resultEmoticons.isEmpty()) {
                     textView.setText(R.string.no_results);
                     textView.setVisibility(View.VISIBLE);
                 } else {
-                    textView.setText(R.string.search_results);
+                    textView.setText(getString(R.string.search_results) + " \"" + query + "\"");
                     textView.setVisibility(View.VISIBLE);
                 }
                 EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, resultEmoticons, "three");
