@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="50"
+        android:layout_weight="40"
         android:orientation="vertical"
         android:padding="8dp">
 
@@ -56,14 +56,15 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/chat_bubble">
+                    android:background="@drawable/chat_bubble"
+                    android:visibility="invisible">
 
                     <ImageView
                         android:id="@+id/displayEmoticon"
                         android:layout_width="220dp"
                         android:layout_height="160dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_favorite_white" />
+                        android:scaleType="fitCenter" />
+
                 </RelativeLayout>
 
             </LinearLayout>
@@ -76,7 +77,7 @@
         android:id="@+id/emoticonKeyboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight = "70"
+        android:layout_weight = "60"
         android:orientation="vertical"
         android:background="@color/white_100">
 
@@ -115,62 +116,75 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:columnCount="3"
                 android:padding="10dp"
                 android:rowCount="2">
 
-                <ImageView
-                    android:id="@+id/emoSendImage1"
+                <ImageButton
+                    android:id="@+id/emoButton1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/mickey_minnie1" />
 
-                <ImageView
-                    android:id="@+id/emoSendImage2"
+                <ImageButton
+                    android:id="@+id/emoButton2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoSendImage3"
+                <ImageButton
+                    android:id="@+id/emoButton3"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoSendImage4"
+                <ImageButton
+                    android:id="@+id/emoButton4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoSendImage5"
+                <ImageButton
+                    android:id="@+id/emoButton5"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoSendImage6"
+                <ImageButton
+                    android:id="@+id/emoButton6"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bad_ducks1" />
 
             </GridLayout>

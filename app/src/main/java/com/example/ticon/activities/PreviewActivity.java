@@ -10,28 +10,26 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.ticon.R;
 import com.example.ticon.models.Emoticon;
 
-public class PreviewActivity extends DetailsActivity {
-
-//    public void changeChatEmo1 (View view){
-//        ImageView previewEmoticon = (ImageView) findViewById(R.id.displayEmoticon);
-//        previewEmoticon.setImageResource(R.drawable.bad_ducks3);
-//    }
+public class PreviewActivity extends DetailsActivity implements View.OnClickListener {
 
     Emoticon emoticon;
 
     ImageView sentImage;
-    ImageView emoKeyImage1;
-    ImageView emoKeyImage2;
-    ImageView emoKeyImage3;
-    ImageView emoKeyImage4;
-    ImageView emoKeyImage5;
-    ImageView emoKeyImage6;
-
+    ImageButton emoKeyButton1;
+    ImageButton emoKeyButton2;
+    ImageButton emoKeyButton3;
+    ImageButton emoKeyButton4;
+    ImageButton emoKeyButton5;
+    ImageButton emoKeyButton6;
     ImageButton sendButton;
+
+    RelativeLayout chatBubble;
+    int imageIndicator = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,23 +48,66 @@ public class PreviewActivity extends DetailsActivity {
         // Create objects from layout
 
         sentImage = findViewById(R.id.displayEmoticon);
-        emoKeyImage1 = findViewById(R.id.emoSendImage1);
-        emoKeyImage2 = findViewById(R.id.emoSendImage2);
-        emoKeyImage3 = findViewById(R.id.emoSendImage3);
-        emoKeyImage4 = findViewById(R.id.emoSendImage4);
-        emoKeyImage5 = findViewById(R.id.emoSendImage5);
-        emoKeyImage6 = findViewById(R.id.emoSendImage6);
+        emoKeyButton1 = findViewById(R.id.emoButton1);
+        emoKeyButton2 = findViewById(R.id.emoButton2);
+        emoKeyButton3 = findViewById(R.id.emoButton3);
+        emoKeyButton4 = findViewById(R.id.emoButton4);
+        emoKeyButton5 = findViewById(R.id.emoButton5);
+        emoKeyButton6 = findViewById(R.id.emoButton6);
 
         sendButton = findViewById(R.id.sendButton);
 
+        chatBubble = findViewById(R.id.chatLayout);
+
         // Set ImageView objects to images from emoticon
 
-        emoKeyImage1.setImageResource(getEmoticonId(0));
-        emoKeyImage2.setImageResource(getEmoticonId(1));
-        emoKeyImage3.setImageResource(getEmoticonId(2));
-        emoKeyImage4.setImageResource(getEmoticonId(3));
-        emoKeyImage5.setImageResource(getEmoticonId(4));
-        emoKeyImage6.setImageResource(getEmoticonId(5));
+        emoKeyButton1.setImageResource(getEmoticonId(0));
+        emoKeyButton2.setImageResource(getEmoticonId(1));
+        emoKeyButton3.setImageResource(getEmoticonId(2));
+        emoKeyButton4.setImageResource(getEmoticonId(3));
+        emoKeyButton5.setImageResource(getEmoticonId(4));
+        emoKeyButton6.setImageResource(getEmoticonId(5));
+
+        // Set Buttons to an on-click function
+        emoKeyButton1.setOnClickListener(this);
+        emoKeyButton2.setOnClickListener(this);
+        emoKeyButton3.setOnClickListener(this);
+        emoKeyButton4.setOnClickListener(this);
+        emoKeyButton5.setOnClickListener(this);
+        emoKeyButton6.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.emoButton1:
+                imageIndicator = 0;
+                break;
+
+            case R.id.emoButton2:
+                imageIndicator = 1;
+                break;
+
+            case R.id.emoButton3:
+                imageIndicator = 2;
+                break;
+
+            case R.id.emoButton4:
+                imageIndicator = 3;
+                break;
+
+            case R.id.emoButton5:
+                imageIndicator = 4;
+                break;
+
+            case R.id.emoButton6:
+                imageIndicator = 5;
+                break;
+        }
+
+        chatBubble.setVisibility(View.VISIBLE);
+        sentImage.setImageResource(getEmoticonId(imageIndicator));
     }
 
 }
