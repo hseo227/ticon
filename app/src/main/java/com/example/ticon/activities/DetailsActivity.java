@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,11 +27,15 @@ import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity {
 
+//    ViewPager viewPager;
+//    ViewPagerAdapter viewPagerAdapter;
+
     Emoticon emoticon;
 
     TextView emoticonTitle;
     TextView emoticonArtist;
     TextView emoticonPrice;
+    TextView emoticonDescription;
     ImageView emoticonImage;
     ImageView emoImage1;
     ImageView emoImage2;
@@ -52,16 +57,20 @@ public class DetailsActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+//        viewPager = (ViewPager) findViewById(R.id.viewPager);
+//        viewPager.setAdapter(new ViewPagerAdapter(this, emoticon.getImages()));
+
         Intent intent = getIntent();
         emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
 //        String id = intent.getStringExtra("id");
 
         // Create objects from layout
-        emoticonImage = findViewById(R.id.emoticonImage);
         emoticonTitle = findViewById(R.id.emoticonTitle);
         emoticonArtist = findViewById(R.id.emoticonArtist);
         emoticonPrice = findViewById(R.id.emoticonPrice);
+        emoticonDescription = findViewById(R.id.emoticonLabel);
 
+        emoticonImage = findViewById(R.id.emoticonImage);
         emoImage1 = findViewById(R.id.emoImage1);
         emoImage2 = findViewById(R.id.emoImage2);
         emoImage3 = findViewById(R.id.emoImage3);
@@ -69,16 +78,18 @@ public class DetailsActivity extends AppCompatActivity {
         emoImage5 = findViewById(R.id.emoImage5);
         emoImage6 = findViewById(R.id.emoImage6);
 
-        Button previewButton = findViewById(R.id.previewButton);
+        previewButton = findViewById(R.id.previewButton);
 
         // Set TextView objects to data from emoticon
         emoticonTitle.setText(emoticon.getName());
         emoticonArtist.setText(emoticon.getArtist());
         emoticonPrice.setText(String.valueOf(emoticon.getPrice()));
+        emoticonDescription.setText(emoticon.getDescription());
 
         // Set ImageView objects to images from emoticon
 
-        emoticonImage.setImageResource(getEmoticonId(0));
+        emoticonImage.setImageResource(getEmoticonId(4));
+
         emoImage1.setImageResource(getEmoticonId(0));
         emoImage2.setImageResource(getEmoticonId(1));
         emoImage3.setImageResource(getEmoticonId(2));
@@ -86,8 +97,8 @@ public class DetailsActivity extends AppCompatActivity {
         emoImage5.setImageResource(getEmoticonId(4));
         emoImage6.setImageResource(getEmoticonId(5));
 
+        // Set on click function to navigate to preview screen
         previewButton.setOnClickListener(view -> {
-
             Intent i = new Intent(view.getContext(), PreviewActivity.class);
             i.putExtra("clickedEmoticon", emoticon);
 
