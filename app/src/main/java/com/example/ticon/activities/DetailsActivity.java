@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ticon.R;
 import com.example.ticon.data.DataProvider;
@@ -37,6 +38,8 @@ public class DetailsActivity extends AppCompatActivity {
     ImageView emoImage4;
     ImageView emoImage5;
     ImageView emoImage6;
+
+    Button previewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +69,8 @@ public class DetailsActivity extends AppCompatActivity {
         emoImage5 = findViewById(R.id.emoImage5);
         emoImage6 = findViewById(R.id.emoImage6);
 
+        Button previewButton = findViewById(R.id.previewButton);
+
         // Set TextView objects to data from emoticon
         emoticonTitle.setText(emoticon.getName());
         emoticonArtist.setText(emoticon.getArtist());
@@ -80,6 +85,15 @@ public class DetailsActivity extends AppCompatActivity {
         emoImage4.setImageResource(getEmoticonId(3));
         emoImage5.setImageResource(getEmoticonId(4));
         emoImage6.setImageResource(getEmoticonId(5));
+
+        previewButton.setOnClickListener(view -> {
+
+            Intent i = new Intent(view.getContext(), PreviewActivity.class);
+            i.putExtra("clickedEmoticon", emoticon);
+
+            view.getContext().startActivity(i);
+
+        });
 
 
 //        DataProvider.getAllData(emoticons -> {
