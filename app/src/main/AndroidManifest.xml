@@ -14,21 +14,27 @@
         android:theme="@style/Theme.Ticon"
         tools:targetApi="31">
         <activity
+            android:name=".activities.MyEmoticonsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ui.wishlist.WishlistFragment"
+            android:exported="false" />
+        <activity
             android:name=".activities.SearchActivity"
             android:exported="false"
             android:label="SearchActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.ListActivity"
-            android:parentActivityName=".activities.MainActivity"
             android:exported="false"
             android:label="ListActivity"
+            android:parentActivityName=".activities.MainActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.DetailsActivity"
-            android:parentActivityName=".activities.ListActivity"
             android:exported="false"
             android:label="DetailsActivity"
+            android:parentActivityName=".activities.ListActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
@@ -37,9 +43,9 @@
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.PreviewActivity"
-            android:parentActivityName=".activities.DetailsActivity"
             android:exported="false"
             android:label=""
+            android:parentActivityName=".activities.DetailsActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"

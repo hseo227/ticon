@@ -23,12 +23,12 @@ public class PreviewActivity extends AppCompatActivity {
 
     public void changeChatEmo3 (View view){
         ImageView previewEmoticon = (ImageView) findViewById(R.id.displayEmoticon);
-        previewEmoticon.setImageResource(R.drawable.bad_ducks11);
+        previewEmoticon.setImageResource(R.drawable.bad_ducks2);
     }
 
     public void changeChatEmo4 (View view){
         ImageView previewEmoticon = (ImageView) findViewById(R.id.displayEmoticon);
-        previewEmoticon.setImageResource(R.drawable.bad_ducks12);
+        previewEmoticon.setImageResource(R.drawable.bad_ducks2);
     }
 
     @Override

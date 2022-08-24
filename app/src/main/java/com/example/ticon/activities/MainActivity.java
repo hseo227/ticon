@@ -3,11 +3,13 @@ package com.example.ticon.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
+import com.example.ticon.activities.ui.wishlist.WishlistFragment;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -26,7 +29,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private class ViewHolder{
         ImageButton  wishlistBtn;
@@ -140,9 +143,37 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        NavigationView testNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        testNavigationView.setNavigationItemSelectedListener(this);
+
     }
 
+    // Navigation Bar
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                listType = "home";
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intent);
+                break;
 
+            case R.id.nav_gallery:
+                listType = "sidebar_list";
+                Intent wishlistIntent = new Intent(getBaseContext(), ListActivity.class);
+                category = "animals";
+                wishlistIntent.putExtra("category", category);
+                startActivity(wishlistIntent);
+                break;
+
+            case R.id.nav_slideshow:
+                listType = "sidebar_list";
+                Intent myEmoticonIntent = new Intent(getApplicationContext(), MyEmoticonsActivity.class);
+                startActivity(myEmoticonIntent);
+                break;
+        }
+        return true;
+    }
 //    private void changeActivityDetails() {
 //        Intent intent = new Intent(this, DetailsActivity.class);
 //        startActivity(intent);
