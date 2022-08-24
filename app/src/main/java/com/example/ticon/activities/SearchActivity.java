@@ -28,13 +28,6 @@ public class SearchActivity extends AppCompatActivity {
         // here we have created new array list and added data to it.
         // Arraylist for storing data
         List<Emoticon> listModelArrayList = new ArrayList<>();
-//        listModelArrayList.add(new ListModel(R.drawable.ic_back, R.drawable.ic_back, R.drawable.ic_back, "Back icon"));
-//        listModelArrayList.add(new ListModel(R.drawable.close_icon, R.drawable.close_icon, R.drawable.close_icon, "Close icon"));
-//        listModelArrayList.add(new ListModel(R.drawable.search_icon, R.drawable.search_icon, R.drawable.search_icon, "Search icon"));
-//        listModelArrayList.add(new ListModel(R.drawable.sort_icon, R.drawable.sort_icon, R.drawable.sort_icon, "Sort icon"));
-//        listModelArrayList.add(new ListModel(R.drawable.ic_back, R.drawable.ic_back, R.drawable.ic_back, "Back icon"));
-//        listModelArrayList.add(new ListModel(R.drawable.close_icon, R.drawable.close_icon, R.drawable.close_icon, "Close icon"));
-//        listModelArrayList.add(new ListModel(R.drawable.search_icon, R.drawable.search_icon, R.drawable.search_icon, "Search icon"));
 
         // we are initializing our adapter class and passing our arraylist to it.
         EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, listModelArrayList, "list");
@@ -49,14 +42,6 @@ public class SearchActivity extends AppCompatActivity {
 
         ItemSpacing itemSpacing = new ItemSpacing(16);
         listRV.addItemDecoration(itemSpacing);
-
-//        Button changeToDuck = findViewById(R.id.duckButton);
-//        changeToDuck.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) { changeActivityDuck();
-//            }
-//        });
-
 
     }
 

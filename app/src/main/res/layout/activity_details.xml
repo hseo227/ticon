@@ -268,7 +268,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks7"/>
+                            android:src="@drawable/bad_ducks3"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -276,7 +276,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks8"/>
+                            android:src="@drawable/bad_ducks3"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -284,7 +284,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks9"/>
+                            android:src="@drawable/bad_ducks3"/>
 
                     </LinearLayout>
 
@@ -313,7 +313,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks10"/>
+                            android:src="@drawable/bad_ducks4"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -321,7 +321,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks11"/>
+                            android:src="@drawable/bad_ducks4"/>
                         <ImageButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -329,7 +329,7 @@
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks12"/>
+                            android:src="@drawable/bad_ducks4"/>
 
                     </LinearLayout>
 

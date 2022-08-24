@@ -43,13 +43,14 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/title"
+                    android:id="@+id/TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
                     android:text="Hi"
                     android:textColor="@color/black" />
             </RelativeLayout>
@@ -58,12 +59,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:id="@+id/author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="10dp"
                     android:text="Hi"

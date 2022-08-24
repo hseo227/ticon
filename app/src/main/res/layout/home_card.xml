@@ -23,7 +23,7 @@
             android:src="@drawable/bad_ducks1" />
 
         <TextView
-            android:id="@+id/title_text"
+            android:id="@+id/TextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
