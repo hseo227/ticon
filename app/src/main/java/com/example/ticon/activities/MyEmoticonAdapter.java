@@ -52,7 +52,7 @@ public class MyEmoticonAdapter extends RecyclerView.Adapter<MyEmoticonAdapter.Vi
             super(itemView);
             emoimg = itemView.findViewById(R.id.imageView1);
             himg = itemView.findViewById(R.id.heartButton);
-            emoName = itemView.findViewById(R.id.title);
+            emoName = itemView.findViewById(R.id.TextView);
             aut = itemView.findViewById(R.id.author);
 
         }
