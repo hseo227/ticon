@@ -19,15 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-<!--            <ImageButton-->
-<!--                android:layout_width="48dp"-->
-<!--                android:layout_height="48dp"-->
-<!--                android:layout_alignParentStart="true"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:background="@android:color/transparent"-->
-<!--                android:contentDescription="Back"-->
-<!--                android:src="@drawable/ic_back" />-->
-
         </androidx.appcompat.widget.Toolbar>
 
         <ScrollView
@@ -85,7 +76,7 @@
         android:id="@+id/emoticonKeyboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight = "50"
+        android:layout_weight = "70"
         android:orientation="vertical"
         android:background="@color/white_100">
 
@@ -118,186 +109,72 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:context=".activities.PreviewActivity">
 
-            <LinearLayout
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum = "9" >
+                android:columnCount="3"
+                android:padding="10dp"
+                android:rowCount="2">
 
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="4"
-                    android:rowCount="5"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
+                <ImageView
+                    android:id="@+id/emoSendImage1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/mickey_minnie1" />
 
-                    //Your grid items..
+                <ImageView
+                    android:id="@+id/emoSendImage2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/emoSendImage3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks1"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks2"/>
+                <ImageView
+                    android:id="@+id/emoSendImage4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                        <ImageButton
-                            android:id="@+id/changeEmo1"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:onClick="changeChatEmo1"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/bad_ducks3" />
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
+                <ImageView
+                    android:id="@+id/emoSendImage5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                    </LinearLayout>
+                <ImageView
+                    android:id="@+id/emoSendImage6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="fill"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:src="@drawable/bad_ducks1" />
 
-                </GridLayout>
+            </GridLayout>
 
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="4"
-                    android:rowCount="5"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks5"/>
-
-                        <ImageButton
-                            android:id="@+id/changeEmo2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:onClick="changeChatEmo2"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/bad_ducks6" />
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="4"
-                    android:rowCount="5"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-
-                        <ImageButton
-                            android:id="@+id/changeEmo3"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:onClick="changeChatEmo3"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/bad_ducks6" />
-
-                        <ImageButton
-                            android:id="@+id/changeEmo4"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:onClick="changeChatEmo4"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/bad_ducks4" />
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-            </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
