@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop = "5dp"
-                android:text="@{emoticonArtist}"
+                android:text="@string/place_holder"
                 android:textColor="@color/grey_500"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -72,12 +72,25 @@
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginTop="12dp"/>-->
 
+
             <ImageView
                 android:id="@+id/emoticonImage"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="12dp"
+                android:src="@drawable/cute_marvel5"/>
+
+            <TextView
+                android:id="@+id/emoticonLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop = "8dp"
+                android:text="Do you want to feel MARVEL-ous?"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -97,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="2dp"
-                    android:text="@{emoticonPrice}"
+                    android:text="1.99"
                     android:textColor="@color/pink_a200"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -118,8 +131,7 @@
                     android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/mint_a100"
                     android:radius="8dp"
-                    android:shadowColor="@color/black"
-                    android:text="Preview in Chat"
+                    android:text="@string/preview"
                     android:textSize="12sp" />
 
                 <Button
@@ -130,17 +142,17 @@
                     android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/pink_a200"
                     android:radius="8dp"
-                    android:text="Buy"
+                    android:text="@string/buy"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
                 <ImageButton
+                    android:id="@+id/wishListButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:layout_marginLeft="5dp"
                     android:background="@android:color/transparent"
-                    android:contentDescription="wishlist"
                     android:src="@drawable/ic_favorite_black"
                     tools:ignore="TouchTargetSizeCheck" />
 
