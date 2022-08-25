@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SearchActivity">
+    tools:context=".activities.SearchActivity"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/search_app_bar_list">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,23 +16,15 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp" >
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/action_search"
-            android:focusableInTouchMode="true"
-            android:descendantFocusability="beforeDescendants"
-            app:showAsAction="always"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp"
-            android:layout_marginVertical="16dp"/>
         <TextView
             android:id="@+id/search_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="@string/popular"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            android:padding="10dp"
+            android:textSize="15dp"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listRView"
             android:layout_width="match_parent"
