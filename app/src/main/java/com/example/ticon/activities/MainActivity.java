@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getDataSortedPopular(emoticonAdapter, popularRV);
         });
 
-
         newRV = findViewById(R.id.new_recycler_view);
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getDataSortedDate(emoticonAdapter, newRV);
         });
 
-//        Button changeToSearchFunny = findViewById(R.id.button1);
         vh.changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

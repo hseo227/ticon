@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SearchActivity"
+    tools:context=".activities.ListActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_list">
 
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <TextView
@@ -28,15 +28,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:text="SORT BY: "
-                android:textSize="12dp" />
+                android:textSize="15sp"
+                tools:ignore="OnClick" />
 
             <TextView
                 android:id="@+id/text_sort_popularity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="fill_vertical"
+                android:onClick="onClick"
+                android:clickable="true"
                 android:text="VIEWS"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
 
             <TextView
                 android:id="@+id/spacer1"
@@ -51,7 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NEW"
-                android:textSize="15dp" />
+                android:onClick="onClick"
+                android:clickable="true"
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
 
             <TextView
                 android:id="@+id/spacer2"
@@ -67,19 +74,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PRICE"
-                android:textSize="15dp" />
+                android:onClick="onClick"
+                android:clickable="true"
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/emptyListView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sort"
-            android:layout_centerHorizontal="true"
-            android:text="@string/no_results"
-            android:textColor="@color/black"
-            android:visibility="invisible" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -89,7 +89,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
 
         </RelativeLayout>
 
