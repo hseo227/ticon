@@ -25,11 +25,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
-import com.example.ticon.activities.ui.wishlist.WishlistFragment;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Collections;
 
@@ -74,18 +72,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, listType);
-            getData(emoticonAdapter, popularRV);
+            getDataSortedPopular(emoticonAdapter, popularRV);
         });
-
 
         newRV = findViewById(R.id.new_recycler_view);
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, listType);
-            getData(emoticonAdapter, newRV);
+            getDataSortedDate(emoticonAdapter, newRV);
         });
 
-//        Button changeToSearchFunny = findViewById(R.id.button1);
         vh.changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -177,15 +173,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
-//    private void changeActivityDetails() {
-//        Intent intent = new Intent(this, DetailsActivity.class);
-//        startActivity(intent);
-//    }
 
-    protected void getData(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+    protected void getDataSortedDate(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as horizontal
         Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByDate());
+        LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        // in below two lines we are setting layoutmanager and adapter to our recycler view.
+        rv.setLayoutManager(layout);
+        rv.setAdapter(emoticonAdapter);
+    }
+
+    protected void getDataSortedPopular(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+        // below line is for setting a layout manager for our recycler view.
+        // here we are creating vertical list so we will provide orientation as horizontal
+        Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByPopularity());
         LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         rv.setLayoutManager(layout);

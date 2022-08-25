@@ -4,15 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SearchActivity"
+    tools:context=".activities.ListActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_list">
-
-<!--    <include-->
-<!--        android:id="@+id/app_bar_main"-->
-<!--        layout="@layout/app_bar_main"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,24 +14,72 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp">
 
-        <ImageButton
+        <LinearLayout
             android:id="@+id/sort"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:background="@android:color/transparent"
-            android:src="@drawable/sort_icon" />
-
-        <TextView
-            android:id="@+id/emptyListView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sort"
-            android:layout_centerHorizontal="true"
-            android:text="@string/no_results"
-            android:textColor="@color/black"
-            android:visibility="invisible" />
+            android:padding="5dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_sort_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="SORT BY: "
+                android:textSize="15sp"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/text_sort_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="fill_vertical"
+                android:onClick="onClick"
+                android:clickable="true"
+                android:text="VIEWS"
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/spacer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=" | "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/text_sort_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEW"
+                android:onClick="onClick"
+                android:clickable="true"
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/spacer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:text=" | "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/text_sort_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PRICE"
+                android:onClick="onClick"
+                android:clickable="true"
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
