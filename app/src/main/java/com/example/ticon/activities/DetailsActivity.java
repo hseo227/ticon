@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -45,6 +46,10 @@ public class DetailsActivity extends AppCompatActivity {
     ImageView emoImage6;
 
     Button previewButton;
+    ImageButton wishListButton;
+
+    Boolean isWishList;
+    Boolean isMyEmoticon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +67,10 @@ public class DetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
-//        String id = intent.getStringExtra("id");
+
+        // Get Boolean values for wish list and My Emoticon
+        isWishList = emoticon.isWishlist();
+        isMyEmoticon = emoticon.isMyEmoticons();
 
         // Create objects from layout
         emoticonTitle = findViewById(R.id.emoticonTitle);
@@ -79,6 +87,7 @@ public class DetailsActivity extends AppCompatActivity {
         emoImage6 = findViewById(R.id.emoImage6);
 
         previewButton = findViewById(R.id.previewButton);
+        wishListButton = findViewById((R.id.wishListButton));
 
         // Set TextView objects to data from emoticon
         emoticonTitle.setText(emoticon.getName());
@@ -97,6 +106,14 @@ public class DetailsActivity extends AppCompatActivity {
         emoImage5.setImageResource(getEmoticonId(4));
         emoImage6.setImageResource(getEmoticonId(5));
 
+        // Set Wish List icon based on if the emoticon is in wish list or not
+
+        if (isWishList){
+            wishListButton.setImageResource(R.drawable.ic_favorite_pink);
+        } else {
+            wishListButton.setImageResource(R.drawable.ic_favorite_empty);
+        }
+
         // Set on click function to navigate to preview screen
         previewButton.setOnClickListener(view -> {
             Intent i = new Intent(view.getContext(), PreviewActivity.class);
@@ -105,7 +122,6 @@ public class DetailsActivity extends AppCompatActivity {
             view.getContext().startActivity(i);
 
         });
-
 
 //        DataProvider.getAllData(emoticons -> {
 //            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, emoticons);
@@ -119,6 +135,11 @@ public class DetailsActivity extends AppCompatActivity {
         int resId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+ emoticon.getImages().get(index), null, null);
 
         return resId;
+    }
+
+    public void onClickWishList (View view) {
+
+
     }
 
 //    protected void getData(EmoticonAdapter emoticonAdapter) {
