@@ -34,5 +34,10 @@
     <string name="animals"># ANIMALS</string>
 
     <string name="no_results">Sorry, No Results Found</string>
+    <string name="search_results">You Searched for </string>
+    <string name="search_label">Search</string>
+    <string name="search_hint">Type here to search</string>
+    <string name="settings_description">Settings description</string>
+
 
 </resources>
