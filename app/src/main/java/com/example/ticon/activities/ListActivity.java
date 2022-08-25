@@ -81,7 +81,9 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
+                vh.views.setTypeface(null, Typeface.BOLD_ITALIC);
+                vh.by_new.setTypeface(null, Typeface.NORMAL);
+                vh.price.setTypeface(null, Typeface.NORMAL);
                 if (category.equals("funny")) {
                     DataProvider.getFunnyData(emoticons -> {
                         // we are initializing our adapter class and passing our arraylist to it.
@@ -108,6 +110,9 @@ public class ListActivity extends AppCompatActivity {
         vh.by_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vh.views.setTypeface(null, Typeface.NORMAL);
+                vh.by_new.setTypeface(null, Typeface.BOLD_ITALIC);
+                vh.price.setTypeface(null, Typeface.NORMAL);
                 if (category.equals("funny")) {
                     DataProvider.getFunnyData(emoticons -> {
                         // we are initializing our adapter class and passing our arraylist to it.
@@ -134,6 +139,9 @@ public class ListActivity extends AppCompatActivity {
         vh.price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vh.views.setTypeface(null, Typeface.NORMAL);
+                vh.by_new.setTypeface(null, Typeface.NORMAL);
+                vh.price.setTypeface(null, Typeface.BOLD_ITALIC);
                 if (category.equals("funny")) {
                     DataProvider.getFunnyData(emoticons -> {
                         // we are initializing our adapter class and passing our arraylist to it.
