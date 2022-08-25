@@ -25,7 +25,6 @@ import java.util.Collections;
 public class ListActivity extends AppCompatActivity {
 
     private RecyclerView SavedListRV;
-    LinearLayoutManager linearLayoutManager;
     Button button;
 
     private class ViewHolder{
@@ -82,8 +81,6 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-
 
                 if (category.equals("funny")) {
                     DataProvider.getFunnyData(emoticons -> {

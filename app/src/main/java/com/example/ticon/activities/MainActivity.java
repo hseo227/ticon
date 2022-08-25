@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_slideshow:
                 listType = "sidebar_list";
-                Intent myEmoticonIntent = new Intent(getApplicationContext(), MyEmoticonsActivity.class);
+                Intent myEmoticonIntent = new Intent(getApplicationContext(), ListActivity.class);
                 startActivity(myEmoticonIntent);
                 break;
         }
