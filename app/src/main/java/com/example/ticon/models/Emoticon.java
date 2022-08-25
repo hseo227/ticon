@@ -14,6 +14,7 @@ public class Emoticon implements Serializable {
     private double price;
     private int views;
     private boolean wishlist;
+    private boolean my_emoticons;
     private List<String> images;
     private int date;
 
@@ -48,6 +49,8 @@ public class Emoticon implements Serializable {
     public boolean isWishlist() {
         return wishlist;
     }
+
+    public boolean isMyEmoticons() { return my_emoticons; }
 
     public List<String> getImages() {
         return images;
