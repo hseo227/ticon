@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
@@ -24,6 +25,7 @@ public class ListActivity extends AppCompatActivity {
 
     private RecyclerView SavedListRV;
     LinearLayoutManager linearLayoutManager;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +85,29 @@ public class ListActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        menu.findItem(R.id.action_search).setIcon(R.drawable.home_icon);
+        menu.findItem(R.id.action_search).setActionView(button);
         return true;
     }
+
+    public void onHomePressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_search) {
+            onHomePressed();
+            return true;
+        } else if (item.getItemId() == R.id.favorite) {
+            return true;
+        } else {
+            finish();
+            return true;
+        }
+    }
+
 
 }
