@@ -138,4 +138,10 @@ public class DataProvider {
         docRef.update("wishlist", isWishList);
     }
 
+    public static void setMyEmoticons(String collection, String documentID, boolean isMyEmoticons) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference docRef = database.collection(collection).document(documentID);
+        docRef.update("my_emoticons", isMyEmoticons);
+    }
+
 }
