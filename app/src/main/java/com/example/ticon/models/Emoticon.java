@@ -79,4 +79,10 @@ public class Emoticon implements Serializable {
     public boolean isMy_emoticons() {
         return my_emoticons;
     }
+
+    public void incrementViews() {
+        String collection = this.getCategory();
+        String documentID = this.getId();
+        DataProvider.setincrementViews(collection, documentID);
+    }
 }

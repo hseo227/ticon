@@ -143,6 +143,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 //            getData(viewPagerAdapter);
 //        });
 
+        emoticon.incrementViews();
+
     }
 
     public int getEmoticonId(int index) {
