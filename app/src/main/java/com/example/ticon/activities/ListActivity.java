@@ -57,6 +57,9 @@ public class ListActivity extends AppCompatActivity {
         String category = intent.getStringExtra("category");
         String listType = intent.getStringExtra("listType");
 
+        String categoryTitle = "#" + category.toUpperCase();
+        getSupportActionBar().setTitle(categoryTitle);
+
         if (category.equals("funny")) {
             DataProvider.getFunnyData(emoticons -> {
                 // we are initializing our adapter class and passing our arraylist to it.
