@@ -19,7 +19,6 @@ public class Emoticon implements Serializable {
     private boolean my_emoticons;
     private List<String> images;
     private int date;
-    private boolean my_emoticons;
 
     public Emoticon() {};
 
@@ -68,7 +67,6 @@ public class Emoticon implements Serializable {
         DataProvider.setWishList(collection, documentID, this.wishlist);
     }
 
-    public int getDate() { return date; }
     public int getDate() {
         return date;
     }
