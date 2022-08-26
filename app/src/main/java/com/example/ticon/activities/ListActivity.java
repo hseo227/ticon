@@ -40,6 +40,7 @@ public class ListActivity extends AppCompatActivity {
 
     ViewHolder vh;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
