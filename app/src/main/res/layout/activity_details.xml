@@ -150,10 +150,9 @@
                     android:id="@+id/wishListButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="3"
-                    android:layout_marginLeft = "5dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_favorite_empty"
                     tools:ignore="TouchTargetSizeCheck" />
 
 

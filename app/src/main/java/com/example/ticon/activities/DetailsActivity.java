@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -19,18 +21,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ticon.R;
+
 import com.example.ticon.data.DataProvider;
-import com.example.ticon.databinding.ActivityDetailsBinding;
 import com.example.ticon.models.Emoticon;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
 //    ViewPager viewPager;
 //    ViewPagerAdapter viewPagerAdapter;
+    Context context;
 
+    String id;
+    String category;
     Emoticon emoticon;
 
     TextView emoticonTitle;
@@ -48,8 +52,8 @@ public class DetailsActivity extends AppCompatActivity {
     Button previewButton;
     ImageButton wishListButton;
 
-    Boolean isWishList;
-    Boolean isMyEmoticon;
+    Boolean wishListBool;
+    Boolean myEmoBool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,11 +70,18 @@ public class DetailsActivity extends AppCompatActivity {
 //        viewPager.setAdapter(new ViewPagerAdapter(this, emoticon.getImages()));
 
         Intent intent = getIntent();
-        emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
+        id = intent.getStringExtra("clickedEmoticonId");
+        category = intent.getStringExtra("clickedEmoticonCategory");
+
+        //emoticon = (Emoticon) intent.getSerializableExtra("EMOTICON");
+        emoticon = (Emoticon) intent.getSerializableExtra("EMOTICON");
+
+        //DataProvider dataProvider = new DataProvider();
+        //DataProvider.getEmoticonById(category, id)() -> new Emoticon();
 
         // Get Boolean values for wish list and My Emoticon
-        isWishList = emoticon.isWishlist();
-        isMyEmoticon = emoticon.isMyEmoticons();
+        wishListBool = emoticon.isWishlist();
+        myEmoBool = emoticon.isMyEmoticons();
 
         // Create objects from layout
         emoticonTitle = findViewById(R.id.emoticonTitle);
@@ -90,8 +101,13 @@ public class DetailsActivity extends AppCompatActivity {
         wishListButton = findViewById((R.id.wishListButton));
 
         // Set TextView objects to data from emoticon
-        emoticonTitle.setText(emoticon.getName());
-        emoticonArtist.setText(emoticon.getArtist());
+        if (wishListBool){
+            emoticonTitle.setText("isTrue");
+        } else{
+            emoticonTitle.setText("IsFalse");
+        }
+        //emoticonTitle.setText(emoticon.getName());
+       // emoticonArtist.setText(emoticonTwo.getArtist());
         emoticonPrice.setText(String.valueOf(emoticon.getPrice()));
         emoticonDescription.setText(emoticon.getDescription());
 
@@ -108,11 +124,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         // Set Wish List icon based on if the emoticon is in wish list or not
 
-        if (isWishList){
-            wishListButton.setImageResource(R.drawable.ic_favorite_pink);
-        } else {
-            wishListButton.setImageResource(R.drawable.ic_favorite_empty);
-        }
+        setWishListImage(wishListBool);
 
         // Set on click function to navigate to preview screen
         previewButton.setOnClickListener(view -> {
@@ -122,6 +134,8 @@ public class DetailsActivity extends AppCompatActivity {
             view.getContext().startActivity(i);
 
         });
+
+        wishListButton.setOnClickListener(this);
 
 //        DataProvider.getAllData(emoticons -> {
 //            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, emoticons);
@@ -137,8 +151,23 @@ public class DetailsActivity extends AppCompatActivity {
         return resId;
     }
 
-    public void onClickWishList (View view) {
+    public void setWishListImage(boolean wishBool) {
+        if (wishBool){
+            wishListButton.setImageResource(R.drawable.ic_favorite_pink);
+        } else {
+            wishListButton.setImageResource(R.drawable.ic_favorite_empty);
+        }
+    }
 
+    @Override
+    public void onClick(View view) {
+        if (wishListBool){
+            wishListBool = false;
+        } else {
+            wishListBool = true;
+        }
+        setWishListImage(wishListBool);
+        emoticon.updateWishList(wishListBool);
 
     }
 
@@ -149,5 +178,21 @@ public class DetailsActivity extends AppCompatActivity {
 //        // in below two lines we are setting layoutmanager and adapter to our recycler view.
 //        detailsLayout.setAdapter(emoticonAdapter);
 //    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menu) {
+
+//        System.out.print(getClass().getSuperclass().toString());
+
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//        finish();
+//        return true;
+//        super.onRestart();
+        finish();
+//        startActivity(
+        return true;
+
+    }
 
 }
