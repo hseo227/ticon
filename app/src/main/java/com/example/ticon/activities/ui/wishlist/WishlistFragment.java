@@ -21,8 +21,7 @@ import com.example.ticon.data.DataProvider;
 
 import java.util.ArrayList;
 
-public class WishlistFragment extends Activity {
-    public class SampleFragment extends Fragment {
+public class WishlistFragment extends Fragment {
 
         //    private FragmentGalleryBinding binding;
         private ArrayList<SavedModel> savedModelArrayList;
@@ -62,5 +61,4 @@ public class WishlistFragment extends Activity {
 //        super.onDestroyView();
 //        binding = null;
 //    }
-    }
 }
