@@ -181,9 +181,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     public void onClickBuy(View view) {
         context = getApplicationContext();
         if (myEmoBool){
-            Toast.makeText(context, "This item is already purchased", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "This emoticon is already in My Emoticons", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "This item id added to My Emoticons", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Added to My Emoticons", Toast.LENGTH_SHORT).show();
             myEmoBool = true;
             emoticon.updateMyEmoticons(myEmoBool);
         }
@@ -206,9 +206,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 //        startActivity(intent);
 //        finish();
 //        return true;
-//        super.onRestart();
+        super.onRestart();
         finish();
-//        startActivity(
         return true;
 
     }

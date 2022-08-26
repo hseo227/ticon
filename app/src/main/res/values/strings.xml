@@ -47,4 +47,6 @@
     <string name="no_results">Sorry, No Results Found</string>
     <string name="test_chat">This is a test chatroom for emoticon preview.</string>
     <string name="try_use">Try use the emoticons in a chatroom!</string>
+    <string name="already_in_my_emoticons">This item is already in My Emoticons</string>
+    <string name="added_to_my_emoticons">Added to My Emoticons</string>
 </resources>
