@@ -2,10 +2,6 @@ package com.example.ticon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +12,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +46,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     Button previewButton;
     ImageButton wishListButton;
+    Button buyButton;
 
     Boolean wishListBool;
     Boolean myEmoBool;
@@ -72,12 +68,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = getIntent();
         id = intent.getStringExtra("clickedEmoticonId");
         category = intent.getStringExtra("clickedEmoticonCategory");
-
-        //emoticon = (Emoticon) intent.getSerializableExtra("EMOTICON");
-        emoticon = (Emoticon) intent.getSerializableExtra("EMOTICON");
-
-        //DataProvider dataProvider = new DataProvider();
-        //DataProvider.getEmoticonById(category, id)() -> new Emoticon();
+        emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
 
         // Get Boolean values for wish list and My Emoticon
         wishListBool = emoticon.isWishlist();
@@ -99,15 +90,12 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         previewButton = findViewById(R.id.previewButton);
         wishListButton = findViewById((R.id.wishListButton));
+        buyButton = findViewById((R.id.buyButton));
 
         // Set TextView objects to data from emoticon
-        if (wishListBool){
-            emoticonTitle.setText("isTrue");
-        } else{
-            emoticonTitle.setText("IsFalse");
-        }
-        //emoticonTitle.setText(emoticon.getName());
-       // emoticonArtist.setText(emoticonTwo.getArtist());
+
+        emoticonTitle.setText(emoticon.getName());
+        emoticonArtist.setText(emoticon.getArtist());
         emoticonPrice.setText(String.valueOf(emoticon.getPrice()));
         emoticonDescription.setText(emoticon.getDescription());
 
@@ -136,6 +124,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         });
 
         wishListButton.setOnClickListener(this);
+        buyButton.setOnClickListener(this::onClickBuy);
 
 //        DataProvider.getAllData(emoticons -> {
 //            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, emoticons);
@@ -168,7 +157,17 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         }
         setWishListImage(wishListBool);
         emoticon.updateWishList(wishListBool);
+    }
 
+    public void onClickBuy(View view) {
+        context = getApplicationContext();
+        if (myEmoBool){
+            Toast.makeText(context, "This item is already purchased", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "This item id added to My Emoticons", Toast.LENGTH_SHORT).show();
+            myEmoBool = true;
+            emoticon.updateMyEmoticons(myEmoBool);
+        }
     }
 
 //    protected void getData(EmoticonAdapter emoticonAdapter) {

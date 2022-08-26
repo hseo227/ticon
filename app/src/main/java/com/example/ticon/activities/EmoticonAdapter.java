@@ -87,7 +87,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             String category = emoticon.getCategory();
             i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
             i.putExtra("clickedEmoticonCategory", listModelArrayList.get(holder.getAdapterPosition()).getCategory());
-            i.putExtra("EMOTICON", listModelArrayList.get(holder.getAdapterPosition()));
+            i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
             view.getContext().startActivity(i);
         });
