@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.ticon.R;
+import com.example.ticon.adapter.EmoticonAdapter;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
 

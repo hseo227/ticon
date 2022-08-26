@@ -10,14 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.view.GravityCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -28,6 +25,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
+import com.example.ticon.adapter.EmoticonAdapter;
+import com.example.ticon.comparators.SortByDate;
+import com.example.ticon.comparators.SortByPopularity;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;

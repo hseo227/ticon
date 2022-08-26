@@ -7,8 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
+import com.example.ticon.adapter.EmoticonAdapter;
+import com.example.ticon.comparators.SortByDate;
+import com.example.ticon.comparators.SortByPopularity;
+import com.example.ticon.comparators.SortByPrice;
 import com.example.ticon.data.DataProvider;
 
 import java.util.Collections;

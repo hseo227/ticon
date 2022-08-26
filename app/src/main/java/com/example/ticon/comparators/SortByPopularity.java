@@ -1,4 +1,4 @@
-package com.example.ticon.activities;
+package com.example.ticon.comparators;
 
 import com.example.ticon.models.Emoticon;
 

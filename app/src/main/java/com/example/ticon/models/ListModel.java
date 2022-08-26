@@ -1,4 +1,4 @@
-package com.example.ticon.activities;
+package com.example.ticon.models;
 
 public class ListModel {
     private int emoticonimg1;
