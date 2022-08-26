@@ -79,16 +79,19 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             holder.emoImg4.setImageResource(getCardImages(3, emoticon, holder));
         }
 
-        holder.itemView.setOnClickListener(view -> {
+        if (!listType.equals("sidebar_list")) {
+            holder.itemView.setOnClickListener(view -> {
 
-            Intent i = new Intent(view.getContext(), DetailsActivity.class);
-            String id = emoticon.getId();
-            String category = emoticon.getCategory();
-            i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
-            i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
+                Intent i = new Intent(view.getContext(), DetailsActivity.class);
+                String id = emoticon.getId();
+                String category = emoticon.getCategory();
+                i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
+                i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
-            view.getContext().startActivity(i);
-        });
+                view.getContext().startActivity(i);
+            });
+        }
+
     }
 
     public int getCardImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
