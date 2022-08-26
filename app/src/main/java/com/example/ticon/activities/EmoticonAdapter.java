@@ -79,6 +79,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         }
 
         holder.itemView.setOnClickListener(view -> {
+
             Intent i = new Intent(view.getContext(), DetailsActivity.class);
             String id = emoticon.getId();
             String category = emoticon.getCategory();
