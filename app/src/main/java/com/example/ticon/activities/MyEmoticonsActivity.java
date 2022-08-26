@@ -76,12 +76,19 @@ public class MyEmoticonsActivity extends AppCompatActivity {
         finish();
     }
 
+        public void onWishlistPressed() {
+        Intent intent = new Intent(this, WishlistActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
             onHomePressed();
             return true;
         } else if (item.getItemId() == R.id.favorite) {
+            onWishlistPressed();
             return true;
         } else {
             finish();

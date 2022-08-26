@@ -10,11 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     RecyclerView popularRV;
     RecyclerView newRV;
+
+    DrawerLayout drawer;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -151,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 listType = "sidebar_list";
                 Intent wishlistIntent = new Intent(getApplicationContext(), WishlistActivity.class);
                 startActivity(wishlistIntent);
-
                 break;
 
             case R.id.nav_slideshow:
@@ -218,19 +222,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 || super.onSupportNavigateUp();
     }
 
-//    public void onWishlistPressed() {
-//        Intent intent = new Intent(this, WishlistActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
+    public void onWishlistPressed() {
+        Intent intent = new Intent(this, WishlistActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.favorite) {
-//            onWishlistPressed();
+        if (item.getItemId() == R.id.action_search) {
             return true;
+        } else if (item.getItemId() == R.id.favorite) {
+            onWishlistPressed();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
-        return true;
     }
 
 }

@@ -50,7 +50,7 @@
         <activity
             android:name=".activities.DetailsActivity"
             android:exported="false"
-            android:label="DetailsActivity"
+            android:label=""
             android:parentActivityName=".activities.ListActivity"
             android:theme="@style/Theme.Ticon.NoActionBar" />
         <activity

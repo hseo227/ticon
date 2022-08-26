@@ -16,23 +16,22 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="3">
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginVertical="10dp"
-                android:src="@drawable/close_icon"
-                android:layout_weight="1"
-                android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginVertical="10dp"
+            android:src="@drawable/close_icon"
+            android:layout_weight="2"
+            android:layout_gravity="center"/>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="10dp"
-            android:layout_weight="2">
-
+            android:layout_weight="1">
             <TextView
                 android:id="@+id/TextView"
                 android:layout_width="match_parent"

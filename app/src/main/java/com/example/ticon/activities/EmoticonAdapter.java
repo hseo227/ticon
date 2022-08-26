@@ -88,9 +88,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
             view.getContext().startActivity(i);
-
         });
-
     }
 
     public int getCardImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
