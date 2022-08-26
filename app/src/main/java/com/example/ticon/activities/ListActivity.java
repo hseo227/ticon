@@ -22,6 +22,7 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView SavedListRV;
     LinearLayoutManager linearLayoutManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

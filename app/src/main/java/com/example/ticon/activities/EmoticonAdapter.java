@@ -80,7 +80,11 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             Toast.makeText(context, "You clicked. Congrats!", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(view.getContext(), DetailsActivity.class);
-            i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
+            String id = emoticon.getId();
+            String category = emoticon.getCategory();
+            i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
+            i.putExtra("clickedEmoticonCategory", listModelArrayList.get(holder.getAdapterPosition()).getCategory());
+            i.putExtra("EMOTICON", listModelArrayList.get(holder.getAdapterPosition()));
 
             view.getContext().startActivity(i);
         });
