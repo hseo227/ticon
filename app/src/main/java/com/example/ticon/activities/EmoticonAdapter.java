@@ -87,11 +87,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
             view.getContext().startActivity(i);
 
-//                Intent intent = new Intent(context, DetailsActivity.class);
-//                intent.putExtra("title", listModelArrayList.get(position).getEmoticonName());
-//                context.startActivity(intent);
-
-            //                    view.getContext().startActivity(intent);
         });
     }
 
