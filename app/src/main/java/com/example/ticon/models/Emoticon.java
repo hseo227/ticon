@@ -2,6 +2,8 @@ package com.example.ticon.models;
 
 import android.media.Image;
 
+import com.example.ticon.data.DataProvider;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -17,6 +19,8 @@ public class Emoticon implements Serializable {
     private boolean my_emoticons;
     private List<String> images;
     private int date;
+
+    public Emoticon() {};
 
     public String getArtist() {
         return artist;
@@ -54,6 +58,13 @@ public class Emoticon implements Serializable {
 
     public List<String> getImages() {
         return images;
+    }
+
+    public void updateWishList(boolean isWishList) {
+        String collection = this.getCategory();
+        String documentID = this.getId();
+        this.wishlist = isWishList;
+        DataProvider.setWishList(collection, documentID, this.wishlist);
     }
 
     public int getDate() { return date; }
