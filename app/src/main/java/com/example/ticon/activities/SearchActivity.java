@@ -57,34 +57,20 @@ public class SearchActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView textView = (TextView) SearchActivity.this.findViewById(R.id.search_text);
+        String finalQuery = query;
+        DataProvider.getAllData(emoticons -> {
+            List<Emoticon> resultEmoticons = getResults(emoticons, finalQuery);
+            if (resultEmoticons.isEmpty()) {
+                textView.setText(R.string.no_results);
+                textView.setVisibility(View.VISIBLE);
+            } else {
+                textView.setText(getString(R.string.search_results) + " \"" + finalQuery + "\"");
+                textView.setVisibility(View.VISIBLE);
+            }
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, resultEmoticons, "three");
+            getData(emoticonAdapter);
+        });
 
-
-        if (query.equals("")){
-//            searchView.setIconified(false);
-//            searchView.setIconifiedByDefault(false);
-            textView.setText(R.string.popular);
-            DataProvider.getAllData(emoticons -> {
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, "three");
-                getData(emoticonAdapter);
-            });
-        } else {
-//            searchView.setIconifiedByDefault(false);
-//            searchView.setFocusable(false);
-//            searchView.clearFocus();
-            String finalQuery = query;
-            DataProvider.getAllData(emoticons -> {
-                List<Emoticon> resultEmoticons = getResults(emoticons, finalQuery);
-                if (resultEmoticons.isEmpty()) {
-                    textView.setText(R.string.no_results);
-                    textView.setVisibility(View.VISIBLE);
-                } else {
-                    textView.setText(getString(R.string.search_results) + " \"" + finalQuery + "\"");
-                    textView.setVisibility(View.VISIBLE);
-                }
-                EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, resultEmoticons, "three");
-                getData(emoticonAdapter);
-            });
-        }
 
     }
 
@@ -92,8 +78,11 @@ public class SearchActivity extends AppCompatActivity {
         List<Emoticon> searchResults = new ArrayList<Emoticon>();
         for (Emoticon emoticon : emoticons) {
             String emoticonIgnoreCase = emoticon.getName().toLowerCase();
+            String emoticonIgnoreScore = emoticonIgnoreCase.replaceAll(" ", "");
             String queryIgnoreCase = query.toLowerCase();
-            if (emoticonIgnoreCase.contains(queryIgnoreCase)) {
+            String emoticonArtistIgnoreCase = emoticon.getArtist().toLowerCase();
+            String emoticonCategoryIgnoreCase = emoticon.getCategory().toLowerCase();
+            if (emoticonIgnoreScore.contains(queryIgnoreCase) || emoticonArtistIgnoreCase.contains(queryIgnoreCase) || emoticonCategoryIgnoreCase.contains(queryIgnoreCase)) {
                 searchResults.add(emoticon);
             }
         }

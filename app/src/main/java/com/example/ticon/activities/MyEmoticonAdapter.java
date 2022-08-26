@@ -36,7 +36,7 @@ public class MyEmoticonAdapter extends RecyclerView.Adapter<MyEmoticonAdapter.Vi
     public void onBindViewHolder(@NonNull MyEmoticonAdapter.Viewholder holder, int position) {
         SavedModel model = SavedModelArrayList.get(position);
         holder.emoimg.setImageResource(model.getEmoticonimg());
-        holder.himg.setImageResource(model.getHeartimg());
+//        holder.himg.setImageResource(model.getHeartimg());
         holder.emoName.setText(model.getEmoticonName());
         holder.aut.setText(model.getAuthor());
     }
@@ -51,7 +51,7 @@ public class MyEmoticonAdapter extends RecyclerView.Adapter<MyEmoticonAdapter.Vi
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             emoimg = itemView.findViewById(R.id.imageView1);
-            himg = itemView.findViewById(R.id.heartButton);
+//            himg = itemView.findViewById(R.id.heartButton);
             emoName = itemView.findViewById(R.id.TextView);
             aut = itemView.findViewById(R.id.author);
 
