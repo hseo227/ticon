@@ -2,9 +2,12 @@ package com.example.ticon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -52,7 +55,13 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     Boolean wishListBool;
     Boolean myEmoBool;
 
+    androidx.viewpager.widget.ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
 
+    // images array
+    int[] images = {R.drawable.animal_friends1, R.drawable.animal_friends2, R.drawable.animal_friends3};
+
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +75,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
 //        viewPager = (ViewPager) findViewById(R.id.viewPager);
 //        viewPager.setAdapter(new ViewPagerAdapter(this, emoticon.getImages()));
+
+
+
 
         Intent intent = getIntent();
         id = intent.getStringExtra("clickedEmoticonId");
@@ -95,7 +107,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         emoticonPrice = findViewById(R.id.emoticonPrice);
         emoticonDescription = findViewById(R.id.emoticonLabel);
 
-        emoticonImage = findViewById(R.id.emoticonImage);
+//        emoticonImage = findViewById(R.id.emoticonImage);
         emoImage1 = findViewById(R.id.emoImage1);
         emoImage2 = findViewById(R.id.emoImage2);
         emoImage3 = findViewById(R.id.emoImage3);
@@ -116,7 +128,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Set ImageView objects to images from emoticon
 
-        emoticonImage.setImageResource(getEmoticonId(4));
+//        emoticonImage.setImageResource(getEmoticonId(4));
 
         emoImage1.setImageResource(getEmoticonId(0));
         emoImage2.setImageResource(getEmoticonId(1));
@@ -124,6 +136,25 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         emoImage4.setImageResource(getEmoticonId(3));
         emoImage5.setImageResource(getEmoticonId(4));
         emoImage6.setImageResource(getEmoticonId(5));
+
+        // Convert imageView into drawable into int
+        emoImage1.setImageDrawable(getDrawable(getEmoticonId(0)));
+        emoImage1.setTag(getEmoticonId(0));
+        int drawableID1 = Integer.parseInt(emoImage1.getTag().toString());
+        emoImage2.setImageDrawable(getDrawable(getEmoticonId(1)));
+        emoImage2.setTag(getEmoticonId(1));
+        int drawableID2 = Integer.parseInt(emoImage2.getTag().toString());
+        emoImage3.setImageDrawable(getDrawable(getEmoticonId(2)));
+        emoImage3.setTag(getEmoticonId(2));
+        int drawableID3 = Integer.parseInt(emoImage3.getTag().toString());
+
+        int[] images = {drawableID1, drawableID2, drawableID3};
+        // Initializing the ViewPager Object
+        viewPager = (ViewPager)findViewById(R.id.viewPagerMain);
+        // Initializing the ViewPagerAdapter
+        viewPagerAdapter = new ViewPagerAdapter(DetailsActivity.this, images);
+        // Adding the Adapter to the ViewPager
+        viewPager.setAdapter(viewPagerAdapter);
 
         // Set Wish List icon based on if the emoticon is in wish list or not
 
