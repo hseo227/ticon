@@ -36,7 +36,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     @Override
     public EmoticonAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
-
         if (listType.equals("home")) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_card,parent,false);
         } else if (listType.equals("three")) {
@@ -73,16 +72,18 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             holder.emoImg4.setImageResource(getCardImages(3, emoticon, holder));
         }
 
-        holder.itemView.setOnClickListener(view -> {
+        if (!listType.equals("sidebar_list")) {
+            holder.itemView.setOnClickListener(view -> {
 
-            Intent i = new Intent(view.getContext(), DetailsActivity.class);
-            String id = emoticon.getId();
-            String category = emoticon.getCategory();
-            i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
-            i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
+                Intent i = new Intent(view.getContext(), DetailsActivity.class);
+                String id = emoticon.getId();
+                String category = emoticon.getCategory();
+                i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
+                i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
-            view.getContext().startActivity(i);
-        });
+                view.getContext().startActivity(i);
+            });
+        }
 
         // Applying animations for recylerview
         Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.recycler_view_animation);
