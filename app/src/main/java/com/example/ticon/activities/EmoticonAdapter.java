@@ -116,14 +116,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             emoImg4 = itemView.findViewById(R.id.imageView4);
             emoName = itemView.findViewById(R.id.TextView);
             artist = itemView.findViewById(R.id.author);
-
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent i = new Intent(view.getContext(), DetailsActivity.class);
-//                    view.getContext().startActivity(i);
-//                }
-//            });
         }
     }
 

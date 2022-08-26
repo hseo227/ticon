@@ -19,6 +19,7 @@ public class Emoticon implements Serializable {
     private boolean my_emoticons;
     private List<String> images;
     private int date;
+    private boolean my_emoticons;
 
     public Emoticon() {};
 
@@ -68,4 +69,11 @@ public class Emoticon implements Serializable {
     }
 
     public int getDate() { return date; }
+    public int getDate() {
+        return date;
+    }
+
+    public boolean isMy_emoticons() {
+        return my_emoticons;
+    }
 }

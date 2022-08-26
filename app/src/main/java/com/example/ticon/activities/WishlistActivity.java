@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.ticon.R;
 import com.example.ticon.data.DataProvider;
@@ -19,7 +18,7 @@ import com.example.ticon.models.Emoticon;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyEmoticonsActivity extends AppCompatActivity {
+public class WishlistActivity extends AppCompatActivity {
 
     private RecyclerView SavedListRV;
     private Button button;
@@ -27,7 +26,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.myemoticons_list);
+        setContentView(R.layout.wishlist_list);
         SavedListRV = findViewById(R.id.listRView);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -36,20 +35,20 @@ public class MyEmoticonsActivity extends AppCompatActivity {
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "three");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(WishlistActivity.this, resultEmoticons, "three");
             getData(emoticonAdapter);
         });
     }
 
     protected List<Emoticon> getResults(List<Emoticon> emoticons) {
-        List<Emoticon> my_emoticons_results = new ArrayList<Emoticon>();
+        List<Emoticon> wishlist_results = new ArrayList<Emoticon>();
         for (Emoticon emoticon : emoticons) {
-            boolean emoticon_is_my_emoticon = emoticon.isMy_emoticons();
-            if (emoticon_is_my_emoticon) {
-                my_emoticons_results.add(emoticon);
+            boolean emoticon_is_wishlist = emoticon.isWishlist();
+            if (emoticon_is_wishlist) {
+                wishlist_results.add(emoticon);
             }
         }
-        return my_emoticons_results;
+        return wishlist_results;
     }
 
     protected void getData(EmoticonAdapter emoticonAdapter) {
@@ -88,4 +87,5 @@ public class MyEmoticonsActivity extends AppCompatActivity {
             return true;
         }
     }
+
 }
