@@ -75,4 +75,8 @@ public class Emoticon implements Serializable {
     }
 
     public int getDate() { return date; }
+
+    public boolean isMy_emoticons() {
+        return my_emoticons;
+    }
 }
