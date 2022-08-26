@@ -36,7 +36,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "three");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "sidebar_list");
             getData(emoticonAdapter);
         });
     }
