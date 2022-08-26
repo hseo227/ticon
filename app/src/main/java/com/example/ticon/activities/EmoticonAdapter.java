@@ -79,9 +79,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         }
 
         holder.itemView.setOnClickListener(view -> {
-            //                    itemView.getContext().startActivity(new Intent(itemView.getContext(), ListActivity.class));
-            Toast.makeText(context, "You clicked. Congrats!", Toast.LENGTH_SHORT).show();
-
             Intent i = new Intent(view.getContext(), DetailsActivity.class);
             String id = emoticon.getId();
             String category = emoticon.getCategory();
