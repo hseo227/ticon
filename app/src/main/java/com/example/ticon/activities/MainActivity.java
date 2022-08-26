@@ -33,7 +33,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private class ViewHolder{
         ImageButton  wishlistBtn;
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     RecyclerView popularRV;
     RecyclerView newRV;
-
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -124,16 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-//        ImageButton changeToDetails = findViewById(R.id.detailsButton);
-//        changeToDetails.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                changeActivityDetails();
-//            }
-//        });
-
         setSupportActionBar(binding.appBarMain.toolbar);
-
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -148,7 +138,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView testNavigationView = (NavigationView) findViewById(R.id.nav_view);
         testNavigationView.setNavigationItemSelectedListener(this);
-
     }
 
     // Navigation Bar
@@ -177,10 +166,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
-//    private void changeActivityDetails() {
-//        Intent intent = new Intent(this, DetailsActivity.class);
-//        startActivity(intent);
-//    }
 
     protected void getData(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
         // below line is for setting a layout manager for our recycler view.
@@ -227,5 +212,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 || super.onSupportNavigateUp();
     }
 
+//    public void onWishlistPressed() {
+//        Intent intent = new Intent(this, WishlistActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.favorite) {
+//            onWishlistPressed();
+            return true;
+        }
+        return true;
+    }
 
 }
