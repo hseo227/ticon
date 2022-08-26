@@ -83,7 +83,7 @@ public class WishlistActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.favorite) {
             return true;
         } else {
-            finish();
+            onHomePressed();
             return true;
         }
     }

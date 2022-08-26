@@ -91,7 +91,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
             onWishlistPressed();
             return true;
         } else {
-            finish();
+            onHomePressed();
             return true;
         }
     }
