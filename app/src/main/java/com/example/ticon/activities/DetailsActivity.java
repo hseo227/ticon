@@ -49,8 +49,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     ImageButton wishListButton;
     Button buyButton;
 
-    Boolean wishListBool = false;
+    Boolean wishListBool;
     Boolean myEmoBool;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,20 +72,22 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         category = intent.getStringExtra("clickedEmoticonCategory");
         emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
 
+
         DataProvider.getWishlistData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
             for (Emoticon emoticon : emoticons) {
-                System.out.println("The emoticons are=" + emoticon);
                 if (emoticon.getId().equals(id)) {
-                    setBoolean();
+                    setWishListImage(true);
                 }
             }
         });
 
-        System.out.println("The initial wish Boolean is" + wishListBool);
 
         // Get Boolean values for wish list and My Emoticon
+        wishListBool = emoticon.isWishlist();
         myEmoBool = emoticon.isMyEmoticons();
+
+        System.out.println("The initial wish Boolean is" + wishListBool);
 
         // Create objects from layout
         emoticonTitle = findViewById(R.id.emoticonTitle);
@@ -124,7 +127,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Set Wish List icon based on if the emoticon is in wish list or not
 
-        setWishListImage(wishListBool);
+//        setWishListImage(wishListBool);
 
         // Set on click function to navigate to preview screen
         previewButton.setOnClickListener(view -> {
@@ -167,6 +170,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         if (wishListBool){
             wishListBool = false;
+
         } else {
             wishListBool = true;
         }
@@ -209,8 +213,4 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    public void setBoolean(){
-        wishListBool = true;
-        System.out.println("I SET BOOLEAN TO :" + wishListBool);
-    }
 }

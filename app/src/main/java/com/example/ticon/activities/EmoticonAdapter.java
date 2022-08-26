@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
+import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
 
 import java.lang.reflect.Array;
@@ -84,7 +85,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             String id = emoticon.getId();
             String category = emoticon.getCategory();
             i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
-            i.putExtra("clickedEmoticonCategory", listModelArrayList.get(holder.getAdapterPosition()).getCategory());
             i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
             view.getContext().startActivity(i);
@@ -118,6 +118,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             artist = itemView.findViewById(R.id.author);
         }
     }
+
 
     public List<Emoticon> getAllEmoticons() {
         return listModelArrayList;
