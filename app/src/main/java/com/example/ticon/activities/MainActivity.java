@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     String category = "";
     String listType = "home";
+    Boolean is_wishlist;
 
     RecyclerView popularRV;
     RecyclerView newRV;
@@ -159,15 +160,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_gallery:
                 listType = "sidebar_list";
-                Intent wishlistIntent = new Intent(getBaseContext(), ListActivity.class);
-                category = "animals";
-                wishlistIntent.putExtra("category", category);
+                Intent wishlistIntent = new Intent(getApplicationContext(), WishlistActivity.class);
                 startActivity(wishlistIntent);
+
                 break;
 
             case R.id.nav_slideshow:
                 listType = "sidebar_list";
-                Intent myEmoticonIntent = new Intent(getApplicationContext(), ListActivity.class);
+                Intent myEmoticonIntent = new Intent(getApplicationContext(), MyEmoticonsActivity.class);
                 startActivity(myEmoticonIntent);
                 break;
         }
@@ -228,6 +228,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
 
 }

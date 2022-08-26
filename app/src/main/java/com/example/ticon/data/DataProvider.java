@@ -163,7 +163,7 @@ public class DataProvider {
     public static void incrementTimesViewed(String collection, String documentID) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference docRef = database.collection(collection).document(documentID);
-        docRef.update("timesViewed", FieldValue.increment(1));
+        docRef.update("views", FieldValue.increment(1));
     };
 
 }

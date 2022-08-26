@@ -15,6 +15,7 @@ public class Emoticon {
     private boolean wishlist;
     private List<String> images;
     private int date;
+    private boolean my_emoticons;
 
     public String getArtist() {
         return artist;
@@ -52,5 +53,11 @@ public class Emoticon {
         return images;
     }
 
-    public int getDate() { return date; }
+    public int getDate() {
+        return date;
+    }
+
+    public boolean isMy_emoticons() {
+        return my_emoticons;
+    }
 }
