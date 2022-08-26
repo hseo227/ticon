@@ -9,6 +9,8 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
@@ -43,6 +46,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     @Override
     public EmoticonAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
+
         if (listType.equals("home")) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_card,parent,false);
         } else if (listType.equals("three")) {
@@ -89,6 +93,10 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
             view.getContext().startActivity(i);
         });
+
+        // Applying animations for recylerview
+        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.recycler_view);
+        holder.itemView.startAnimation(animation);
     }
 
     public int getCardImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
@@ -102,6 +110,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
+//        public View cardview;
         private ImageView emoImg1, emoImg2, emoImg3, emoImg4, imageButton;
         private TextView emoName, artist;
 
