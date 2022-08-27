@@ -75,12 +75,6 @@ public class Emoticon implements Serializable {
         this.my_emoticons = isMyEmoticons;
         DataProvider.setMyEmoticons(collection, documentID, this.my_emoticons);
     }
-//
-//    public int getDate() { return date; }
-//
-//    public boolean isMy_emoticons() {
-//        return my_emoticons;
-//    }
 
     public void incrementViews() {
         String collection = this.getCategory();
