@@ -7,6 +7,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_logo">Navigation header logo</string>
     <string name="action_settings">Settings</string>
+    <string name="place_holder">Lorem Ipsum</string>
 
     <string name="favorite">Favorite Emoticons</string>
     <string name="shopping_cart">Shopping Cart</string>
@@ -33,6 +34,19 @@
     <string name="duck">Duck</string>
     <string name="animals"># ANIMALS</string>
 
-    <string name="no_results">Sorry, No Results Found</string>
+    <string name="search_results">Search results for </string>
+    <string name="search_label">Search</string>
+    <string name="search_hint">Type here to search</string>
+    <string name="settings_description">Settings description</string>
 
+    <!--    Button Names-->
+    <string name="preview">Preview in Chat</string>
+    <string name="buy">Buy</string>
+
+    <!--    Notifications-->
+    <string name="no_results">Sorry, No Results Found</string>
+    <string name="test_chat">This is a test chatroom for emoticon preview.</string>
+    <string name="try_use">Try use the emoticons in a chatroom!</string>
+    <string name="already_in_my_emoticons">This item is already in My Emoticons</string>
+    <string name="added_to_my_emoticons">Added to My Emoticons</string>
 </resources>

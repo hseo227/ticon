@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.DetailsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_100"
-    tools:context=".activities.DetailsActivity">
+    android:orientation="vertical"
+    android:background="@color/white_100">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,15 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-<!--                <ImageButton-->
-<!--                    android:layout_width="48dp"-->
-<!--                    android:layout_height="48dp"-->
-<!--                    android:layout_alignParentStart="true"-->
-<!--                    android:layout_centerVertical="true"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    android:contentDescription="Back"-->
-<!--                    android:src="@drawable/ic_back" />-->
-
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -37,48 +29,83 @@
         <LinearLayout
             android:id="@+id/item_container"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="match_parent"
             android:background="@color/white"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="10dp"
             android:radius="8dp">
 
             <TextView
-                android:id="@+id/emoticonName"
+                android:id="@+id/emoticonTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop = "30dp"
-                android:text="Bad Duck"
+                android:layout_marginTop = "15dp"
+                android:text="@string/place_holder"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/artistName"
+                android:id="@+id/emoticonArtist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop = "3dp"
-                android:text="by Hayoon"
+                android:layout_marginTop="5dp"
+                android:text="@string/place_holder"
                 android:textColor="@color/grey_500"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/itemImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:src = "@drawable/bad_ducks1" />
-
             <LinearLayout
-                android:id="@+id/priceTag"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="12dp" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/left"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_arrow_left"
+                    android:layout_marginHorizontal="10dp"/>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerMain"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/right"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_marginHorizontal="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/emoticonLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop = "12dp"
+                android:text="@string/place_holder"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
                 android:background="@android:color/transparent">
 
                 <ImageView
@@ -88,9 +115,10 @@
                     android:src="@drawable/ic_dollar"/>
 
                 <TextView
+                    android:id="@+id/emoticonPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="2dp"
+                    android:paddingStart="2dp"
                     android:text="1.99"
                     android:textColor="@color/pink_a200"
                     android:textSize="12sp"
@@ -101,243 +129,113 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="40dp"
-                android:layout_gravity="bottom">
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="15dp"
+                android:paddingHorizontal="6dp"
+                android:gravity="bottom">
 
                 <Button
                     android:id="@+id/previewButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="60dp"
                     android:layout_weight="2"
-                    android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/mint_a100"
+                    android:layout_marginHorizontal="2dp"
                     android:radius="8dp"
-                    android:shadowColor="@color/black"
-                    android:text="Preview in Chat"
+                    android:text="@string/preview"
                     android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/buyButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="60dp"
                     android:layout_weight="2"
                     android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/pink_a200"
                     android:radius="8dp"
-                    android:text="Buy"
+                    android:text="@string/buy"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
                 <ImageButton
+                    android:id="@+id/wishListButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_height="60dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_weight="3"
                     android:background="@android:color/transparent"
-                    android:contentDescription="wishlist"
-                    android:src="@drawable/ic_favorite_black"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:src = "@drawable/ic_favorite_empty"/>
 
-                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".activities.PreviewActivity">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum = "9" >
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="4"
-                    android:rowCount="5"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks1"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks2"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks3"/>
-
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks4"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks5"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks6"/>
-
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks7"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks8"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks9"/>
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_weight = "3"
-                    android:columnCount="3"
-                    android:rowCount="4"
-                    android:alignmentMode="alignMargins"
-                    android:columnOrderPreserved="false"
-                    android:padding="10dp">
-
-                    //Your grid items..
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks10"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks11"/>
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:scaleType="fitCenter"
-                            android:adjustViewBounds="true"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/bad_ducks12"/>
-
-                    </LinearLayout>
-
-                </GridLayout>
-
-            </LinearLayout>
-        </ScrollView>
-
     </LinearLayout>
 
-</ScrollView>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white_100"
+        android:padding="16dp"
+        android:rowCount="2">
+
+        <ImageView
+            android:id="@+id/emoImage1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/mickey_minnie1" />
+
+        <ImageView
+            android:id="@+id/emoImage2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
+
+        <ImageView
+            android:id="@+id/emoImage3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
+
+        <ImageView
+            android:id="@+id/emoImage4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
+
+        <ImageView
+            android:id="@+id/emoImage5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
+
+        <ImageView
+            android:id="@+id/emoImage6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
+
+    </GridLayout>
+
+</LinearLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ListActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_list">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="6dp"
+        android:paddingBottom="6dp">
+
+        <LinearLayout
+            android:id="@+id/sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/text_sort_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="4dp"
+                android:text="SORT BY: "
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/text_sort_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:gravity="fill_vertical"
+                android:onClick="onClick"
+                android:text="VIEWS"
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/spacer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=" | "
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_sort_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:text="NEW"
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/spacer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=" | "
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_sort_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:text="PRICE"
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/sort" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listRView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

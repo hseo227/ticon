@@ -1,7 +1,6 @@
 package com.example.ticon.data;
 
-import com.example.ticon.models.Category;
-import com.example.ticon.models.Emoticons;
+import com.example.ticon.models.Emoticon;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -12,67 +11,183 @@ import java.util.List;
 
 public class DataProvider {
 
-    public static void getFunnyEmoticonData(CompleteListener<List<Category>> onCompleteListener){
-        List<Emoticons> emoticonList = new ArrayList<>();
+    /**
+     * Summarise dataprovider functionality
+     */
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static void getAnimalsData(ITaskListener<List<Emoticon>> taskListener){
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        List<Emoticon> emoticons = new ArrayList<>();
 
-        db.collection("funny").get().addOnCompleteListener(task -> {
+        database.collection("animals").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 QuerySnapshot results = task.getResult();
-                for (Emoticons emoticons: results.toObjects(Emoticons.class)) {
-                    emoticonList.add(emoticons);
+                for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
                 }
             }
 
-            if (emoticonList.size() > 0) {
-                onCompleteListener.onComplete(emoticonList);
+            if (emoticons.size() > 0 ) {
+                taskListener.onComlete(emoticons);
             }
         });
     }
 
-    public static void getAnimalEmoticonData(CompleteListener<List<Category>> onCompleteListener){
-        List<Emoticons> emoticonList = new ArrayList<>();
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static void getCharacterData(ITaskListener<List<Emoticon>> taskListener){
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        List<Emoticon> emoticons = new ArrayList<>();
 
-        db.collection("animals").get().addOnCompleteListener(task -> {
+        database.collection("characters").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 QuerySnapshot results = task.getResult();
-                for (Emoticons emoticons: results.toObjects(Emoticons.class)) {
-                    emoticonList.add(emoticons);
+                for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
                 }
             }
 
-            if (emoticonList.size() > 0) {
-                onCompleteListener.onComplete(emoticonList);
+            if (emoticons.size() > 0 ) {
+                taskListener.onComlete(emoticons);
             }
         });
     }
 
-    public static void getCharacterEmoticonData(CompleteListener<List<Category>> onCompleteListener){
-        List<Emoticons> emoticonList = new ArrayList<>();
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static void getFunnyData(ITaskListener<List<Emoticon>> taskListener){
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        List<Emoticon> emoticons = new ArrayList<>();
 
-        db.collection("characters").get().addOnCompleteListener(task -> {
+        database.collection("funny").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 QuerySnapshot results = task.getResult();
-                for (Emoticons emoticons: results.toObjects(Emoticons.class)) {
-                    emoticonList.add(emoticons);
+                for (Emoticon emoticon: results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
                 }
             }
 
-            if (emoticonList.size() > 0) {
-                onCompleteListener.onComplete(emoticonList);
+            if (emoticons.size() > 0 ) {
+                taskListener.onComlete(emoticons);
             }
         });
     }
 
-    public static void incrementViews(String collection, String documentID) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection(collection).document(documentID);
-        docRef.update("timesViewed", FieldValue.increment(1));
-    };
+
+    public static void getAllData(ITaskListener<List<Emoticon>> taskListener) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        List<Emoticon> emoticons = new ArrayList<>();
+
+        database.collection("animals").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon : results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
+                }
+            }
+
+            if (emoticons.size() > 0) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+        database.collection("characters").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon : results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
+                }
+            }
+
+            if (emoticons.size() > 0) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+        database.collection("funny").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon : results.toObjects(Emoticon.class)) {
+                    emoticons.add(emoticon);
+                }
+            }
+
+            if (emoticons.size() > 0) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+    }
+
+
+    public static void getWishlistData(ITaskListener<List<Emoticon>> taskListener) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        List<Emoticon> emoticons = new ArrayList<>();
+
+        database.collection("animals").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon : results.toObjects(Emoticon.class)) {
+                    if (emoticon.isWishlist()) {
+                        emoticons.add(emoticon);
+                    }
+                }
+            }
+
+            if (emoticons.size() > 0) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+        database.collection("characters").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon : results.toObjects(Emoticon.class)) {
+                    if (emoticon.isWishlist()) {
+                        emoticons.add(emoticon);
+                    }
+                }
+            }
+
+            if (emoticons.size() > 0) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+        database.collection("funny").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot results = task.getResult();
+                for (Emoticon emoticon : results.toObjects(Emoticon.class)) {
+                    if (emoticon.isWishlist()) {
+                        emoticons.add(emoticon);
+                    }
+                }
+            }
+
+            if (emoticons.size() > 0) {
+                taskListener.onComlete(emoticons);
+            }
+        });
+
+    }
+
+
+    public static void setIncrementViews(String collection, String documentID) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference docRef = database.collection(collection).document(documentID);
+        docRef.update("views", FieldValue.increment(1));
+    }
+
+
+    public static void setWishList(String collection, String documentID, boolean isWishList) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference docRef = database.collection(collection).document(documentID);
+        docRef.update("wishlist", isWishList);
+    }
+
+
+    public static void setMyEmoticons(String collection, String documentID, boolean isMyEmoticons) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference docRef = database.collection(collection).document(documentID);
+        docRef.update("my_emoticons", isMyEmoticons);
+    }
 
 }

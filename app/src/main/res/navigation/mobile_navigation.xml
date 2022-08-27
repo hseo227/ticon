@@ -14,10 +14,12 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.ticon.activities.ui.wishlist.WishlistFragment"
-        android:label="@string/menu_wishlist" />
+        android:label="@string/menu_wishlist"
+        tools:layout="@layout/activity_details"/>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.ticon.activities.ui.myEmoticons.MyEmoticonsFragment"
-        android:label="@string/menu_my_emoticons" />
+        android:label="@string/menu_my_emoticons"
+        tools:layout="@layout/activity_list"/>
 </navigation>
