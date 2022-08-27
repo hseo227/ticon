@@ -13,7 +13,8 @@ import com.example.ticon.R;
 public class ViewPagerAdapter extends PagerAdapter {
 
     /**
-     * Initializes the imageview items for the viewPager
+     * Initializes the imageview items for the viewPager. Used in DetailsActivity to enable
+     * navigation through multiple images of the item.
      */
 
     final Context context;
