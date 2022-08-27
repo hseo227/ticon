@@ -54,9 +54,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     androidx.viewpager.widget.ViewPager viewPager;
     com.example.ticon.adapters.ViewPagerAdapter viewPagerAdapter;
 
-    // images array
-    int[] images = {R.drawable.animal_friends1, R.drawable.animal_friends2, R.drawable.animal_friends3};
-
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,7 +141,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Set Adapter to ViewPager
         viewPager.setAdapter(viewPagerAdapter);
 
-        // Right button is clicked
+        // Right button is clicked for next image on the right
         ImageButton right = (ImageButton)findViewById(R.id.right);
         right.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -153,7 +150,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        // Left button is clicked
+        // Left button is clicked for next image on the left
         ImageButton left = (ImageButton)findViewById(R.id.left);
         left.setOnClickListener(new View.OnClickListener() {
             @Override

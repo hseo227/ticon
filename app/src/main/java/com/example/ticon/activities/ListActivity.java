@@ -27,7 +27,9 @@ import java.util.Collections;
 public class ListActivity extends AppCompatActivity {
 
     /**
-     * Summarise activity functionality
+     * Displays a list of items in each category, in respect to the selected category.
+     * Items are displayed in a card view depending on the indentified list display type.
+     * The list is sortable in views, new, price.
      */
 
     private RecyclerView SavedListRV;
@@ -46,7 +48,6 @@ public class ListActivity extends AppCompatActivity {
 
     ViewHolder vh;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +56,10 @@ public class ListActivity extends AppCompatActivity {
 
         vh = new ViewHolder();
 
+        // Initiate toolbar
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+        // Enable back button on toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
@@ -241,20 +244,23 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu - add items to the action bar if it is present
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        // Replace the search icon action to home icon
         menu.findItem(R.id.action_search).setIcon(R.drawable.home_icon);
         menu.findItem(R.id.action_search).setActionView(button);
         return true;
     }
 
     public void onHomePressed() {
+        // Navigate to home
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
     public void onWishlistPressed() {
+        // Navigate to wishlist
         Intent intent = new Intent(this, WishlistActivity.class);
         startActivity(intent);
         finish();

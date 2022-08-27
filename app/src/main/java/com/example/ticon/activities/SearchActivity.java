@@ -29,7 +29,9 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
     /**
-     * Summarise activity functionality
+     * Searches for an item and shows the results of the search term.
+     * Search request is invoked from MainActivity. Search functionality is also invoked from
+     * SearchActivity results page.
      */
 
     private RecyclerView listRV;
@@ -37,30 +39,36 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Search query passed in from MainActivity or SearchActivity
         Intent intent = getIntent();
         String query = intent.getStringExtra("query");
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search your data somehow
         }
 
         setContentView(R.layout.search_app_bar_list);
         listRV = findViewById(R.id.listRView);
         SearchView searchView = findViewById(R.id.action_search);
 
+        // Initiate toolbar
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+        // Enable back button on toolbar
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // Use query to search the database
         TextView textView = SearchActivity.this.findViewById(R.id.search_text);
         String finalQuery = query;
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons, finalQuery);
             if (resultEmoticons.isEmpty()) {
+                // No item is found, message is shown
                 textView.setText(R.string.no_results);
             } else {
+                // Related item is found, message is shown
                 textView.setText(getString(R.string.search_results) + " \"" + finalQuery + "\"");
             }
             textView.setVisibility(View.VISIBLE);
@@ -72,13 +80,17 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     protected List<Emoticon> getResults(List<Emoticon> emoticons, String query) {
+        // Search if query is included in emoticon - name, artist, category
         List<Emoticon> searchResults = new ArrayList<Emoticon>();
         for (Emoticon emoticon : emoticons) {
-            String emoticonIgnoreCase = emoticon.getName().toLowerCase();
-            String emoticonIgnoreScore = emoticonIgnoreCase.replaceAll(" ", "");
+            // Ignore upper/lower case in query
             String queryIgnoreCase = query.toLowerCase();
+            // Ignore upper/lower case in emoticon database
+            String emoticonIgnoreCase = emoticon.getName().toLowerCase();
             String emoticonArtistIgnoreCase = emoticon.getArtist().toLowerCase();
             String emoticonCategoryIgnoreCase = emoticon.getCategory().toLowerCase();
+            // Ignore white space
+            String emoticonIgnoreScore = emoticonIgnoreCase.replaceAll(" ", "");
             if (emoticonIgnoreScore.contains(queryIgnoreCase) || emoticonArtistIgnoreCase.contains(queryIgnoreCase) || emoticonCategoryIgnoreCase.contains(queryIgnoreCase)) {
                 searchResults.add(emoticon);
             }
@@ -124,12 +136,14 @@ public class SearchActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        // Navigate to home
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
     public void onWishlistPressed() {
+        // Navigate to wishlist
         Intent intent = new Intent(this, WishlistActivity.class);
         startActivity(intent);
         finish();
