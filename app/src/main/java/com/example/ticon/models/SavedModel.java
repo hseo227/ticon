@@ -1,6 +1,11 @@
 package com.example.ticon.models;
 
 public class SavedModel {
+
+    /**
+     * Summarise model functionality
+     */
+
     private int emoticonimg;
     private int heartimg;
     private String emoticonName;
