@@ -53,7 +53,6 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         // Create objects from layout
         sentImage = findViewById(R.id.displayEmoticon);
         previewImage = findViewById(R.id.transparentEmoticon);
@@ -70,7 +69,6 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         chatBubble = findViewById(R.id.chatLayout);
         transparentLayout = findViewById(R.id.transparentDisplay);
 
-
         // Set ImageView objects to images from emoticon
         emoKeyButton1.setImageResource(getEmoticonId(0));
         emoKeyButton2.setImageResource(getEmoticonId(1));
@@ -78,7 +76,6 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         emoKeyButton4.setImageResource(getEmoticonId(3));
         emoKeyButton5.setImageResource(getEmoticonId(4));
         emoKeyButton6.setImageResource(getEmoticonId(5));
-
 
         // Set Buttons to an on-click function
         emoKeyButton1.setOnClickListener(this);
@@ -121,7 +118,6 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
                 imageIndicator = 5;
                 break;
         }
-
         transparentLayout.setVisibility(View.VISIBLE);
         previewImage.setImageResource(getEmoticonId(imageIndicator));
     }
@@ -141,4 +137,5 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
             sentImage.setImageResource(getEmoticonId(imageIndicator));
         }
     }
+
 }

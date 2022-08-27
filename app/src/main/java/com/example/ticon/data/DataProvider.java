@@ -15,6 +15,7 @@ public class DataProvider {
      * Summarise dataprovider functionality
      */
 
+
     public static void getAnimalsData(ITaskListener<List<Emoticon>> taskListener){
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         List<Emoticon> emoticons = new ArrayList<>();
@@ -114,7 +115,6 @@ public class DataProvider {
                 taskListener.onComlete(emoticons);
             }
         });
-
     }
 
 

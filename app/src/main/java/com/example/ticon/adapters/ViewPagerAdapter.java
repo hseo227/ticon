@@ -21,39 +21,48 @@ public class ViewPagerAdapter extends PagerAdapter {
     final int[] images;
     final LayoutInflater layoutInflater;
 
+
     public ViewPagerAdapter(Context context, int[] images) {
         this.context = context;
         this.images = images;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+
     @Override
     public int getCount() {
-        // return number of images
         return images.length;
     }
+
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view == object;
     }
 
+
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         // Inflate imageview items for viewpager
         View itemView = layoutInflater.inflate(R.layout.view_pager_item, container, false);
+
         // Initialize image view
         ImageView imageView = itemView.findViewById(R.id.viewPagerImage);
+
         // Set the image in the imageView
         imageView.setImageResource(images[position]);
+
         // Add View
         Objects.requireNonNull(container).addView(itemView);
+
         return itemView;
     }
+
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout) object);
     }
+
 }

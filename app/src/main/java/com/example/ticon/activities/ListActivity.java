@@ -34,6 +34,8 @@ public class ListActivity extends AppCompatActivity {
 
     private RecyclerView SavedListRV;
     Button button;
+    ViewHolder vh;
+
 
     private class ViewHolder{
         final TextView views;
@@ -46,7 +48,6 @@ public class ListActivity extends AppCompatActivity {
         }
     }
 
-    ViewHolder vh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,12 +92,12 @@ public class ListActivity extends AppCompatActivity {
 
         // Onclick for Sort by: VIEWS
         vh.views.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 vh.views.setTypeface(null, Typeface.BOLD_ITALIC);
                 vh.by_new.setTypeface(null, Typeface.NORMAL);
                 vh.price.setTypeface(null, Typeface.NORMAL);
+
                 if (category.equals("funny")) {
                     DataProvider.getFunnyData(emoticons -> {
                         // we are initializing our adapter class and passing our arraylist to it.
@@ -178,28 +179,34 @@ public class ListActivity extends AppCompatActivity {
         });
     }
 
+
     protected void getData(EmoticonAdapter emoticonAdapter) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical
+
         LinearLayoutManager layout = new LinearLayoutManager(this);
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         SavedListRV.setLayoutManager(layout);
         SavedListRV.setAdapter(emoticonAdapter);
     }
 
+
     protected void getData2(EmoticonAdapter emoticonAdapter) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical
         GridLayoutManager grid_layout = new GridLayoutManager(this, 2);
+
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         SavedListRV.setLayoutManager(grid_layout);
         SavedListRV.setAdapter(emoticonAdapter);
     }
 
+
     protected void getDataSortedPopular(EmoticonAdapter emoticonAdapter, String layout_type) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as horizontal
         Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByPopularity());
+
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         if (layout_type.equals("grid")) {
             GridLayoutManager grid_layout = new GridLayoutManager(this, 2);
@@ -208,14 +215,15 @@ public class ListActivity extends AppCompatActivity {
             LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             SavedListRV.setLayoutManager(layout);
         }
-
         SavedListRV.setAdapter(emoticonAdapter);
     }
+
 
     protected void getDataSortedDate(EmoticonAdapter emoticonAdapter, String layout_type) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as horizontal
         Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByDate());
+
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         if (layout_type.equals("grid")) {
             GridLayoutManager grid_layout = new GridLayoutManager(this, 2);
@@ -226,11 +234,13 @@ public class ListActivity extends AppCompatActivity {
         }
         SavedListRV.setAdapter(emoticonAdapter);
     }
+
 
     protected void getDataSortedPrice(EmoticonAdapter emoticonAdapter, String layout_type) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as horizontal
         Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByPrice());
+
         // in below two lines we are setting layoutmanager and adapter to our recycler view.
         if (layout_type.equals("grid")) {
             GridLayoutManager grid_layout = new GridLayoutManager(this, 2);
@@ -242,15 +252,18 @@ public class ListActivity extends AppCompatActivity {
         SavedListRV.setAdapter(emoticonAdapter);
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu - add items to the action bar if it is present
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
         // Replace the search icon action to home icon
         menu.findItem(R.id.action_search).setIcon(R.drawable.home_icon);
         menu.findItem(R.id.action_search).setActionView(button);
         return true;
     }
+
 
     public void onHomePressed() {
         // Navigate to home
@@ -259,12 +272,14 @@ public class ListActivity extends AppCompatActivity {
         finish();
     }
 
+
     public void onWishlistPressed() {
         // Navigate to wishlist
         Intent intent = new Intent(this, WishlistActivity.class);
         startActivity(intent);
         finish();
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

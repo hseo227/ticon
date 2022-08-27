@@ -31,11 +31,13 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     private final String listType;
     String id = "";
 
+
     public EmoticonAdapter(Context context, List<Emoticon> listModelArrayList, String listType) {
         this.context = context;
         this.listModelArrayList = listModelArrayList;
         this.listType = listType;
     }
+
 
     @NonNull
     @Override
@@ -53,6 +55,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         }
         return new Viewholder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull EmoticonAdapter.Viewholder holder, int position) {
@@ -86,7 +89,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
                 Intent i = new Intent(view.getContext(), DetailsActivity.class);
                 String id = emoticon.getId();
-                String category = emoticon.getCategory();
                 i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
                 i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
@@ -99,15 +101,18 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
         holder.itemView.startAnimation(animation);
     }
 
+
     public int getCardImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
         int resId = context.getResources().getIdentifier(emoticon.getImages().get(index), "drawable", context.getPackageName());
         return resId;
     }
 
+
     @Override
     public int getItemCount() {
         return listModelArrayList.size();
     }
+
 
     public class Viewholder extends RecyclerView.ViewHolder {
         private final ImageView emoImg1;

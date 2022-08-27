@@ -31,7 +31,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     Context context;
 
     String id;
-    String category;
     Emoticon emoticon;
 
     TextView emoticonTitle;
@@ -137,6 +136,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Right button is clicked for next image on the right
         ImageButton right = (ImageButton)findViewById(R.id.right);
         right.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
                 viewPager.arrowScroll(View.FOCUS_RIGHT);
@@ -146,6 +146,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Left button is clicked for next image on the left
         ImageButton left = (ImageButton)findViewById(R.id.left);
         left.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 viewPager.arrowScroll(View.FOCUS_LEFT);
@@ -186,6 +187,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+
     // This is the on click function for wish list button.
     // This adds and takes out emoticon from wish list and changes the image of the button.
     @Override
@@ -218,7 +220,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         super.onRestart();
         finish();
         return true;
-
     }
 
 }
