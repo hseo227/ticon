@@ -15,6 +15,7 @@ public class SplashActivity extends AppCompatActivity {
      * Displays the splash screen for the application.
      */
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,5 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         }, 1050);
-
     }
 }

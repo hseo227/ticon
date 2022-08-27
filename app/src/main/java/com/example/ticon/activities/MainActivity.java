@@ -41,12 +41,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      * The top-bar implementations are also here, including the side-bar drawer.
      */
 
+
     private class ViewHolder{
         final ImageButton  wishlistBtn;
         final Button changeToSearchFunny;
         final Button changeToSearchCharacter;
         final Button changeToSearchAnimals;
         final SearchView searchView;
+
         public ViewHolder() {
             wishlistBtn = findViewById(R.id.favorite);
             changeToSearchFunny = findViewById(R.id.button1);
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             searchView = findViewById(R.id.action_search);
         }
     }
+
 
     ViewHolder vh;
 
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private AppBarConfiguration mAppBarConfiguration;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         vh = new ViewHolder();
 
-
         popularRV = findViewById(R.id.popular_recycler_view);
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
@@ -83,14 +86,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getDataSortedPopular(emoticonAdapter, popularRV);
         });
 
-
         newRV = findViewById(R.id.new_recycler_view);
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, listType);
             getDataSortedDate(emoticonAdapter, newRV);
         });
-
 
         vh.changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
         vh.changeToSearchCharacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,7 +117,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
         vh.changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 animalsIntent.putExtra("listType", listType);
                 startActivity(animalsIntent);
             }
-
         });
 
         // Side bar drawer set up
@@ -151,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView testNavigationView = findViewById(R.id.nav_view);
         testNavigationView.setNavigationItemSelectedListener(this);
     }
+
 
     // Assigning where the side bar drawer features will be navigated to.
     @Override
@@ -176,7 +175,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         return true;
-
     }
 
 
@@ -191,8 +189,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Setting of layoutmanager and adapter to the recycler view.
         rv.setLayoutManager(layout);
         rv.setAdapter(emoticonAdapter);
-
     }
+
 
     // Recylerview set up for NEW section
     protected void getDataSortedDate(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
@@ -203,8 +201,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         rv.setLayoutManager(layout);
         rv.setAdapter(emoticonAdapter);
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -219,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         search.setQueryHint(getResources().getString(R.string.search_hint));
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent newIntent = new Intent(getBaseContext(), SearchActivity.class);
@@ -232,8 +231,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
+
         return true;
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -243,11 +244,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 || super.onSupportNavigateUp();
     }
 
+
     public void onWishlistPressed() {
         Intent intent = new Intent(this, WishlistActivity.class);
         startActivity(intent);
         finish();
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

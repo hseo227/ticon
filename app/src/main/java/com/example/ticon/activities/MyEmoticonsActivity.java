@@ -29,6 +29,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
     private RecyclerView SavedListRV;
     private Button button;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,4 +109,5 @@ public class MyEmoticonsActivity extends AppCompatActivity {
             return true;
         }
     }
+
 }
