@@ -41,7 +41,8 @@ public class WishlistActivity extends AppCompatActivity {
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(WishlistActivity.this, resultEmoticons, "sidebar_list");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(WishlistActivity.this,
+                    resultEmoticons, "sidebar_list");
             getData(emoticonAdapter);
         });
     }

@@ -6,6 +6,11 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Emoticon implements Serializable {
+
+    /**
+     * The data model class for Emoticons.
+     */
+
     private String artist;
     private String category;
     private String description;
