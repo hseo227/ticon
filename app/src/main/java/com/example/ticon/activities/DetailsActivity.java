@@ -56,7 +56,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     Boolean myEmoBool;
 
     androidx.viewpager.widget.ViewPager viewPager;
-    ViewPagerAdapter viewPagerAdapter;
+    com.example.ticon.activities.ViewPagerAdapter viewPagerAdapter;
 
     // images array
     int[] images = {R.drawable.animal_friends1, R.drawable.animal_friends2, R.drawable.animal_friends3};
@@ -66,7 +66,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        // I had to remove to make the status bar show
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
@@ -152,7 +153,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Initializing the ViewPager Object
         viewPager = (ViewPager)findViewById(R.id.viewPagerMain);
         // Initializing the ViewPagerAdapter
-        viewPagerAdapter = new ViewPagerAdapter(DetailsActivity.this, images);
+        viewPagerAdapter = new com.example.ticon.activities.ViewPagerAdapter(DetailsActivity.this, images);
         // Adding the Adapter to the ViewPager
         viewPager.setAdapter(viewPagerAdapter);
 
