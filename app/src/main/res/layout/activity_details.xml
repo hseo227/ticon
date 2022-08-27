@@ -67,21 +67,12 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-<!--            <androidx.viewpager.widget.ViewPager-->
-<!--                android:id="@+id/viewPager"-->
-<!--                android:layout_width="110dp"-->
-<!--                android:layout_height="110dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginTop="12dp"/>-->
-
-
-            <ImageView
-                android:id="@+id/emoticonImage"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerMain"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/cute_marvel5"/>
+                android:layout_marginTop="12dp"/>
 
             <TextView
                 android:id="@+id/emoticonLabel"

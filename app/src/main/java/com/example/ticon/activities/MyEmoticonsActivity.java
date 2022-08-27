@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.ticon.R;
+import com.example.ticon.adapter.EmoticonAdapter;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
 
@@ -36,7 +36,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "three");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "sidebar_list");
             getData(emoticonAdapter);
         });
     }
@@ -91,7 +91,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
             onWishlistPressed();
             return true;
         } else {
-            finish();
+            onHomePressed();
             return true;
         }
     }

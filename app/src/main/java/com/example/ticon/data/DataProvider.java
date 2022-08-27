@@ -165,7 +165,7 @@ public class DataProvider {
 
     }
 
-    public static void setincrementViews(String collection, String documentID) {
+    public static void setIncrementViews(String collection, String documentID) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference docRef = database.collection(collection).document(documentID);
         docRef.update("views", FieldValue.increment(1));

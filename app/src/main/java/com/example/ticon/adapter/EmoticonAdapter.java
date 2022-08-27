@@ -1,29 +1,22 @@
-package com.example.ticon.activities;
+package com.example.ticon.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
-import com.example.ticon.data.DataProvider;
+import com.example.ticon.activities.DetailsActivity;
 import com.example.ticon.models.Emoticon;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewholder> {
@@ -79,16 +72,22 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             holder.emoImg4.setImageResource(getCardImages(3, emoticon, holder));
         }
 
-        holder.itemView.setOnClickListener(view -> {
+        if (!listType.equals("sidebar_list")) {
+            holder.itemView.setOnClickListener(view -> {
 
-            Intent i = new Intent(view.getContext(), DetailsActivity.class);
-            String id = emoticon.getId();
-            String category = emoticon.getCategory();
-            i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
-            i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
+                Intent i = new Intent(view.getContext(), DetailsActivity.class);
+                String id = emoticon.getId();
+                String category = emoticon.getCategory();
+                i.putExtra("clickedEmoticonId", listModelArrayList.get(holder.getAdapterPosition()).getId());
+                i.putExtra("clickedEmoticon", listModelArrayList.get(holder.getAdapterPosition()));
 
-            view.getContext().startActivity(i);
-        });
+                view.getContext().startActivity(i);
+            });
+        }
+
+        // Applying animations for recylerview
+        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.recycler_view_animation);
+        holder.itemView.startAnimation(animation);
     }
 
     public int getCardImages(int index, Emoticon emoticon, EmoticonAdapter.Viewholder holder) {
@@ -102,6 +101,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
+//        public View cardview;
         private ImageView emoImg1, emoImg2, emoImg3, emoImg4, imageButton;
         private TextView emoName, artist;
 

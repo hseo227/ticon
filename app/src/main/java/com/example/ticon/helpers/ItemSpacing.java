@@ -1,4 +1,4 @@
-package com.example.ticon.activities;
+package com.example.ticon.helpers;
 
 import android.graphics.Rect;
 import android.view.View;

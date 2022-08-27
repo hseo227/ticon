@@ -1,7 +1,5 @@
 package com.example.ticon.models;
 
-import android.media.Image;
-
 import com.example.ticon.data.DataProvider;
 
 import java.io.Serializable;
@@ -83,6 +81,6 @@ public class Emoticon implements Serializable {
     public void incrementViews() {
         String collection = this.getCategory();
         String documentID = this.getId();
-        DataProvider.setincrementViews(collection, documentID);
+        DataProvider.setIncrementViews(collection, documentID);
     }
 }
