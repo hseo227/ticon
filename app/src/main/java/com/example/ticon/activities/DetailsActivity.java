@@ -23,12 +23,13 @@ import com.example.ticon.models.Emoticon;
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
     /**
-     * Summarise activity functionality
+     * This activity provides the details window UI of this application.
+     * It uses the activity_details.xml to set the layout of the screen.
+     * It shows the details of the selected emoticon.
      */
 
     Context context;
 
-    int boolCount = 0;
     String id;
     String category;
     Emoticon emoticon;
@@ -57,13 +58,12 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     // images array
     int[] images = {R.drawable.animal_friends1, R.drawable.animal_friends2, R.drawable.animal_friends3};
 
+
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        // I had to remove to make the status bar show
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toolbar myToolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
@@ -71,12 +71,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         Intent intent = getIntent();
         id = intent.getStringExtra("clickedEmoticonId");
-        category = intent.getStringExtra("clickedEmoticonCategory");
         emoticon = (Emoticon) intent.getSerializableExtra("clickedEmoticon");
 
-
         DataProvider.getWishlistData(emoticons -> {
-            // we are initializing our adapter class and passing our arraylist to it.
+            // We are calling Data Provider to initialise the wish list button display.
             for (Emoticon emoticon : emoticons) {
                 if (emoticon.getId().equals(id)) {
                     setWishListImage(true);
@@ -84,12 +82,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-
         // Get Boolean values for wish list and My Emoticon
         wishListBool = emoticon.isWishlist();
         myEmoBool = emoticon.isMy_emoticons();
-
-        System.out.println("The initial wish Boolean is" + wishListBool);
 
         // Create objects from layout
         emoticonTitle = findViewById(R.id.emoticonTitle);
@@ -109,14 +104,12 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         buyButton = findViewById((R.id.buyButton));
 
         // Set TextView objects to data from emoticon
-
         emoticonTitle.setText(emoticon.getName());
         emoticonArtist.setText(emoticon.getArtist());
         emoticonPrice.setText(String.valueOf(emoticon.getPrice()));
         emoticonDescription.setText(emoticon.getDescription());
 
         // Set ImageView objects to images from emoticon
-
         emoImage1.setImageResource(getEmoticonId(0));
         emoImage2.setImageResource(getEmoticonId(1));
         emoImage3.setImageResource(getEmoticonId(2));
@@ -162,40 +155,33 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        // Set Wish List icon based on if the emoticon is in wish list or not
-
-//        setWishListImage(wishListBool);
-
         // Set on click function to navigate to preview screen
         previewButton.setOnClickListener(view -> {
             Intent i = new Intent(view.getContext(), PreviewActivity.class);
             i.putExtra("clickedEmoticon", emoticon);
 
             view.getContext().startActivity(i);
-
         });
 
+        // Set on click functions to the buttons
         wishListButton.setOnClickListener(this);
         buyButton.setOnClickListener(this::onClickBuy);
-
-//        DataProvider.getAllData(emoticons -> {
-//            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, emoticons);
-//            getData(viewPagerAdapter);
-//        });
-
         emoticon.incrementViews();
-
     }
 
+
+    // This function gets the id of emoticon image from drawable
     public int getEmoticonId(int index) {
         String PACKAGE_NAME = getApplicationContext().getPackageName();
-        int resId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+ emoticon.getImages().get(index), null, null);
+        int resId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+
+                emoticon.getImages().get(index), null, null);
 
         return resId;
     }
 
+
+    //This function sets the image of wish list button
     public void setWishListImage(boolean wishBool) {
-        System.out.println(wishBool);
         if (wishBool){
             wishListButton.setImageResource(R.drawable.ic_favorite_pink);
         } else {
@@ -203,6 +189,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    // This is the on click function for wish list button.
+    // This adds and takes out emoticon from wish list and changes the image of the button.
     @Override
     public void onClick(View view) {
         wishListBool = !wishListBool;
@@ -210,6 +198,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         emoticon.updateWishList(wishListBool);
     }
 
+
+    // This is the on click function for buy button.
+    // As actual purchase is not implemented in the app, this button adds emoticon to the
+    // My Emoticons list and displays a message to indicate the user.
     private void onClickBuy(View view) {
         context = getApplicationContext();
         if (myEmoBool){
@@ -221,23 +213,11 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-//    protected void getData(EmoticonAdapter emoticonAdapter) {
-//        // below line is for setting a layout manager for our recycler view.
-//        // here we are creating vertical list so we will provide orientation as vertical
-//        LinearLayoutManager layout = new LinearLayoutManager(this);
-//        // in below two lines we are setting layoutmanager and adapter to our recycler view.
-//        detailsLayout.setAdapter(emoticonAdapter);
-//    }
 
+    // This is the function for back button to go back to previous screen.
     @Override
     public boolean onOptionsItemSelected(MenuItem menu) {
 
-//        System.out.print(getClass().getSuperclass().toString());
-
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//        finish();
-//        return true;
         super.onRestart();
         finish();
         return true;

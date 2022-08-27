@@ -16,7 +16,9 @@ import com.example.ticon.models.Emoticon;
 public class PreviewActivity extends DetailsActivity implements View.OnClickListener {
 
     /**
-     * Summarise activity functionality
+     * This activity provides the Preview window UI of this application.
+     * It uses the activity_preview.xml to set the layout of the screen.
+     * It allows the users to try emoticons in a preview test chat room.
      */
 
     Emoticon emoticon;
@@ -30,7 +32,6 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
     ImageButton emoKeyButton5;
     ImageButton emoKeyButton6;
     ImageButton sendButton;
-
     ImageButton exitTransparentButton;
 
     RelativeLayout chatBubble;
@@ -38,12 +39,11 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
 
     int imageIndicator = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
-        // I had to remove to make the status bar show
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toolbar myToolbar = findViewById(R.id.toolbar3);
         setSupportActionBar(myToolbar);
@@ -53,8 +53,8 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Create objects from layout
 
+        // Create objects from layout
         sentImage = findViewById(R.id.displayEmoticon);
         previewImage = findViewById(R.id.transparentEmoticon);
         emoKeyButton1 = findViewById(R.id.emoButton1);
@@ -72,13 +72,13 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
 
 
         // Set ImageView objects to images from emoticon
-
         emoKeyButton1.setImageResource(getEmoticonId(0));
         emoKeyButton2.setImageResource(getEmoticonId(1));
         emoKeyButton3.setImageResource(getEmoticonId(2));
         emoKeyButton4.setImageResource(getEmoticonId(3));
         emoKeyButton5.setImageResource(getEmoticonId(4));
         emoKeyButton6.setImageResource(getEmoticonId(5));
+
 
         // Set Buttons to an on-click function
         emoKeyButton1.setOnClickListener(this);
@@ -92,6 +92,8 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
     }
 
 
+    // This is the function for the emoticon keyboard.
+    // It reads which button is pressed, and opens a pop up layout with that selected emoticon.
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -124,10 +126,14 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         previewImage.setImageResource(getEmoticonId(imageIndicator));
     }
 
+
+    // This is the function to close the semi-transparent pop up layout.
     public void exitTransparent(View v){
         transparentLayout.setVisibility(View.INVISIBLE);
     }
 
+
+    // This function sends the emoticon to the chat bubble when user clicks the send button.
     public void sendEmoticon(View v) {
         if (transparentLayout.getVisibility() == View.VISIBLE) {
             transparentLayout.setVisibility(View.INVISIBLE);
