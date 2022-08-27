@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         vh = new ViewHolder();
 
+
         popularRV = findViewById(R.id.popular_recycler_view);
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
@@ -82,12 +83,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getDataSortedPopular(emoticonAdapter, popularRV);
         });
 
+
         newRV = findViewById(R.id.new_recycler_view);
         DataProvider.getAllData(emoticons -> {
             // we are initializing our adapter class and passing our arraylist to it.
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, emoticons, listType);
             getDataSortedDate(emoticonAdapter, newRV);
         });
+
 
         vh.changeToSearchFunny.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
         vh.changeToSearchCharacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
         vh.changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,19 +128,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 animalsIntent.putExtra("listType", listType);
                 startActivity(animalsIntent);
             }
+
         });
 
         // Side bar drawer set up
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+
+        NavController navController = Navigation.findNavController(this,
+                R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -146,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Assigning where the side bar drawer features will be navigated to.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()) {
             case R.id.nav_home:
                 listType = "home";
@@ -166,34 +176,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         return true;
+
     }
+
 
     // Recylerview set up for POPULAR section
     protected void getDataSortedPopular(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+
         // Setting the layout manager for our recycler view.
         Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByPopularity());
-        LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layout = new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false);
+
         // Setting of layoutmanager and adapter to the recycler view.
         rv.setLayoutManager(layout);
         rv.setAdapter(emoticonAdapter);
+
     }
 
     // Recylerview set up for NEW section
     protected void getDataSortedDate(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+
         Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByDate());
-        LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layout = new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false);
+
         rv.setLayoutManager(layout);
         rv.setAdapter(emoticonAdapter);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         SearchView search = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        search.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchActivity.class)));
+        search.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this,
+                SearchActivity.class)));
         search.setQueryHint(getResources().getString(R.string.search_hint));
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -204,6 +226,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(newIntent);
                 return true;
             }
+
             @Override
             public boolean onQueryTextChange(String query) {
                 return false;
@@ -214,7 +237,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController = Navigation.findNavController(this,
+                R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

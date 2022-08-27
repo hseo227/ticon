@@ -34,7 +34,7 @@
     <string name="duck">Duck</string>
     <string name="animals"># ANIMALS</string>
 
-    <string name="search_results">You Searched for </string>
+    <string name="search_results">Search results for </string>
     <string name="search_label">Search</string>
     <string name="search_hint">Type here to search</string>
     <string name="settings_description">Settings description</string>

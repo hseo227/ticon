@@ -6,6 +6,11 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Emoticon implements Serializable {
+
+    /**
+     * The data model class for Emoticons.
+     */
+
     private String artist;
     private String category;
     private String description;
@@ -62,6 +67,7 @@ public class Emoticon implements Serializable {
         return date;
     }
 
+    // Updating the is_wishlist boolean in Firestore using DataProvider
     public void updateWishList(boolean isWishList) {
         String collection = this.getCategory();
         String documentID = this.getId();
@@ -69,6 +75,7 @@ public class Emoticon implements Serializable {
         DataProvider.setWishList(collection, documentID, this.wishlist);
     }
 
+    // Updating the my_emoticons boolean in Firestore using DataProvider
     public void updateMyEmoticons(boolean isMyEmoticons) {
         String collection = this.getCategory();
         String documentID = this.getId();
@@ -76,6 +83,7 @@ public class Emoticon implements Serializable {
         DataProvider.setMyEmoticons(collection, documentID, this.my_emoticons);
     }
 
+    // Incrementing the view in Firestore using DataProvider
     public void incrementViews() {
         String collection = this.getCategory();
         String documentID = this.getId();

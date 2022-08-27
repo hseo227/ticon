@@ -33,6 +33,7 @@ public class DataProvider {
         });
     }
 
+
     public static void getCharacterData(ITaskListener<List<Emoticon>> taskListener){
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         List<Emoticon> emoticons = new ArrayList<>();
@@ -50,6 +51,7 @@ public class DataProvider {
             }
         });
     }
+
 
     public static void getFunnyData(ITaskListener<List<Emoticon>> taskListener){
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -69,6 +71,7 @@ public class DataProvider {
         });
     }
 
+
     public static void getAllData(ITaskListener<List<Emoticon>> taskListener) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         List<Emoticon> emoticons = new ArrayList<>();
@@ -85,7 +88,6 @@ public class DataProvider {
                 taskListener.onComlete(emoticons);
             }
         });
-
 
         database.collection("characters").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -114,6 +116,7 @@ public class DataProvider {
         });
 
     }
+
 
     public static void getWishlistData(ITaskListener<List<Emoticon>> taskListener) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -166,17 +169,20 @@ public class DataProvider {
 
     }
 
+
     public static void setIncrementViews(String collection, String documentID) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference docRef = database.collection(collection).document(documentID);
         docRef.update("views", FieldValue.increment(1));
     }
 
+
     public static void setWishList(String collection, String documentID, boolean isWishList) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference docRef = database.collection(collection).document(documentID);
         docRef.update("wishlist", isWishList);
     }
+
 
     public static void setMyEmoticons(String collection, String documentID, boolean isMyEmoticons) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
