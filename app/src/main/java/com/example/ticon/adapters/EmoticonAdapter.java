@@ -22,7 +22,8 @@ import java.util.List;
 public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewholder> {
 
     /**
-     * Summarise adapter functionality
+     * This adapter acts a bridge between the view and underlying data of the activity classes -
+     * MainActivity, ListActivity, SearchActivity, WishlistActivity, MyEmoticonsActivity.
      */
 
     private final Context context;
@@ -40,6 +41,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     @Override
     public EmoticonAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
+        // Initiate the appropriate card view needed for each list type
         if (listType.equals("home")) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_card,parent,false);
         } else if (listType.equals("three")) {
@@ -56,6 +58,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     public void onBindViewHolder(@NonNull EmoticonAdapter.Viewholder holder, int position) {
         Emoticon emoticon = listModelArrayList.get(position);
 
+        // Initiate the required data for each list type
         if (listType.equals("home")) {
             holder.emoName.setText(emoticon.getName());
             holder.imageButton.setImageResource(getCardImages(0, emoticon, holder));
@@ -76,6 +79,8 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             holder.emoImg4.setImageResource(getCardImages(3, emoticon, holder));
         }
 
+        // Make item in the list view clickable to navigate to DetailsActivity.
+        // Item in wishlist and myEmoticons activity is not available for details.
         if (!listType.equals("sidebar_list")) {
             holder.itemView.setOnClickListener(view -> {
 
@@ -105,7 +110,6 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
-//        public View cardview;
         private final ImageView emoImg1;
         private final ImageView emoImg2;
         private final ImageView emoImg3;
