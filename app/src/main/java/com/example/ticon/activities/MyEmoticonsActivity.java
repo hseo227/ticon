@@ -22,7 +22,8 @@ import java.util.List;
 public class MyEmoticonsActivity extends AppCompatActivity {
 
     /**
-     * Summarise activity functionality
+     * Displays the list of MY EMOTICONS in the My Emoticons page.
+     * It is the list of all the emoticons that have been pressed BUY.
      */
 
     private RecyclerView SavedListRV;
@@ -40,11 +41,13 @@ public class MyEmoticonsActivity extends AppCompatActivity {
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "sidebar_list");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this,
+                    resultEmoticons, "sidebar_list");
             getData(emoticonAdapter);
         });
     }
 
+    // This method goes through a list of emoticons and only grabs the ones in My Emoticons.
     protected List<Emoticon> getResults(List<Emoticon> emoticons) {
         List<Emoticon> my_emoticons_results = new ArrayList<Emoticon>();
         for (Emoticon emoticon : emoticons) {
