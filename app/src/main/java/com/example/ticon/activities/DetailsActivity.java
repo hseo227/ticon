@@ -38,7 +38,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     TextView emoticonArtist;
     TextView emoticonPrice;
     TextView emoticonDescription;
-    ImageView emoticonImage;
     ImageView emoImage1;
     ImageView emoImage2;
     ImageView emoImage3;
@@ -69,14 +68,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         Toolbar myToolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-//        viewPager = (ViewPager) findViewById(R.id.viewPager);
-//        viewPager.setAdapter(new ViewPagerAdapter(this, emoticon.getImages()));
-
-
-
 
         Intent intent = getIntent();
         id = intent.getStringExtra("clickedEmoticonId");
@@ -106,7 +98,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         emoticonPrice = findViewById(R.id.emoticonPrice);
         emoticonDescription = findViewById(R.id.emoticonLabel);
 
-//        emoticonImage = findViewById(R.id.emoticonImage);
         emoImage1 = findViewById(R.id.emoImage1);
         emoImage2 = findViewById(R.id.emoImage2);
         emoImage3 = findViewById(R.id.emoImage3);
@@ -127,8 +118,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Set ImageView objects to images from emoticon
 
-//        emoticonImage.setImageResource(getEmoticonId(4));
-
         emoImage1.setImageResource(getEmoticonId(0));
         emoImage2.setImageResource(getEmoticonId(1));
         emoImage3.setImageResource(getEmoticonId(2));
@@ -147,13 +136,32 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         emoImage3.setTag(getEmoticonId(2));
         int drawableID3 = Integer.parseInt(emoImage3.getTag().toString());
 
+        // Initialize image items in viewpager
         int[] images = {drawableID1, drawableID2, drawableID3};
-        // Initializing the ViewPager Object
+        // Initialize ViewPager Object
         viewPager = findViewById(R.id.viewPagerMain);
-        // Initializing the ViewPagerAdapter
+        // Initialize ViewPagerAdapter
         viewPagerAdapter = new ViewPagerAdapter(DetailsActivity.this, images);
-        // Adding the Adapter to the ViewPager
+        // Set Adapter to ViewPager
         viewPager.setAdapter(viewPagerAdapter);
+
+        // Right button is clicked
+        ImageButton right = (ImageButton)findViewById(R.id.right);
+        right.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                viewPager.arrowScroll(View.FOCUS_RIGHT);
+            }
+        });
+
+        // Left button is clicked
+        ImageButton left = (ImageButton)findViewById(R.id.left);
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.arrowScroll(View.FOCUS_LEFT);
+            }
+        });
 
         // Set Wish List icon based on if the emoticon is in wish list or not
 
