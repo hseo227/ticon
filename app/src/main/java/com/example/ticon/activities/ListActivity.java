@@ -63,7 +63,7 @@ public class ListActivity extends AppCompatActivity {
         String category = intent.getStringExtra("category");
         String listType = intent.getStringExtra("listType");
 
-        String categoryTitle = "#" + category.toUpperCase();
+        String categoryTitle = "# " + category.toUpperCase();
         getSupportActionBar().setTitle(categoryTitle);
 
         if (category.equals("funny")) {
