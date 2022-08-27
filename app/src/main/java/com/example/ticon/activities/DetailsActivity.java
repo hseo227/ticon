@@ -98,7 +98,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         // Get Boolean values for wish list and My Emoticon
         wishListBool = emoticon.isWishlist();
-        myEmoBool = emoticon.isMyEmoticons();
+        myEmoBool = emoticon.isMy_emoticons();
 
         System.out.println("The initial wish Boolean is" + wishListBool);
 
