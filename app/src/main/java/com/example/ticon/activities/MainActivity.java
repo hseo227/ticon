@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
-import com.example.ticon.adapter.EmoticonAdapter;
+import com.example.ticon.adapters.EmoticonAdapter;
 import com.example.ticon.comparators.SortByDate;
 import com.example.ticon.comparators.SortByPopularity;
 import com.example.ticon.data.DataProvider;

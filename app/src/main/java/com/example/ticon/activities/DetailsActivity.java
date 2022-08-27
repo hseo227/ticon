@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.example.ticon.R;
 
-import com.example.ticon.adapter.ViewPagerAdapter;
+import com.example.ticon.adapters.ViewPagerAdapter;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
 
