@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.ticon.R;
@@ -21,6 +22,7 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
     Emoticon emoticon;
 
     ImageView sentImage;
+    ImageView previewImage;
     ImageButton emoKeyButton1;
     ImageButton emoKeyButton2;
     ImageButton emoKeyButton3;
@@ -29,7 +31,11 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
     ImageButton emoKeyButton6;
     ImageButton sendButton;
 
+    ImageButton exitTransparentButton;
+
     RelativeLayout chatBubble;
+    LinearLayout transparentLayout;
+
     int imageIndicator = 0;
 
     @Override
@@ -50,6 +56,7 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         // Create objects from layout
 
         sentImage = findViewById(R.id.displayEmoticon);
+        previewImage = findViewById(R.id.transparentEmoticon);
         emoKeyButton1 = findViewById(R.id.emoButton1);
         emoKeyButton2 = findViewById(R.id.emoButton2);
         emoKeyButton3 = findViewById(R.id.emoButton3);
@@ -58,8 +65,11 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         emoKeyButton6 = findViewById(R.id.emoButton6);
 
         sendButton = findViewById(R.id.sendButton);
+        exitTransparentButton = findViewById(R.id.exitTransparent);
 
         chatBubble = findViewById(R.id.chatLayout);
+        transparentLayout = findViewById(R.id.transparentDisplay);
+
 
         // Set ImageView objects to images from emoticon
 
@@ -77,6 +87,8 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         emoKeyButton4.setOnClickListener(this);
         emoKeyButton5.setOnClickListener(this);
         emoKeyButton6.setOnClickListener(this);
+        exitTransparentButton.setOnClickListener(this::exitTransparent);
+        sendButton.setOnClickListener(this::sendEmoticon);
     }
 
 
@@ -108,8 +120,19 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
                 break;
         }
 
-        chatBubble.setVisibility(View.VISIBLE);
-        sentImage.setImageResource(getEmoticonId(imageIndicator));
+        transparentLayout.setVisibility(View.VISIBLE);
+        previewImage.setImageResource(getEmoticonId(imageIndicator));
     }
 
+    public void exitTransparent(View v){
+        transparentLayout.setVisibility(View.INVISIBLE);
+    }
+
+    public void sendEmoticon(View v) {
+        if (transparentLayout.getVisibility() == View.VISIBLE) {
+            transparentLayout.setVisibility(View.INVISIBLE);
+            chatBubble.setVisibility(View.VISIBLE);
+            sentImage.setImageResource(getEmoticonId(imageIndicator));
+        }
+    }
 }

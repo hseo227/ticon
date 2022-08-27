@@ -9,9 +9,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:background="@color/white"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="10dp"
             android:radius="8dp">
 
             <TextView
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop = "25dp"
+                android:layout_marginTop = "15dp"
                 android:text="@string/place_holder"
                 android:textColor="@color/black"
                 android:textSize="22sp"
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop = "5dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/place_holder"
                 android:textColor="@color/grey_500"
                 android:textSize="12sp"
@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@android:color/transparent">
 
                 <ImageView
@@ -129,7 +129,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="15dp"
                 android:gravity="bottom">
 
                 <Button
@@ -171,75 +173,69 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        tools:context=".activities.PreviewActivity">
+        android:columnCount="3"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white_100"
+        android:padding="15dp"
+        android:rowCount="2">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="3"
-            android:padding="16dp"
-            android:rowCount="2">
+        <ImageView
+            android:id="@+id/emoImage1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/mickey_minnie1" />
 
-            <ImageView
-                android:id="@+id/emoImage1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="fill"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:src="@drawable/mickey_minnie1" />
+        <ImageView
+            android:id="@+id/emoImage2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
 
-            <ImageView
-                android:id="@+id/emoImage2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="fill"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:src="@drawable/bad_ducks1" />
+        <ImageView
+            android:id="@+id/emoImage3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
 
-            <ImageView
-                android:id="@+id/emoImage3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="fill"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:src="@drawable/bad_ducks1" />
+        <ImageView
+            android:id="@+id/emoImage4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
 
-            <ImageView
-                android:id="@+id/emoImage4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="fill"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:src="@drawable/bad_ducks1" />
+        <ImageView
+            android:id="@+id/emoImage5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
 
-            <ImageView
-                android:id="@+id/emoImage5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="fill"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:src="@drawable/bad_ducks1" />
+        <ImageView
+            android:id="@+id/emoImage6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:src="@drawable/bad_ducks1" />
 
-            <ImageView
-                android:id="@+id/emoImage6"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="fill"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:src="@drawable/bad_ducks1" />
-
-        </GridLayout>
-
-    </LinearLayout>
+    </GridLayout>
 
 </LinearLayout>

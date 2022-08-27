@@ -22,7 +22,8 @@ import java.util.List;
 public class WishlistActivity extends AppCompatActivity {
 
     /**
-     * Summarise activity functionality
+     * Displays the list of WISHLIST in the Wishlist page.
+     * It is the list of all the emoticons that have been "hearted".
      */
 
     private RecyclerView SavedListRV;
@@ -40,11 +41,13 @@ public class WishlistActivity extends AppCompatActivity {
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(WishlistActivity.this, resultEmoticons, "sidebar_list");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(WishlistActivity.this,
+                    resultEmoticons, "sidebar_list");
             getData(emoticonAdapter);
         });
     }
 
+    // This method goes through a list of emoticons and only grabs the ones in Wishlist.
     protected List<Emoticon> getResults(List<Emoticon> emoticons) {
         List<Emoticon> wishlist_results = new ArrayList<Emoticon>();
         for (Emoticon emoticon : emoticons) {

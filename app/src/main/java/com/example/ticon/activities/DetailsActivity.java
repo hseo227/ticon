@@ -207,7 +207,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         emoticon.updateWishList(wishListBool);
     }
 
-    public void onClickBuy(View view) {
+    private void onClickBuy(View view) {
         context = getApplicationContext();
         if (myEmoBool){
             Toast.makeText(context, "This emoticon is already in My Emoticons", Toast.LENGTH_SHORT).show();
