@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp" >
+        android:paddingHorizontal="6dp" >
+
         <TextView
             android:id="@+id/search_text"
             android:layout_width="match_parent"
@@ -25,11 +25,13 @@
             android:visibility="visible"
             android:padding="10dp"
             android:textSize="15dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listRView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

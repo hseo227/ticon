@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.ticon.R;
-import com.example.ticon.adapter.EmoticonAdapter;
+import com.example.ticon.adapters.EmoticonAdapter;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
 
@@ -20,6 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyEmoticonsActivity extends AppCompatActivity {
+
+    /**
+     * Displays the list of MY EMOTICONS in the My Emoticons page.
+     * It is the list of all the emoticons that have been pressed BUY.
+     */
 
     private RecyclerView SavedListRV;
     private Button button;
@@ -30,17 +35,19 @@ public class MyEmoticonsActivity extends AppCompatActivity {
         setContentView(R.layout.myemoticons_list);
         SavedListRV = findViewById(R.id.listRView);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons);
-            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this, resultEmoticons, "sidebar_list");
+            EmoticonAdapter emoticonAdapter = new EmoticonAdapter(MyEmoticonsActivity.this,
+                    resultEmoticons, "sidebar_list");
             getData(emoticonAdapter);
         });
     }
 
+    // This method goes through a list of emoticons and only grabs the ones in My Emoticons.
     protected List<Emoticon> getResults(List<Emoticon> emoticons) {
         List<Emoticon> my_emoticons_results = new ArrayList<Emoticon>();
         for (Emoticon emoticon : emoticons) {

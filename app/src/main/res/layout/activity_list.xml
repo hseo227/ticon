@@ -11,35 +11,36 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp">
+        android:paddingHorizontal="6dp"
+        android:paddingBottom="6dp">
 
         <LinearLayout
             android:id="@+id/sort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:padding="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/text_sort_by"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingHorizontal="4dp"
                 android:text="SORT BY: "
-                android:textSize="15sp"
+                android:textSize="14sp"
                 tools:ignore="OnClick" />
 
             <TextView
                 android:id="@+id/text_sort_popularity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="fill_vertical"
                 android:background="@android:color/transparent"
-                android:onClick="onClick"
                 android:clickable="true"
+                android:gravity="fill_vertical"
+                android:onClick="onClick"
                 android:text="VIEWS"
-                android:textSize="15dp"
+                android:textSize="14sp"
                 tools:ignore="OnClick" />
 
             <TextView
@@ -48,37 +49,36 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text=" | "
-                android:textSize="15dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/text_sort_new"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NEW"
                 android:background="@android:color/transparent"
-                android:onClick="onClick"
                 android:clickable="true"
-                android:textSize="15dp"
+                android:onClick="onClick"
+                android:text="NEW"
+                android:textSize="14sp"
                 tools:ignore="OnClick" />
 
             <TextView
                 android:id="@+id/spacer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:gravity="center"
                 android:text=" | "
-                android:textSize="15dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/text_sort_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PRICE"
                 android:background="@android:color/transparent"
-                android:onClick="onClick"
                 android:clickable="true"
-                android:textSize="15dp"
+                android:onClick="onClick"
+                android:text="PRICE"
+                android:textSize="14sp"
                 tools:ignore="OnClick" />
 
         </LinearLayout>
@@ -91,7 +91,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="match_parent" />
 
         </RelativeLayout>
 

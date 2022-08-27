@@ -18,8 +18,6 @@ public class Emoticon implements Serializable {
     private List<String> images;
     private int date;
 
-    public Emoticon() {};
-
     public String getArtist() {
         return artist;
     }
@@ -52,10 +50,16 @@ public class Emoticon implements Serializable {
         return wishlist;
     }
 
-    public boolean isMyEmoticons() { return my_emoticons; }
+    public boolean isMy_emoticons() {
+        return my_emoticons;
+    }
 
     public List<String> getImages() {
         return images;
+    }
+
+    public int getDate() {
+        return date;
     }
 
     public void updateWishList(boolean isWishList) {
@@ -70,12 +74,6 @@ public class Emoticon implements Serializable {
         String documentID = this.getId();
         this.my_emoticons = isMyEmoticons;
         DataProvider.setMyEmoticons(collection, documentID, this.my_emoticons);
-    }
-
-    public int getDate() { return date; }
-
-    public boolean isMy_emoticons() {
-        return my_emoticons;
     }
 
     public void incrementViews() {

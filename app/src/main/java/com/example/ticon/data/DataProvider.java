@@ -1,18 +1,19 @@
 package com.example.ticon.data;
 
 import com.example.ticon.models.Emoticon;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class DataProvider {
+
+    /**
+     * Summarise dataprovider functionality
+     */
 
     public static void getAnimalsData(ITaskListener<List<Emoticon>> taskListener){
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -169,7 +170,7 @@ public class DataProvider {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference docRef = database.collection(collection).document(documentID);
         docRef.update("views", FieldValue.increment(1));
-    };
+    }
 
     public static void setWishList(String collection, String documentID, boolean isWishList) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();

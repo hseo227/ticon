@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
 
 import com.example.ticon.R;
-import com.example.ticon.adapter.EmoticonAdapter;
+import com.example.ticon.adapters.EmoticonAdapter;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
 
@@ -28,8 +28,11 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
+    /**
+     * Summarise activity functionality
+     */
+
     private RecyclerView listRV;
-    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,24 +47,23 @@ public class SearchActivity extends AppCompatActivity {
 
         setContentView(R.layout.search_app_bar_list);
         listRV = findViewById(R.id.listRView);
-        searchView = findViewById(R.id.action_search);
+        SearchView searchView = findViewById(R.id.action_search);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView textView = (TextView) SearchActivity.this.findViewById(R.id.search_text);
+        TextView textView = SearchActivity.this.findViewById(R.id.search_text);
         String finalQuery = query;
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons, finalQuery);
             if (resultEmoticons.isEmpty()) {
                 textView.setText(R.string.no_results);
-                textView.setVisibility(View.VISIBLE);
             } else {
                 textView.setText(getString(R.string.search_results) + " \"" + finalQuery + "\"");
-                textView.setVisibility(View.VISIBLE);
             }
+            textView.setVisibility(View.VISIBLE);
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, resultEmoticons, "three");
             getData(emoticonAdapter);
         });

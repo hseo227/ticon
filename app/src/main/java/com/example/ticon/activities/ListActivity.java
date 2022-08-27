@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticon.R;
-import com.example.ticon.adapter.EmoticonAdapter;
+import com.example.ticon.adapters.EmoticonAdapter;
 import com.example.ticon.comparators.SortByDate;
 import com.example.ticon.comparators.SortByPopularity;
 import com.example.ticon.comparators.SortByPrice;
@@ -26,13 +26,17 @@ import java.util.Collections;
 
 public class ListActivity extends AppCompatActivity {
 
+    /**
+     * Summarise activity functionality
+     */
+
     private RecyclerView SavedListRV;
     Button button;
 
     private class ViewHolder{
-        TextView views;
-        TextView by_new;
-        TextView price;
+        final TextView views;
+        final TextView by_new;
+        final TextView price;
         public ViewHolder() {
             views = findViewById(R.id.text_sort_popularity);
             by_new = findViewById(R.id.text_sort_new);
@@ -51,7 +55,7 @@ public class ListActivity extends AppCompatActivity {
 
         vh = new ViewHolder();
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -59,7 +63,7 @@ public class ListActivity extends AppCompatActivity {
         String category = intent.getStringExtra("category");
         String listType = intent.getStringExtra("listType");
 
-        String categoryTitle = "#" + category.toUpperCase();
+        String categoryTitle = "# " + category.toUpperCase();
         getSupportActionBar().setTitle(categoryTitle);
 
         if (category.equals("funny")) {

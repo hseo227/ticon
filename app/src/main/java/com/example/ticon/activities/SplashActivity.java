@@ -11,6 +11,10 @@ import com.example.ticon.R;
 
 public class SplashActivity extends AppCompatActivity {
 
+    /**
+     * Summarise activity functionality
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
