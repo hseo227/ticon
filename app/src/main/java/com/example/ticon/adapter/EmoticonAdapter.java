@@ -25,12 +25,11 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
      * Summarise adapter functionality
      */
 
-    private Context context;
-    private List<Emoticon> listModelArrayList;
-    private String listType;
+    private final Context context;
+    private final List<Emoticon> listModelArrayList;
+    private final String listType;
     String id = "";
 
-//    Constructor
     public EmoticonAdapter(Context context, List<Emoticon> listModelArrayList, String listType) {
         this.context = context;
         this.listModelArrayList = listModelArrayList;
@@ -90,7 +89,7 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
             });
         }
 
-        // Applying animations for recylerview
+        // Applying animations for Recylerview
         Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.recycler_view_animation);
         holder.itemView.startAnimation(animation);
     }
@@ -107,8 +106,13 @@ public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewho
 
     public class Viewholder extends RecyclerView.ViewHolder {
 //        public View cardview;
-        private ImageView emoImg1, emoImg2, emoImg3, emoImg4, imageButton;
-        private TextView emoName, artist;
+        private final ImageView emoImg1;
+        private final ImageView emoImg2;
+        private final ImageView emoImg3;
+        private final ImageView emoImg4;
+        private final ImageView imageButton;
+        private final TextView emoName;
+        private final TextView artist;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);

@@ -71,7 +71,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // I had to remove to make the status bar show
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
+        Toolbar myToolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -153,7 +153,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         int[] images = {drawableID1, drawableID2, drawableID3};
         // Initializing the ViewPager Object
-        viewPager = (ViewPager)findViewById(R.id.viewPagerMain);
+        viewPager = findViewById(R.id.viewPagerMain);
         // Initializing the ViewPagerAdapter
         viewPagerAdapter = new com.example.ticon.activities.ViewPagerAdapter(DetailsActivity.this, images);
         // Adding the Adapter to the ViewPager
@@ -202,12 +202,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        if (wishListBool){
-            wishListBool = false;
-
-        } else {
-            wishListBool = true;
-        }
+        wishListBool = !wishListBool;
         setWishListImage(wishListBool);
         emoticon.updateWishList(wishListBool);
     }

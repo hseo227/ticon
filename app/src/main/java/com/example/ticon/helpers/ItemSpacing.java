@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemSpacing extends RecyclerView.ItemDecoration {
-    private int verticalSpaceHeight;
+    private final int verticalSpaceHeight;
 
     public ItemSpacing(int verticalSpacingHeight) {
         this.verticalSpaceHeight = verticalSpacingHeight;

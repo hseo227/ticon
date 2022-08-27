@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        NavigationView testNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView testNavigationView = findViewById(R.id.nav_view);
         testNavigationView.setNavigationItemSelectedListener(this);
     }
 

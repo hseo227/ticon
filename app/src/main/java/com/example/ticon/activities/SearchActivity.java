@@ -50,12 +50,12 @@ public class SearchActivity extends AppCompatActivity {
         listRV = findViewById(R.id.listRView);
         searchView = findViewById(R.id.action_search);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView textView = (TextView) SearchActivity.this.findViewById(R.id.search_text);
+        TextView textView = SearchActivity.this.findViewById(R.id.search_text);
         String finalQuery = query;
         DataProvider.getAllData(emoticons -> {
             List<Emoticon> resultEmoticons = getResults(emoticons, finalQuery);

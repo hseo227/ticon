@@ -173,7 +173,7 @@ public class DataProvider {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference docRef = database.collection(collection).document(documentID);
         docRef.update("views", FieldValue.increment(1));
-    };
+    }
 
     public static void setWishList(String collection, String documentID, boolean isWishList) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();

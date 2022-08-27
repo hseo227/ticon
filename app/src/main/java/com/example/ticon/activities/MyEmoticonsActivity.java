@@ -34,7 +34,7 @@ public class MyEmoticonsActivity extends AppCompatActivity {
         setContentView(R.layout.myemoticons_list);
         SavedListRV = findViewById(R.id.listRView);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

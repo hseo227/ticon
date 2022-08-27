@@ -55,7 +55,7 @@ public class ListActivity extends AppCompatActivity {
 
         vh = new ViewHolder();
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

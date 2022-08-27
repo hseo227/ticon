@@ -39,7 +39,7 @@ public class PreviewActivity extends DetailsActivity implements View.OnClickList
         // I had to remove to make the status bar show
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar3);
+        Toolbar myToolbar = findViewById(R.id.toolbar3);
         setSupportActionBar(myToolbar);
 
         Intent intent = getIntent();
