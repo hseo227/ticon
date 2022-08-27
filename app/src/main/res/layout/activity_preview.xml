@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="40"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar3"
@@ -21,56 +20,92 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <ScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingBottom="20dp">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/noticeBubble"
-                    android:layout_width="220dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/notice_bubble"
-                    android:elevation="5dp"
-                    android:padding="13dp"
-                    android:textSize="14sp"
-                    android:text="@string/test_chat"
-                    android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    android:padding="8dp">
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="8dp"
-                    android:src="@drawable/logo" />
-
-                <RelativeLayout
-                    android:id="@+id/chatLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="8dp"
-                    android:elevation="5dp"
-                    android:background="@drawable/chat_bubble"
-                    android:visibility="invisible">
+                    <TextView
+                        android:id="@+id/noticeBubble"
+                        android:layout_width="220dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/notice_bubble"
+                        android:elevation="5dp"
+                        android:padding="13dp"
+                        android:textSize="14sp"
+                        android:text="@string/test_chat"
+                        android:textColor="@color/white" />
 
                     <ImageView
-                        android:id="@+id/displayEmoticon"
-                        android:layout_width="220dp"
-                        android:layout_height="160dp"
-                        android:scaleType="fitCenter" />
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/logo" />
 
-                </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/chatLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="8dp"
+                        android:elevation="5dp"
+                        android:background="@drawable/chat_bubble"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/displayEmoticon"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="60dp"
+                            android:scaleType="fitCenter" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/transparentDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/black_transparent"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="invisible">
+
+                <ImageButton
+                    android:id="@+id/exitTransparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_close">
+                </ImageButton>
+
+                <ImageView
+                    android:id="@+id/transparentEmoticon"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center" />
 
             </LinearLayout>
 
-        </ScrollView>
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -91,7 +126,7 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="40"
                 android:background="@drawable/text_with_round_corner"
                 android:padding="16dp"
