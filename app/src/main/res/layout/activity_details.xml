@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.DetailsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white_100">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -65,25 +67,10 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-<!--            <androidx.viewpager.widget.ViewPager-->
-<!--                android:id="@+id/viewPager"-->
-<!--                android:layout_width="110dp"-->
-<!--                android:layout_height="110dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginTop="12dp"/>-->
-
-
-<!--            <ImageView-->
-<!--                android:id="@+id/emoticonImage"-->
-<!--                android:layout_width="150dp"-->
-<!--                android:layout_height="150dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginTop="12dp"-->
-<!--                android:src="@drawable/cute_marvel5"/>-->
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerMain"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"/>
 
@@ -92,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop = "8dp"
+                android:layout_marginTop = "12dp"
                 android:text="@string/place_holder"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -102,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:background="@android:color/transparent">
 
                 <ImageView
@@ -125,17 +112,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="bottom">
+                android:layout_height="match_parent"
+                android:gravity="bottom">
 
                 <Button
                     android:id="@+id/previewButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="60dp"
                     android:layout_weight="2"
-                    android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/mint_a100"
+                    android:layout_marginHorizontal="2dp"
                     android:radius="8dp"
                     android:text="@string/preview"
                     android:textSize="12sp" />
@@ -143,11 +129,11 @@
                 <Button
                     android:id="@+id/buyButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="60dp"
                     android:layout_weight="2"
                     android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/pink_a200"
-                    android:radius="8dp"
+                    android:radius="6dp"
                     android:text="@string/buy"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
@@ -155,7 +141,7 @@
                 <ImageButton
                     android:id="@+id/wishListButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="60dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="3"
                     android:background="@android:color/transparent"
@@ -167,76 +153,77 @@
 
         </LinearLayout>
 
-        <ScrollView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        tools:context=".activities.PreviewActivity">
+
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".activities.PreviewActivity">
+            android:columnCount="3"
+            android:padding="10dp"
+            android:rowCount="2">
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:columnCount="3"
-                android:padding="10dp"
-                android:rowCount="2">
+            <ImageView
+                android:id="@+id/emoImage1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/mickey_minnie1" />
 
-                <ImageView
-                    android:id="@+id/emoImage1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:src="@drawable/mickey_minnie1" />
+            <ImageView
+                android:id="@+id/emoImage2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoImage2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:src="@drawable/bad_ducks1" />
+            <ImageView
+                android:id="@+id/emoImage3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoImage3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:src="@drawable/bad_ducks1" />
+            <ImageView
+                android:id="@+id/emoImage4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoImage4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:src="@drawable/bad_ducks1" />
+            <ImageView
+                android:id="@+id/emoImage5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoImage5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:src="@drawable/bad_ducks1" />
+            <ImageView
+                android:id="@+id/emoImage6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/bad_ducks1" />
 
-                <ImageView
-                    android:id="@+id/emoImage6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="fill"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:src="@drawable/bad_ducks1" />
-
-            </GridLayout>
-
-        </ScrollView>
+        </GridLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>
