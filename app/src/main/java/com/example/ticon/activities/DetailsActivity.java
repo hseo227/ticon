@@ -2,16 +2,13 @@ package com.example.ticon.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,10 +17,9 @@ import android.widget.Toast;
 
 import com.example.ticon.R;
 
+import com.example.ticon.adapter.ViewPagerAdapter;
 import com.example.ticon.data.DataProvider;
 import com.example.ticon.models.Emoticon;
-
-import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -58,7 +54,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     Boolean myEmoBool;
 
     androidx.viewpager.widget.ViewPager viewPager;
-    com.example.ticon.activities.ViewPagerAdapter viewPagerAdapter;
+    ViewPagerAdapter viewPagerAdapter;
 
     // images array
     int[] images = {R.drawable.animal_friends1, R.drawable.animal_friends2, R.drawable.animal_friends3};
@@ -155,7 +151,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Initializing the ViewPager Object
         viewPager = findViewById(R.id.viewPagerMain);
         // Initializing the ViewPagerAdapter
-        viewPagerAdapter = new com.example.ticon.activities.ViewPagerAdapter(DetailsActivity.this, images);
+        viewPagerAdapter = new ViewPagerAdapter(DetailsActivity.this, images);
         // Adding the Adapter to the ViewPager
         viewPager.setAdapter(viewPagerAdapter);
 

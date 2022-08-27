@@ -34,9 +34,9 @@ public class ListActivity extends AppCompatActivity {
     Button button;
 
     private class ViewHolder{
-        TextView views;
-        TextView by_new;
-        TextView price;
+        final TextView views;
+        final TextView by_new;
+        final TextView price;
         public ViewHolder() {
             views = findViewById(R.id.text_sort_popularity);
             by_new = findViewById(R.id.text_sort_new);

@@ -33,7 +33,6 @@ public class SearchActivity extends AppCompatActivity {
      */
 
     private RecyclerView listRV;
-    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public class SearchActivity extends AppCompatActivity {
 
         setContentView(R.layout.search_app_bar_list);
         listRV = findViewById(R.id.listRView);
-        searchView = findViewById(R.id.action_search);
+        SearchView searchView = findViewById(R.id.action_search);
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -61,11 +60,10 @@ public class SearchActivity extends AppCompatActivity {
             List<Emoticon> resultEmoticons = getResults(emoticons, finalQuery);
             if (resultEmoticons.isEmpty()) {
                 textView.setText(R.string.no_results);
-                textView.setVisibility(View.VISIBLE);
             } else {
                 textView.setText(getString(R.string.search_results) + " \"" + finalQuery + "\"");
-                textView.setVisibility(View.VISIBLE);
             }
+            textView.setVisibility(View.VISIBLE);
             EmoticonAdapter emoticonAdapter = new EmoticonAdapter(this, resultEmoticons, "three");
             getData(emoticonAdapter);
         });

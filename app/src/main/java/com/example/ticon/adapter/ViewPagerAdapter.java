@@ -69,20 +69,20 @@ import androidx.viewpager.widget.PagerAdapter;
 import java.util.Objects;
 import com.example.ticon.R;
 
-class ViewPagerAdapter extends PagerAdapter {
+public class ViewPagerAdapter extends PagerAdapter {
 
     /**
      * Summarise adapter functionality
      */
 
     // Context object
-    Context context;
+    final Context context;
 
     // Array of images
-    int[] images;
+    final int[] images;
 
     // Layout Inflater
-    LayoutInflater mLayoutInflater;
+    final LayoutInflater mLayoutInflater;
 
 
     // Viewpager Constructor

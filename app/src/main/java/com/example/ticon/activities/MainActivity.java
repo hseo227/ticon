@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
 
     private class ViewHolder{
-        ImageButton  wishlistBtn;
-        Button changeToSearchFunny;
-        Button changeToSearchCharacter;
-        Button changeToSearchAnimals;
-        SearchView searchView;
+        final ImageButton  wishlistBtn;
+        final Button changeToSearchFunny;
+        final Button changeToSearchCharacter;
+        final Button changeToSearchAnimals;
+        final SearchView searchView;
         public ViewHolder() {
             wishlistBtn = findViewById(R.id.favorite);
             changeToSearchFunny = findViewById(R.id.button1);
