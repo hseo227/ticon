@@ -64,6 +64,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="12dp" >
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,11 +73,13 @@
                     android:background="@android:color/transparent"
                     android:src="@drawable/ic_arrow_left"
                     android:layout_marginHorizontal="10dp"/>
+
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewPagerMain"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:layout_gravity="center"/>
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,6 +88,7 @@
                     android:layout_gravity="center"
                     android:src="@drawable/ic_arrow_right"
                     android:layout_marginHorizontal="10dp"/>
+
             </LinearLayout>
 
             <TextView
@@ -146,7 +150,7 @@
                     android:layout_weight="2"
                     android:layout_marginHorizontal="6dp"
                     android:backgroundTint="@color/pink_a200"
-                    android:radius="6dp"
+                    android:radius="8dp"
                     android:text="@string/buy"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
@@ -160,7 +164,6 @@
                     android:background="@android:color/transparent"
                     tools:ignore="TouchTargetSizeCheck"
                     android:src = "@drawable/ic_favorite_empty"/>
-
 
             </LinearLayout>
 
@@ -178,7 +181,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:columnCount="3"
-            android:padding="10dp"
+            android:padding="16dp"
             android:rowCount="2">
 
             <ImageView
