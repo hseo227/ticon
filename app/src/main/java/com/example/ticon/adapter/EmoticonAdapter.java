@@ -20,6 +20,11 @@ import com.example.ticon.models.Emoticon;
 import java.util.List;
 
 public class EmoticonAdapter extends RecyclerView.Adapter<EmoticonAdapter.Viewholder> {
+
+    /**
+     * Summarise adapter functionality
+     */
+
     private Context context;
     private List<Emoticon> listModelArrayList;
     private String listType;

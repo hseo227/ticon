@@ -21,6 +21,10 @@ import java.util.List;
 
 public class WishlistActivity extends AppCompatActivity {
 
+    /**
+     * Summarise activity functionality
+     */
+
     private RecyclerView SavedListRV;
     private Button button;
 

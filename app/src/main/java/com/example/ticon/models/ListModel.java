@@ -1,6 +1,11 @@
 package com.example.ticon.models;
 
 public class ListModel {
+
+    /**
+     * Summarise model functionality
+     */
+
     private int emoticonimg1;
     private int emoticonimg2;
     private int emoticonimg3;

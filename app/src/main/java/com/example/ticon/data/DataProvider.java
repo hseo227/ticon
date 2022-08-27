@@ -14,6 +14,10 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class DataProvider {
 
+    /**
+     * Summarise dataprovider functionality
+     */
+
     public static void getAnimalsData(ITaskListener<List<Emoticon>> taskListener){
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         List<Emoticon> emoticons = new ArrayList<>();

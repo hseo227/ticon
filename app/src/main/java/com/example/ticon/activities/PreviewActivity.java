@@ -14,6 +14,10 @@ import com.example.ticon.models.Emoticon;
 
 public class PreviewActivity extends DetailsActivity implements View.OnClickListener {
 
+    /**
+     * Summarise activity functionality
+     */
+
     Emoticon emoticon;
 
     ImageView sentImage;

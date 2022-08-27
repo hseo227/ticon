@@ -28,6 +28,10 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
+    /**
+     * Summarise activity functionality
+     */
+
     private RecyclerView listRV;
     private SearchView searchView;
 

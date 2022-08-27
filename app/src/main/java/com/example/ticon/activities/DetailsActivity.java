@@ -27,8 +27,10 @@ import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
-//    ViewPager viewPager;
-//    ViewPagerAdapter viewPagerAdapter;
+    /**
+     * Summarise activity functionality
+     */
+
     Context context;
 
     int boolCount = 0;

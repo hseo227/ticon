@@ -36,6 +36,11 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    /**
+     * Displays the CATEGORIES, POPULAR, and NEW sections.
+     * The top-bar implementations are also here, including the side-bar drawer.
+     */
+
     private class ViewHolder{
         ImageButton  wishlistBtn;
         Button changeToSearchFunny;
@@ -50,17 +55,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             searchView = findViewById(R.id.action_search);
         }
     }
+
     ViewHolder vh;
-    DataProvider dp;
 
     String category = "";
     String listType = "home";
-    Boolean is_wishlist;
 
     RecyclerView popularRV;
     RecyclerView newRV;
-
-    DrawerLayout drawer;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -99,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-//        Button changeToSearchCharacter = findViewById(R.id.button2);
         vh.changeToSearchCharacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-//        Button changeToSearchAnimals = findViewById(R.id.button3);
         vh.changeToSearchAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        // Side bar drawer set up
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         testNavigationView.setNavigationItemSelectedListener(this);
     }
 
-    // Navigation Bar
+    // Assigning where the side bar drawer features will be navigated to.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -167,30 +168,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    protected void getDataSortedDate(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
-        // below line is for setting a layout manager for our recycler view.
-        // here we are creating vertical list so we will provide orientation as horizontal
-        Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByDate());
+    // Recylerview set up for POPULAR section
+    protected void getDataSortedPopular(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+        // Setting the layout manager for our recycler view.
+        Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByPopularity());
         LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        // in below two lines we are setting layoutmanager and adapter to our recycler view.
+        // Setting of layoutmanager and adapter to the recycler view.
         rv.setLayoutManager(layout);
         rv.setAdapter(emoticonAdapter);
     }
 
-    protected void getDataSortedPopular(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
-        // below line is for setting a layout manager for our recycler view.
-        // here we are creating vertical list so we will provide orientation as horizontal
-        Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByPopularity());
+    // Recylerview set up for NEW section
+    protected void getDataSortedDate(EmoticonAdapter emoticonAdapter, RecyclerView rv) {
+        Collections.sort(emoticonAdapter.getAllEmoticons(), new SortByDate());
         LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        // in below two lines we are setting layoutmanager and adapter to our recycler view.
         rv.setLayoutManager(layout);
         rv.setAdapter(emoticonAdapter);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main_menu, menu);
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         SearchView search = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));

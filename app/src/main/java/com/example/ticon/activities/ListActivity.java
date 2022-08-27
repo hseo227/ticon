@@ -26,6 +26,10 @@ import java.util.Collections;
 
 public class ListActivity extends AppCompatActivity {
 
+    /**
+     * Summarise activity functionality
+     */
+
     private RecyclerView SavedListRV;
     Button button;
 

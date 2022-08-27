@@ -1,5 +1,5 @@
-package com.example.ticon.activities;//package com.example.ticon.activities;
-//
+package com.example.ticon.adapter;
+
 //import android.content.Context;
 //import android.view.LayoutInflater;
 //import android.view.View;
@@ -70,6 +70,10 @@ import java.util.Objects;
 import com.example.ticon.R;
 
 class ViewPagerAdapter extends PagerAdapter {
+
+    /**
+     * Summarise adapter functionality
+     */
 
     // Context object
     Context context;
