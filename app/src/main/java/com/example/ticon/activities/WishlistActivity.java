@@ -47,6 +47,7 @@ public class WishlistActivity extends AppCompatActivity {
         });
     }
 
+
     // This method goes through a list of emoticons and only grabs the ones in Wishlist.
     protected List<Emoticon> getResults(List<Emoticon> emoticons) {
         List<Emoticon> wishlist_results = new ArrayList<Emoticon>();
@@ -59,6 +60,7 @@ public class WishlistActivity extends AppCompatActivity {
         return wishlist_results;
     }
 
+
     protected void getData(EmoticonAdapter emoticonAdapter) {
         // below line is for setting a layout manager for our recycler view.
         // here we are creating vertical list so we will provide orientation as vertical
@@ -67,6 +69,7 @@ public class WishlistActivity extends AppCompatActivity {
         SavedListRV.setLayoutManager(layout);
         SavedListRV.setAdapter(emoticonAdapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,11 +80,13 @@ public class WishlistActivity extends AppCompatActivity {
         return true;
     }
 
+
     public void onHomePressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
